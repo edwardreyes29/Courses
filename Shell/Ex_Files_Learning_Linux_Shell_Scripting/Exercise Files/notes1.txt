@@ -48,3 +48,24 @@ and not in the current directory
 If command is not in the path, Linux reports it as not found
 ./ tells system to not bother with the path, here's the
 location of the command
+
+
+> Comments
+Best practice to add comments to script which explains them
+Uses # like python
+
+> Shebang #!
+The current script is written specifically for Bash shell, but if someone tried to
+run the script in a different shell environment, might get unexpected results 
+- #!/usr/bin/env bash     // More portable
+- #!/bin/bash
+- #!/usr/bin/env python
+- #!/usr/bin/env node    // If written in JavaScript
+
+!!! Make sure script only runs on bash
+#! - tells the system which command processor should handle this script
+   - Must be first  line of te file or will be ignored like a comment
+
+#!/usr/bin/env bash -> for bash
+
+Default shell in most linux systems is Bash
