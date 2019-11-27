@@ -1,0 +1,173 @@
+$ 9. Classes
+
+    I. Creating a Class 
+        * Basis of all data in Python
+        * Everything is an object in Python
+            * Class is how an object is defined
+
+    II. Constructing an object 
+
+        __new__ => create object
+        __init__ => customize object
+
+        Constructor: 
+            class Animal:
+                def __init__(self, type, name, sound):
+                    self._type = type
+                    self._name = name
+                    self._sound = sound
+
+        __init__: special name for a class functions which
+            operates as an initializer or constructor.
+        (*) Pass arguments to it, and the first one is always 'self'
+
+        self._type = type and so on are object varaibles, they don't 
+        exist until the object is defined. They don't exist in the class
+        without having been constructed into an object
+
+        [Type]
+
+        class Person:
+            def __init__(self, firstname, lastname, age):
+                self._firstname = firstname
+                self._lastname = lastname
+                self._age = age 
+
+            def firstname(self):
+                return self._firstname
+
+            def lastname(self):
+                return self._lastname
+
+            def age(self):
+                return self._age
+
+        Review:
+            An object is an instance of a class. An object is created by 
+            calling the class as if it were a function, and the constructor
+            is used to initalize the object
+
+    III. Class methods  
+
+        Method: A functions associated with a class
+        Provides interface to class and its objects
+
+        E.x.
+
+            def type(self, t = None):
+                if t: self._type = the
+                return self._type
+
+                - The argument with self is what makes a function a method and not just
+                another plain function
+                - The secdon argument is t:
+                    - default value is None
+                    - if there is no value or None, it will fail and it will just
+                        return the value of self._type
+                
+                self._type: underscores are used to indicate data belonging to the object
+                Python does not have private variables, so there's no way to prevent someone
+                from using these, so underscores indicate a private variable and should not be
+                set or retrieved outside of teh setter getter
+        
+        (Special method) __str__:
+
+            def __str__(self):
+                return f'The {self.type()} is named "{self.name()}" and says "{self.sound()}".'
+
+                - Specially named method which provides string representation of the object.
+                - Allows us to print object by using the print() method without the need of a
+                - special function. 
+
+
+        [Type]
+        class Animal:
+            def __init__(self, **kwargs):
+                self._type = kwargs['type'] if 'type' in kwargs else 'kitten'
+                self._type = kwargs['name'] if 'name' in kwargs else 'fluffy'
+                self._type = kwargs['sound'] if 'sound' in kwargs else 'meow'
+
+            def type(self, t = None)
+                if t: self._type = t
+                return self._type        
+
+            def name(self, n = None)
+                if n: self._name = n 
+                return self._name
+
+            def sound(self, s = None)
+                if s: self._sound = s 
+                return self._sound
+
+            def __str__(self):
+                return f'The {self.type()} is named "{self.name()}" and says "{self.sound()}".'å
+
+        Review: 
+        Methods are teh primary interface of classes and objects. They workd exactly like functions,
+        except they are bound tot he object through their first arguments, commonly named self
+
+    IV. Object data 
+        Data may be associated with a class or an object
+
+        Encapsulation: 
+            - Major benefit of object-orientd programming.
+            - If variables are encapsulated, that means they belong to the object and no to the class
+
+        (!) General Rule: Except for constants that you are never going to change -> Immutable
+                You never want to put mutable data in a class
+
+            Never want to access class or objects variables directly
+
+
+    V. Inheritance 
+
+        Inheritance: 
+            - Fundamental part of Object-oriented programming.
+            - Allows you to extend your classes in driving properties and methods from parent classes.
+
+
+        E.x.
+            class Animal: 
+                def __init__(self, ##kwargs):
+                    if 'type' in kwargs: self._type = kwargs['type']
+                    if 'name' in kwargs: self._name = kwargs['name']
+                    if 'sound' in kwargs: self._sound = kwargs['sound']
+
+                def type(self, t = None):
+                    if t: self._type = t
+                    try: return self_type
+                    except AttributeError: return None
+
+                ...
+            # end Animal class    
+
+
+            string[::-1] Reverses string
+
+    VI. Iterator Objects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

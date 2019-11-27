@@ -1,0 +1,5 @@
+What you should know
+* Basic understanding with data in Python or SQL
+* Familarity with Hive or Hadoop
+
+* Analyzing Big Data with Hive by Ben Sullins (1 hr)

@@ -1,0 +1,100 @@
+$ 7. Functions
+
+    I. Defining a function 
+
+        Ex. if __name__ == '__main__': main()
+        * special varaible __name__ will return the name of the curretn module
+
+            e.g. [import function-working.py]
+            So if this file had been included in another execution unit by the 
+            import statement, in other words if somebody had typed import and 
+            the name of this file, then this woudl be running as a module and the
+            name would have the name of the module here
+            But in this case it is not running as a module, it's running as the 
+            main unit of execution.
+
+            '__main__' not important in this case, this is the main file
+            * Comes in handy when we talk about modules.
+
+            * Often used for the purpose b/c it calls main.
+
+            * You can call a function if it has been called beforehand
+            but main then calls kitten which is defined after.
+
+            Python doesn't support 'for declarations'
+            if __name__ == '__main__': main() is the standard declarations
+
+        def kitten():
+            print('Meow')
+        * Standard way to create a function
+        * parentheses used to pass a parameter
+        * ALL functions return a value
+            - if no value is specified, it will return None
+
+        In other programming languages:
+            functions -> return value
+            procedures -> doesn't
+        In Python, there is no such distinction
+    
+    II. Function arguments
+
+        def kitten(a, b = 1, c = 0): # Give parameter 'c' a default value
+        print('Meow.')
+        print(a, b, c)
+            (!) Any arguments with defaults MUST be after any arguments w/o defaults
+
+
+        Ex. 
+            def main():
+                x = 5
+                kitten(5)
+
+            def kitten(a):
+                a = 3 # call by value
+                print('Meow.')
+                print(a)
+
+        When you pass a variable to a funcion, the function operates on a copy
+        the copy of a variable to a function. Usually when references are passes,
+        the arguments value would change in the function. Now this isn't all true in
+        Python in both cases, since everything in Python are objects
+            - Integers are immutable
+                When passing x as an arg, id(x) == id(a)
+                But once a = 3, id(x) != id(a)
+        (!) An integer is not mutable, so it cannot change, so when you assign 
+            a new value to an integer, you assign an entirely different object
+
+        [intersting part]
+                x = [5] # make x a list, which is mutable
+                y = x
+                y[0] = 3
+                print(id(x)) # x & y have the same id
+                print(id(y))
+                print(x)
+                print(y)
+
+                So y and x are still the same object since lists are mutable.
+                If you change a value in x you change a value in y
+                Same thing happens with functions, strictly call by reference
+            (!) In his case, mutable objects may be changed, and those
+                changes will be reflected in the caller.
+
+                Immutable objects may not be changed, so function arguments in 
+                Python act exactly as assignemnts in Python, with all the quirks
+                of Python's object model
+
+    III. Argument Lists
+
+    IV. Keyword arguments
+
+    V. Return values
+
+    VI. Generators
+
+        Special class of function that serves as an iterator.
+        Instead of returninga single value, the generator returns 
+        a stream of values.
+    
+    VII. Decorators
+        Form of metaprogramming and it can be described as a special type of function.
+        Remember, in Python, everything is an object.

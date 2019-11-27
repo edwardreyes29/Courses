@@ -1,0 +1,130 @@
+$ 2. Arrays
+
+    I. What are arrays?
+        - Array: a collection of elements, where each item is 
+            identified by and index or a key
+        
+        - Datat Structure: a collection with a defined way of
+            accessing and storing items
+
+        - Use index to acces specific piece of Datat
+
+        // Java 
+        int[] lotteryNumbers = {0, 2, 18, 40, 14, 30};
+        int first = lotterNumbers[0]
+
+        # Python: No arrays, uses lists instead
+        lotteryNumbers = [0, 2, 18, 40, 14, 30]
+        second = lotteryNumbers[1]
+    
+        - Array: index out of bounds error
+            Trying to access item outside limits
+
+    II. Use arrays in Swift
+    III. Multidimensional arrays
+        - Can have containers within containers
+        - Each rows have the same number of columns, unlike a jagged array
+
+        E.x. Dinner
+            Appetizers:     Salad       Soup        Cheese plate
+            Main Courses:   Chicken     Salmon      Lasagna
+
+            // Java
+            String[][] dinnerChoices = {
+                {"Salad", "Soup", "Cheese plate"},
+                {"Chicken" , "Salmon", "Lasagna"}
+            }
+
+            // Locations
+            Appetizers:   (0,0)   (0,1)   (0,2)
+            Lasagna:      (1,0)   (1,1)   (1,2)
+
+
+
+    IV. Multidimensional arrays in JavaScript
+    * In JDOODLE, select NodeJS
+
+
+    V. Jagged arrays
+        - Jagged array can have elements of different dimensions and sizes
+
+        // Regular multidimensional array
+        [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+
+        // Jagged array
+        // Each array in this data structure can be of different length
+        [
+            [1, 3, 8],
+            [1, 2],
+            [9, 0],
+            [10, 11, 4, 20, 50],
+            [30]
+        ]
+
+        * Acces the lenght of each individual array, since eachg
+            array has different sizes
+
+
+    VI. Jagged arrays in C#
+    VII. Resizable arrays and language support
+        Java, C++: Basic Arrays cannot be resized
+            - Can only change values
+            Java:
+                - Immutable: basic array
+                - Mutable: Java classes five us resizable versions
+                - ArrayList: comes w/ extra functionality
+
+                    * An arrayList is an array under the surface
+                    * Focus less on maintaing data structures and
+                        more on crating
+                    E.x.
+                        myArrayList.add(2,10); // inserts value 10 at index 2
+
+
+        Ruby, JavaScript: Basic arrays can be resized
+
+        Resizable/dynamic/mutable arrays
+            - can change size of array
+
+
+        Java Code:
+            import java.util.ArrrayList;
+
+            public class MyClass {
+                public static void main(String args[]) {
+                    ArrayList<Integer> myArrayList = new ArrayList<>();
+                    for (int i = 0; i < 10; i++) {
+                        myArrayList.add(i);
+                    }
+                    myArrayList.add(2, 10);
+                    System.out.println(myArrayList);
+                }
+            }
+            Original Array: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            Output:         [0, 1, 10, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        [Add, push] -> Adding to back of the array
+        [Remove, pop] -> Removing from the back of the array
+
+        Insert Funciontality in Non-mutable Arrays:
+        Basic array is big enough: 
+            * items are shuffled downa nd a new item is added
+        Basic array is not big enough:
+            * All contents copied into a new, bigger basic array,
+                and new items are also copied over with it
+            * Major performance reprucssions
+
+    VIII. Search arrays
+
+
+
+    IX. Sort arrays
+
+
+
+    X. Big O notation
+

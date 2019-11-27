@@ -1,0 +1,35 @@
+$Intro
+
+    I. Welcome
+    Hive -> Facebook -> SQL langauge that processes and analyzes data in Hadoop
+
+    II. What you should know
+    * Flat data sources
+        - Comma Separated Values
+    * Knowledge of databases
+    * Hadoop
+        - Hadoop Fundamentals with Lynn Langit
+    Beginner course!!!
+
+$ 1. Hive Concepts and Setup
+
+    I. Why Use Hive
+        SQL-like abstraction that allows for interactive queries on top of Hadoop data
+        Hadoops file system HTFS
+
+        Hadoop is not a database
+        - SQL support 
+        - Backup just in case server goes down
+
+        Hive Benefits
+        - Familar langauge
+            - Java, SQL, no Java necessary
+            - Tool support
+            
+
+
+    II. How Hive works
+
+    III. Setting up demo environment
+
+    IV. Quiz

@@ -1,0 +1,44 @@
+I. Expression & Statements
+    Expressions: combinations of literals, identifiers, operators
+    - anything that returns a value is an Expressions
+
+
+    Statement is a line of code, can be an expression too.
+
+II. Whitespaces
+    A block is delimited by Whitespaces
+    whitespaces creates blocks of statements
+    Whitespaces are meaningful in python
+
+ III. Using print()
+
+
+IV. Blocks and Scope
+    Indentation levels matter!
+    e.g. outer block is zero Indentation
+        block under if is 4 characters.
+        a half indentation cannot be matched by interpreter
+    Statements must be indented at the same level
+
+    # Indentation does not define scope of variables
+
+V. Conditionals
+    if x > y
+        stmt
+    elif x < y
+        stmt
+    else
+        stmt
+
+    Python doesn't have switch statemnent
+
+VI. Loops
+    while Loops, body of loop is executed while condition is true
+    for loop iterates over sequence
+
+VII. Functions
+    In python, all functions return a value
+    if no statements inside function and no return, 
+    will return the default value of none
+
+IX. Objects

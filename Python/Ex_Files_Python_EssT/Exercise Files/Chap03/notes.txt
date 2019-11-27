@@ -1,0 +1,48 @@
+Overview:
+> Duck Typing
+"if it walks like a duck, it's a duck"
+
+I. String Type
+All types are classes in Python 3
+
+II. Numeric Types
+Integer & floats
+
+III. Bool Type
+Logical values and expressions
+(!) Very few things evaluate to false, False, 0, None, and empty string.
+Every other value would evaluate to true
+
+IV. Sequence Types
+lists, tuples, dictionaries (hash)
+
+(!) Generally preferable to favor immutable 'tuple' over mutable type 'list'
+Unless you know that you need to change element in the list
+
+list by using [] # mutable
+    x = [ 1, 2 , 3, 4, 5 ]
+
+tuple by using () # immutable
+    x = ( 6, 7, 8, 9, 10 )
+
+range -> range(start, stop[, step]) # immutable
+    x = range(1, 6)
+    - Has three possible parameters
+        start: Starting number of the sequence. 
+        stop: Generate numbers up to, but not including this number. (Default if given only one parameter)
+        step: Difference between each number in the sequence.
+
+dictionaries -> searchanle sequences of key value pairs -> use {} # mutable
+    x = {'one': 1, 'two': 2, 'three': 3}
+Keys and values can be any type -> same for all lists & tuples
+
+
+
+
+V. type() and id()
+id() function returns the unique identifier for each object
+Not useful if you need to know if a particular object is a list or a tuple
+(!) Special function isinstance(object, classinfo)
+
+
+To check type of object, use 'isinstance()'

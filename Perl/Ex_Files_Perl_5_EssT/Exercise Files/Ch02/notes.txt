@@ -1,0 +1,45 @@
+2. Quick Start 
+
+    I. About quick start 
+        - fundamental programming concepts 
+        - not meant to give in-depth knowledge about perl
+
+        
+    II. Hello World
+        Perl comes from Unix
+
+        (#!) -> shebang -> common Unix technique for for running a script
+        This will tell Unix shell interpreter, bash or ksh, how to run the script
+        shows path to perl interpreter
+
+        (use) -> keyword which says to use library or to use some particular configuration
+
+        use 5.18.0; # Tells Perl interpreter to use syntax from Perl 5.18.0, even if you're running a higher level of Perl
+            -> Allows Perl develpers to continure to add new features to Perl without breaking the code
+
+        !!! To run script in Terminal: perl myprogram.pl
+
+        semicolons acts more like a sepatator, but its best practice to include it to prevent errors
+
+    III. Counting lines in a file
+
+    my $filename = "linesfile.txt";  
+    - my keyword, lexically scoped in enclosing block, local variable to this file. 
+    - Can use same name in a different scope
+    - ($variable) scalar varaibls carries one variable, one value
+
+
+    Perl supports three different data types: scalar, array, and hash
+        - Will automatically convert between these values
+        DuckTyping - "if it looks like a duck its a duck"
+        - No constants
+
+    @ - makes variable into an array, $ - makes variable into scalar
+
+
+    IV. Loops and conditionals 
+
+    V. Functions 
+
+    VI. Using peridoc
+

@@ -1,0 +1,60 @@
+$ 5. Operators
+
+    I. Arithmetic Operators
+        // Integer Division
+        ** Exponent
+        - Unary negative
+        + Unary positive
+
+    II. Bitwise Operators
+        & And
+        | Or 
+        ^ Xor
+        << Shift left
+        >> Shift right
+
+        - These bitwise operators operate on numbers
+        - They operate on the individual bits in the numbers
+
+        {x:02x} -> format specifiers
+            - two character string in hexadecimal and has leading zero.
+                - 0 -> leading zeros
+                - 2 -> sets field to two characters wide
+                - x -> hexadecimal display of an integer value
+                - b -> binary representation of value
+
+                & -> 00001010 & 00000010 = 00000010
+                | -> 00001010 | 00000101 = 00001111
+                ^ -> 00001010 ^ 00001111 = 00000101 # way to flip bits
+                << -> 00001010 << 00000001 = 0010100 # shifts left by 1
+                >> -> 00001010 >> 00000001 = 0000101 # shifts right by 1
+    
+    III. Comparison Operators
+        <, >, <=, >=, ==, !=
+
+    IV. Boolean Operators
+        and     And
+        or      Or
+        not     Not 
+        in      Value in set
+        not in  Value not in set
+        is      Same object identity
+        is not  Not same object identiy
+
+        x = ( 'bear', 'bunny', 'tree', 'sky', 'rain' ) # tuple!
+        y = 'bear'
+        if y is x[0]: # strings are not mutable. If you have two
+        literal strings with exactly the same variable, theres
+        no reason to carry around two separate objects. 
+        (!) It gets optimized into one object so it becomes true
+
+        print(id(y))        # 4412558256
+        print(id(x[0]))     # 4412558256
+        Shows that they are both the same object
+
+    V. Operator Precedence
+    Order of precedence from highest to lowest
+    - arithmetic operators
+    - bitwise operators
+    - comparison operators
+    - boolean operators

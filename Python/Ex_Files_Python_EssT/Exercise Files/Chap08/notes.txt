@@ -1,0 +1,106 @@
+$ 8. Structured Data
+
+    I. Basic Data Structrues
+        A. List Type []
+            e.g. 
+                x = [ 1, 2, 3, 4, 5, ]
+            * mutable: may add, delete, and change values
+        B. Tuple ()
+            e.g.
+                x = ( 1, 2, 3, 4, 5 )
+            * immutable: cannot change once it's been created
+        C. Dictionary {k:v}
+            e.g. 
+                x = { "a": 1, "b": 2, "c": 3 }
+            * Sequence of key-value pairs
+            * Other languages -> associatve arrary or hashed array 
+            * unordered list of unique values.
+
+        D. Set Type {}
+            e.g.    
+                x = { 1, 2, 3, 4, 5 }
+            * useful for finding and operating upon unique values within a sequence.
+
+        * Any of these collection types may contain any object or type
+
+    II. Lists & Tuples
+
+        A. List
+            * Ordered collection
+            * Sequential
+            * iterable
+            * mutable
+        B. Tuple
+            * Works exactly like a list, except mutable
+
+    III. Dictionaries
+        * {}
+        * key-value pairs
+        * keys must be immutable
+
+        Dictionary constructor, more convenient
+        especially when strings are used as keys
+        sigils = dict(dragon = 'fire', wolf = 'ice', lion = 'gold')
+
+        A. items method
+            animals.items() returns a view of key value pairs
+        B. Keys method
+            animals.keys() returns a view of dictionary keys
+        C. Values method
+            animals.values() returns view of values in dictionary
+        D. Set values
+            animals['lion'] = 'ROAARRR'
+        E. Add new iten, simply assign new value to a new key with dictionary name
+            animals['otter'] = 'squeek??'
+        F. check if item is in dictionary
+            print('lion' in sigils) # true 
+
+            if 'peacock' in animals:
+                print('Yes')
+            else: 
+                print('No')
+        H. Get method: returns value if you don't know if it exists
+            use if you don't want the exception
+
+    IV. Sets 
+        * Does not allow duplicate elemets
+        * unordered
+
+        I using sets, your going to be checking the membership set.
+        Use as sets, not lists. If you want an ordered list, use a list
+
+        a = set("hello there")
+        print(a) # returns something like 'hel tr'
+
+        let a and b be sets, then:
+        
+        A. (-) operator:
+            a - b returns all members in a and not b
+        B. (|) operator:
+            a | b returns all membes in or or both sets
+        C. (^) operator (caret): 
+            a ^ b returns all bemebers in a or b but not both
+        D. (&) operator:
+            a & b return only members in both sets
+
+    V. List Comprehension
+        seq = range(11) # 0, 1, 2, ..., 10
+
+        # Comprehension
+        seq2 = [x * 2 for x in seq]
+        
+        [expression] [clause] where the result is a new list
+
+        # Basic syntax
+        [ expression for item in list if conditional]
+
+        for item in list:
+            if conditional:
+                expression
+        
+
+    VI. Mixed Structrues
+
+        isinstance(object, classinfo)
+        object - object to be checked
+        classinfo - clas, type, tuple of classes and types

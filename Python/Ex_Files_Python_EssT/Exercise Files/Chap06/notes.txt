@@ -1,0 +1,47 @@
+$ 6. Loops
+
+    I. Python loops 
+
+    II. The while loop
+        while loop uses a conditional expression to control loop
+        Ex.
+
+            secret = 'swordfish'
+            pw = ''
+
+            while pw != secret:
+                pw = input("What's the secret word? ")
+        
+        * input(prompt) # prompt is the message that ask user to enter a specific input
+    
+    III. The for loop 
+        The for loop uses a sequence to control a loop
+        
+        Ex.
+            animal = ( 'bear', 'bunny', 'dog', 'cat', 'velociraptor')
+
+            for pet in animals:
+                print(pet)
+
+    IV. Additional controls
+            1. Continue
+                Continue clause shortcuts a loop and start it again
+                as if it had reached the end of its body of code.
+            2. Break
+                Break clause is used to break out of a loop prematurely.
+                Execution will continue after teh entire loop structure
+            3. Else
+                * Not common in other languages
+                Else block executes only if loop ends normally.
+                It will not execute if a break is used to end the loop.
+                Available for both while loop and for loops
+
+        print("Authorized" if auth else "Calling the FBI ...")
+        Same as:
+        if (auth):
+            print("Authorized")
+        else:
+            print("Calling the FBI")
+
+        
+

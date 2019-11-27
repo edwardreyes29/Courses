@@ -1,0 +1,38 @@
+$ 4. Conditionals
+
+    I. Conditional syntax
+        if & elif require Conditional
+        else is optional
+
+        You can add as many elif as you want
+
+
+    II. Conditional operators
+
+        Minimally complete set of operators
+        
+        * Comparison Operators
+            - same as Java
+
+        * Logical operators
+            and       x and y   # True if both x and y. Diff from Java -> x && y
+            or        x or y    # True if x or y, Diff from Java -> x || y
+            not       not x     # Invert state. Diff from Java -> !x
+
+        * Identity Operators: test if two objects are the same object or not
+            x is y      # True if the same object
+            x is not y  # True if not the same object
+
+        * Membership Operators: true if variable is a member of a collection
+            x in y      # True if x member of collection y
+            x not in y  # True if x not member of collection y
+
+
+    III. Conditional assignment
+        Since python 2.5, python has included a ternary conditional operators
+
+        (Look at ternary-working.py)
+
+        x = condition1 if y else condition2
+        Eveything is require, must have both clauses (if and else)
+
