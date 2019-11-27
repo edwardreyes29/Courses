@@ -1,0 +1,50 @@
+Vim most popular editor for vim but not required
+
+
+touch - updates files timestamp if it exists and if it
+        doesn't exists, creates it
+
+e.g.
+    $ touch hello.sh - creates empty file named sh
+
+To open file to edit on text editor:
+    If using atom - $ atom hello.sh
+    If using Visual $ Studio code - code hello.sh
+
+echo - echo command prints to the display
+
+To open script:
+    $ bash hello.sh
+
+bash - bash command opens script and invokes commands in it
+
+Why do we need to type bash to execute my script.
+A: Because files by default don't have the execution permission
+
+//////////////////////////////////////
+[edward@edward-pc ch_01]$ ./hello.sh
+bash: ./hello.sh: Permission denied
+//////////////////////////////////////
+
+Use change mode command to make a file an executable:
+$ chmod 755 hello.sh
+Gives everyone permission to read and execute the script file, but only
+the author the permission to write it
+
+//////////////////////////////////////
+[edward@edward-pc ch_01]$ ./hello.sh
+Hello, World.
+Mars is red.
+//////////////////////////////////////
+
+Now why do we need to type ./ before writing the name of the script?
+//////////////////////////////////////
+[edward@edward-pc ch_01]$ hello.sh
+bash: hello.sh: command not found
+//////////////////////////////////////
+
+Linux systems looks for commands on the path 
+and not in the current directory
+If command is not in the path, Linux reports it as not found
+./ tells system to not bother with the path, here's the
+location of the command
