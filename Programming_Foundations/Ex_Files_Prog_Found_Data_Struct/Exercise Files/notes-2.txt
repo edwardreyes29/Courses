@@ -120,11 +120,56 @@ $ 2. Arrays
 
     VIII. Search arrays
 
+        input: object
+        output: true/false value or index
+
+        How to search:
+            1. Check every item
+            2. if match, return true (return index, ArrayList)
+            3. if no match (after searching entire array) return false (return -1, ArrayList)
+
+            linear search with a for loop (brute force)
+            run-time increases with size of input
 
 
     IX. Sort arrays
 
+        Sorting Arrays: Numerical
+        Sorting Arrays: Alphabetical
 
+        Call sort function or pass data structure as a parameter to a sorting function
+
+        When working with objects, define a comparator to sort
+        e.g. three persons, each with first name, last name, age
+
+        Computationally expensive, need to do a lot of comparisions and checks.
+        The number of comparisions depends on the sorting alg and how much info you have about your data
 
     X. Big O notation
 
+        Big O notation: Notation used to describe the performance or complexity of an algorithm
+
+            O(1) Time: Consisten duration of algorithm in same time (or space) regardless of size of input
+                        - "Constant Time"
+            O(N) Time:
+            e.g.    
+                - Access
+                    - If we know items index -> O(1) time
+                - Updated
+                    - O(1) time
+                - Inserted
+                    - Insert index at end of array (large enough) -> O(1)
+                    - If array is full and need to create new array -> O(N) linear time, also worst-case
+                - Search
+                    - Best case -> O(1) time
+                    - Worst case (if item doesn't exist) -> O(N) time
+                - Delete 
+                    - Best case (if we have index of the item) -> O(1) time
+                    - Worst case (if we do not know index, must search, and item is not in array) -> O(N) time
+                - Sort: some have prereqs for data
+                    - Insertion sort
+                    - Merge sort
+                    - Heap sort
+                    - Bubble sort
+                    - Bucket sort
+                    - Radix sort
