@@ -69,3 +69,13 @@ run the script in a different shell environment, might get unexpected results
 #!/usr/bin/env bash -> for bash
 
 Default shell in most linux systems is Bash
+
+> Creating and using variables
+
+- Must begin with letter or underscore
+- Any character except first can be a number
+- Case sensitive
+- Upper case by convention
+- Variables cannot have white space
+    - wrap around with single or double quotes
+    - or create two separate variables
