@@ -1,0 +1,16 @@
+$ 13. Built-In Function
+    Documentations
+    https://docs.python.org/3/library/functions.html
+    I. Numeric functions
+
+    II. String functions
+        repr - will return value returned by the special repr method
+             - Can print emojis
+        
+        will print what is returned in the __repr__ method of the class
+        or return something else like the address of object
+    III. Container functions
+
+
+    IV. Object and class functions
+
