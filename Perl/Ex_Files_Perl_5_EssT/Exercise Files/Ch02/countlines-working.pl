@@ -8,7 +8,7 @@ use warnings;
 my $filename = "linesfile.txt";  # my keyword -> declares local variable / $variable -> scalar variable carries one value
 
 open(FH, $filename);    # open the file
-my @lines = <FH>;       # read the file: put file into array. @ - makes variable into an array, $ - makes variable into scalar
+my @lines = <FH>;       # read the file: put file into array. 
 close(FH);              # close the file
 
 my $count = scalar @lines;  # the number of lines in the file
