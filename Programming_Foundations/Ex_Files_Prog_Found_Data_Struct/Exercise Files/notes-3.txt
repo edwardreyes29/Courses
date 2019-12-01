@@ -48,7 +48,49 @@ $ 3. Lists
     IV. Use linked list  in Java
 
     V. Singly vs. doubley linked lists
+        Singly Linked Lists:
+            - Only has next pointer
+            - can only traverse forward
+        Double Linked Lists:
+            - next and previous pointer
+            - just need to add a previous in node and tail in the linkedlist class
+
+            Code:
+                public class CustomLinkedList {
+                    Node head;
+                    Node tail;
+                    
+                    class Node {
+                        int data;
+                        Node next;
+                        Node previous;
+
+                        Node(int d) { data = d; }
+                    }
+                }
 
     VI. Lists in other langauges
+        Java -> list not datatype
+        Python -> is a datatype
+
+        Java: 
+            java.util. package
+            - List inteface
+                - ArrayList class
+                    - A little both like list and an Array
+                    - Has behavious of a list on surface
+                    - Stored as an array under the hood  
+                - LinkedList class
+        C# has built-in linkedlist implementation
+
+        Swift, Ruby, and JavaScript:
+            - No built-in linked lists 
+        Python:
+            Python list are resizable array
+            - Not built-in linkedlist implementation
+
+        ! Most of the time, you need array structures rather than linkedlists
+
+        
 
     VII. Pros and cons of lists
