@@ -10,7 +10,4 @@ $ 13. Built-In Function
         will print what is returned in the __repr__ method of the class
         or return something else like the address of object
     III. Container functions
-
-
     IV. Object and class functions
-
