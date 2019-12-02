@@ -1,0 +1,39 @@
+$ 4. Stacks and Queues
+
+    I. Stacks
+    Last in, firs out -> LIFO
+    Push -> add item
+    Pop -> remove item
+
+    Useful for keeping track of states, or when things have occured
+
+    II. Implement stacks in Swift
+
+    III. Use stacks in Swift for LIFO
+
+    IV. Error tracing with stacks
+        - Can retrace steps as needed
+        - can do this when you get an error -> runtime stack or call stack
+        
+        Rumtime stack: 
+            - keeps track of what variables you currently have access to and what subroutine or function you are in
+
+            Runtime stack in java:
+                Exception in thread "main" java.util.EmptyStackException
+                at java.util.Stack.peek(Stack.java:102)
+                at java.util.Stack.pop(Stack.java:84)
+                at MyStack.main(MyStack.java:7)
+                [edward@edward-pc MyDataStructures]$ 
+
+
+    V. Queues
+
+    VI. Implement queues in Swift
+
+    VII. Use queues in Swift for FIFO 
+
+    VIII. Queues in other languages
+
+    IX. Specialized queues
+
+    X. Pros & cons of stacks and queues

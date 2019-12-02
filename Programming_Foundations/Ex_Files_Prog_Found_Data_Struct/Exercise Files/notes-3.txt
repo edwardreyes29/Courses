@@ -94,3 +94,7 @@ $ 3. Lists
         
 
     VII. Pros and cons of lists
+    Sort - Merge sort for LinkedList. 
+         - quicksort and heapsort not ideal -> b/c slow random access performance 
+            -> accessing items in linkedlist are sequential.
+            -> random access, shuld be able to access item by index and get item at that slot immediatley (like and array)
