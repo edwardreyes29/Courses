@@ -6,3 +6,85 @@ I. Tools for JavaScript development
     - Helper tools for debugging
 
     JavaScript runs without compilation in any browser
+
+II. Introducing browser console
+    Console is a command line for the browser where you can
+    write, manage, and monitor JavaScript 
+
+    - Window.alert() method displays an alert dialog with optional specified
+      content and an OK buton
+    - (Shift+Enter :: allows you to create new line without entering code)
+
+        > alert("Hello World")
+        > alert(5+8)
+        > var date = new Date()
+        alert("Today is " + date)
+
+    - Console method log() outputs a message to web console.
+
+        > console.log("Today is " + date)
+          Today is Mon Jan 20 2020 11:23:21 GMT-0800 (Pacific Standard Time)
+    
+    - Can insert html from JavaScript. The following will add an h1 displaying the
+      current date and inserting it inside the <body> elements
+
+        > document.body.innerHTML = "<h1>The date today is " + date + "</h1>"
+        > document.body.innerHTML = "<h1>The date today is " + 
+          (date.getMonth + 1) + "/" + date.getDate() + "/" + date.getFullYear() + "</h1>"
+          
+III. Add inline JavaScript to a HTML document 
+
+    Concept: We have to get broser to load and run our JavaScript alongside HTML
+             markup automatically
+
+    <script> tag will be used to insert JavaScript within HTML markup
+    placement depends on several factos including when you want script to 
+    execute and whether render blocking matters.
+
+    * Rule of thumb:
+        - If you want script to run before contents of page are rendered, add it to head
+            * Note: browsers reads JS top down, so elements not declared yet but called by 
+                    JS will produce an error
+        - If you want to run after contents of page are rendered, add it after the body 
+
+IV. Add JavaScript in an external file
+
+  We can write script in a dedicated file and tcall the file when necessary from
+  several different HTML documents.
+
+  Also means we can have several JavaScript files containing different scripts
+  and call them when needed, creating a more modular approach
+
+  * JavaScript render blocking: 
+      - JS may change HTML in CSS on a page, so anytime a browser encounters a JS
+        file reference, it stop the rendering of the page until script file is downloaded
+        and executed. It can slow sown performance of a site siginifacantly. 
+      - Sometimes necessary, but not what we want most of the time
+      - HTTP/2 protocol partially solves this issue by allowing browser to 
+        download multiple assets in parallel. But if file is reference in header, 
+        render blocking will still happen but it will take less time.
+
+      * Problem has been solved.
+        Loading JS:
+          - Right away
+              <script src="script.js"></script>
+          - Asynchronous: File downloaded alongside HTML, render block occurs when script is executed
+              <script src="script.js" async></script>
+          - Deferred: Loading execution only happens when everything else is loaded.
+              <script src="script.js" defer></script>
+
+III. How to write JavaScript: A crash course
+
+  1. JS is case sensitive
+  2. Use camelCase
+    - Variables start with lowercase letter:
+        > var greenDuck;
+    - Objects and clases start with uppercase letter;
+        > var date = Date();
+    - Constants are all-caps:
+        > const = CONSTANTLYUPPERCASE;
+  3. Whitespace Matters (to Humans)
+  4. End each statement with a Semicolon (JS doesn't really care, but easier to read)
+  5. Use Comments Liberally
+      > // single line
+      > /* multi-line */

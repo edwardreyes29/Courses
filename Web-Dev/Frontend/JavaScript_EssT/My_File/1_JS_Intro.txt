@@ -16,7 +16,7 @@ II. Navigating JavaScript landscape
     - ES6 -> ECMAScript 2015 
     - Browsers use ECMAScript to interpret JavaScript.
 
-    Recommended: UP and Running with ECMAScript 6
+   
 
     jQuery: - Library of JavaScript functions
             - Introduces CSS-like syntax and several visual and UI enhancements
