@@ -1,0 +1,130 @@
+I. What is a command line?
+
+    CLI :: interact with program without a GUI
+    - Send typed commands
+    - Display text output
+    - Shell or interpreter
+        - Environment used
+        - One of earliest ways to interact with computer
+        - Bash: Bourne-again Shell
+    
+II. How commands are structured
+    General Pattern: Command + Option(s) + Arguments
+    >>> ls -lh /usr/bin
+    >>> sort -u users.txt
+    >>> grep -i "needle" haystack
+
+    There will always be a command.
+    But there coult be command with option or command with arguements 
+
+    Command:
+        - The program you're running.
+
+            ls :: list, shows file in specified directory
+
+    Options: 
+        - Tell program how to operate
+        - Start w/ dash (-)
+        - most offer one or more option
+
+            -l :: shows long listing of files in a directory
+            -a :: tells the command to show all the files, not just hidden ones
+            -h :: make files sizes human readable
+
+        - Can combine options:
+            -l -a -h --> -lah  
+        * Options with two dashes (--) cannot be combined
+
+    Arguments:
+        - Tell command what thing to operate on
+        - usually a file path or set of files or folders
+
+
+III. Write commands in a shell at the prompt 
+
+    edward@edward-pc :: username@hostname 
+
+    >>> ls 
+        Coding  Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+        
+        - shell interprets my command to list the contents of directory
+        - Returns output of that command, which in this case is a
+            list of files and folders in my current working directory
+    >>> ls -l 
+        total 36
+        drwxr-xr-x 5 edward edward 4096 Jan 18 22:17 Coding
+        drwxr-xr-x 2 edward edward 4096 Jan 19 18:39 Desktop
+        drwxr-xr-x 2 edward edward 4096 Nov 30 01:32 Documents
+        drwxr-xr-x 2 edward edward 4096 Jan 19 18:39 Downloads
+        drwxr-xr-x 2 edward edward 4096 Nov 26 23:32 Music
+        drwxr-xr-x 2 edward edward 4096 Nov 26 23:32 Pictures
+        drwxr-xr-x 2 edward edward 4096 Nov 26 23:32 Public
+        drwxr-xr-x 2 edward edward 4096 Nov 26 23:32 Templates
+        drwxr-xr-x 2 edward edward 4096 Nov 26 23:32 Videos
+
+        -l means "long listing", which tells progam to show files with more
+            detail that just list of names.
+
+IV. Helpful keybaord shortcuts in terminal
+
+    Ctrl + alt + t :: opens terminal 
+    Ctrl + shift + plus :: enlarge text
+    Ctrl + c :: cancels current command
+
+    Tab completion:
+        - Automatically compeletes a file or folder name
+        - Makes a guess based on the contents of the path
+        - press tab twice for more options 
+    
+    Text navigation shortcuts:
+
+        Ctrl + A (^A) :: Move to begining of line
+        Ctrl + E (^E) :: Move to end of line
+        Ctrl + left arrow :: Move left one word
+        Ctrl + right arrow :: Move right one word
+        Ctrl + U :: Remove (crop) from cursor to start
+        Ctrl + K :: Remove (crop) from cursor to end
+        Ctrl + Y :: Paste cropped text
+        Ctrl + Shift + C :: Copy to clipboard
+        Ctrl + Shift + V :: Paste from clipboard
+
+
+        ^ :: is called C A R E T, shorthand for control key
+        - May see this when refering to documentation
+
+    Bash Shortcuts:
+        Up arrow :: Recall previous commands
+        Down arrow :: Scroll previous commands
+        Ctrl + R :: Search command history
+        Ctrl + C :: Cancel Command
+
+V. Finding help for commands
+
+    Even experienced commandline users don't memorize everything
+
+
+    Manual Pages:
+        * Tips: 
+        1. You don't have to memorize everything
+
+            "Never memorize something that you can look up"
+            - Albert Einstein 
+
+            "Learn the concept of application and not memorize data"
+            - Neel Bhavsar
+        2. man :: open manual pages
+            e.g.
+                >>> man ls
+                - will show information about ls command
+                - press [h] to show help
+
+            Navigation:
+                e :: move down one line
+                y :: move up one line
+                f :: forward
+                b :: backward
+        Can also type [command --help] to see a brief description 
+
+        3. apropos :: searches a list of commands and their descriptions 
+                      for text you provide as an arguments
+            - time consuming

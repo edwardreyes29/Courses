@@ -1,0 +1,18 @@
+I. Quick intro to linux
+
+    Defined by kernel
+    - core component of the system
+    - interacts with computer hardware to allow software and other
+        hardware to exchange information
+    - Often includes tools from GNU Project
+        a. software package management
+        b. control of services
+        c. location of configuration files may differ
+    - Distro: specific group of software and conventions
+    - Major Distors: Arch, Debian, Red Hat, Slackware
+    - Linux Mint, Unbuntu, Kali, etc. from Debian
+    - CentOS, Fedora, etc. from Red Hat
+
+    * Bash shell is available on most distros on OSes.
+
+CL is also called shell
