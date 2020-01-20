@@ -1,0 +1,38 @@
+I. What is JavaScript?
+    Webpage consists of three layers of code put
+    together by the browser:
+        1. HTML Markup: Content Layer
+            - Content lives
+            - Mark up language makes it easy for browser to parse
+        2. CSS Rules: Content Layer 
+            - Code that instructs browser to how to display HTML Markup
+            - HTML handles content and CSS handles presentation
+            - Works as a presentational enhancement
+        3. JavaScript: Interactive layers
+            - Scripting language that urns in browser and interacts with HTML Markup
+                and CSS Rules to change what you see and what you can do.
+
+II. Navigating JavaScript landscape
+    - ES6 -> ECMAScript 2015 
+    - Browsers use ECMAScript to interpret JavaScript.
+
+    Recommended: UP and Running with ECMAScript 6
+
+    jQuery: - Library of JavaScript functions
+            - Introduces CSS-like syntax and several visual and UI enhancements
+            - Simplifies the use of JavaScript in websites
+            - An abstraction of core language
+    JavaScript Frameworks:
+        - AngularJS, React, Vue.js, and so on are front-end application Frameworks
+        used to simplify the building of advanced interactive web-based applications.
+
+        Facebook -> React
+        - Traditionally, technologies like php generate pages on server and send them to browser whereas these
+          frameworks run in the browser and pull just data from the server.
+        - Makes websites run really fast.
+
+    JavaScript Platforms:
+        - Node.js
+            - JavaScript platform built on browser runtime environments.
+            - Used to run advanced operations and applications on servers and computers using JavaScript
+            - Will be used here to debug JavaScript code
