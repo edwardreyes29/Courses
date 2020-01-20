@@ -1,0 +1,8 @@
+I. Tools for JavaScript development
+    - Code editor
+    - Browser with developer tools
+        - Chrome, Firefox, Edge, Opera, Brave
+        - Test for all browsers
+    - Helper tools for debugging
+
+    JavaScript runs without compilation in any browser
