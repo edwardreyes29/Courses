@@ -1,0 +1,28 @@
+I. Variables: The catch-all containers of JS
+
+    Container is either empty or undefined.
+
+    Rule of thumb: 
+    - To avoid global scope, always declare varaibles
+
+II. Data Types
+
+    Six primitive data Types
+    - Numeric, String, Boolean, null, undefined, Symbol (not covered)
+
+    Numeric:
+        var number = -1.442
+
+    String:
+        var string = "Hello There";
+    - hyphens and quotes need to be carefull.
+    - Escape string quotes (\")
+
+    Boolean:
+        - true
+        - false
+    null:
+        - intentional absence of value
+        var empty = null;
+
+III. Operators

@@ -14,7 +14,7 @@ I. What is JavaScript?
 
 II. Navigating JavaScript landscape
     - ES6 -> ECMAScript 2015 
-    - Browsers use ECMAScript to interpret JavaScript.
+    - Browsers use ECMAScripts to interpret JavaScript.
 
    
 
