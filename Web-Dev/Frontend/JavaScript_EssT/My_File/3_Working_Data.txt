@@ -25,4 +25,57 @@ II. Data Types
         - intentional absence of value
         var empty = null;
 
-III. Operators
+III. Operators, Strings, & numbers
+    * JavaScript uses Algebra
+    var a = 4;
+    var b = "5"
+
+    console.log(a + b) // outputs "45"
+
+V. Conditional Statements
+    if ( some condition ) {
+        Do something.
+    }
+
+    var a = 4;
+    var b = "4";
+
+    a == b // true
+    a === b // false, strict equality (identical)
+
+
+    if (a == true) {} <=> if (a) {}
+
+    if (a == false) {} // longhand
+    if (a != true) {} // Reverse psychology
+    if (!a)  {} // shorthand "not a"
+
+VI. Advanced conditions and logic
+
+    // If a equals b AND c equals d:
+        if (a == b && c == d) {}
+
+    // If a equals b OR c equals d:
+        if (a == b || c == d) {} // Either a or b or both
+
+    XOR doesn't exist in JS, heres a work around:
+
+        if ((a == b || c ==d) && (a == b != c == d)) {}
+    
+    Ternary Operator: condition ? true : false
+        a == b ? console.log("Match") : console.log("No match");
+
+VII.
+
+    var pens;
+    pens = ["red", "blue", "green"];
+
+* Each element in an array can be a different data type
+
+VIII. Properties and methods in arrays
+    Arrays are objects
+
+    Property: Meta information about the object
+    Method: Function that belongs to the object
+
+
