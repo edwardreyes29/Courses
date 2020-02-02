@@ -53,6 +53,6 @@ console.log("Extra Large size: ", xlargeSize());
 /**
 	Closure.
 
-
+	https://developer.mozilla.org/en/docs/Web/JavaScript/Closures
 
 */
