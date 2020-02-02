@@ -1,0 +1,109 @@
+I. DOM: The document object model
+
+  The browser is an object & the document it displays is an object too.
+
+  The browser has a long list of objects:
+    - Window
+    - Navigation buttons
+    - location/URL
+    - etc...
+
+    These are modeled by the Browser Object Model (BOM).
+
+    (!) Window is the top-level object in the BOM.
+    Window object method examples:
+        To see the width of the current viewport:
+          window.innerWidth
+        To open a new tab:
+          window.open()
+
+    See list of all properties and methods for window:
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+
+    Document is a property in the window object, which contains HTML document.
+    To get document object you can call window.document.
+
+    But since JavaScript lives inside the window,
+    you can simply call it directly.
+
+    The Document Object Model is the model of the document that
+    forms the current webpage.
+
+    In HTML, every piece of content is wrapped in a beginning and end
+    tag creating an HTML element. Each of these elements is a DOM node, and
+    each of them are handled as an object in the browser.
+    This is why when you target an element with a CSS rule that rule is
+    implemented to each of them individually.
+
+    e.g.
+      HTML:
+        <nav class="menu multi-level-nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            ...
+          </ul>
+        </nav>
+
+      CSS:
+        a {
+          color: white;
+          display: block;
+          text-decoration: none;
+        }
+      Look up document node tree:
+      - <head> holds all the invisible object like <title>, <meta>, <script>, etc...
+      - <body> holds all visible nodes in the viewport.
+
+      These nodes live in strict hierarchical relationships depending on how
+      they are nested in HTML.
+
+      You can see the code version of the DOM in the elements tab (inspect).
+
+II. Target elements in the DOM with querySelector methods.
+
+  (!) REMEMBER - The document is one giant object and all elements within the
+                 document are nodes inside that object.
+
+      Some properties of the documents:
+        document.body;    // The body element
+        document.title;   // The document title
+        document.URL;     // The document URL
+
+      https://developer.mozilla.org/en-US/docs/Web/API/document
+
+
+      Some DOM methods:
+        // Get element with a specific ID:
+        document.getElementById("some-ID");
+
+        // Get all elements with a specified class name as array:
+        document.getElementsByClassName("classname");
+
+        // Get all elements with a specified HTML tag as array:
+        document.getElementsByTagName("HTML tag");
+
+        https://goo.gl/7oR1zi
+        // Get the first element matching specified selectors(s):
+        document.querySelector(".main-nav a");
+
+        // Get all elements mathicn specified selectors(s):
+        document.querySelectorAll(".post-content p");
+
+        .selector specifies class
+        #selector specifies id
+
+        e.g.
+          // Return first intsance of element containing class "masthead"
+          document.querySelector(".masthead");
+
+          // Return all instances of the A element.
+          document.querySelectorAll("a");
+
+          // Returns first link inside an element with class "has-children"
+          // inside the class "menu"
+          document.querySelector(".menu .has-children a")
+
+          // Returns any link pointing  to LinkedIn inside the element
+          // with class "social-nav"
+          document.querySelectorAll(".social-nav a[href*='linkedin.com']")
