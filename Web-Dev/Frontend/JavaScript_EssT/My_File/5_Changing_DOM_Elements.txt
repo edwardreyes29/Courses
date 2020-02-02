@@ -107,3 +107,5 @@ II. Target elements in the DOM with querySelector methods.
           // Returns any link pointing  to LinkedIn inside the element
           // with class "social-nav"
           document.querySelectorAll(".social-nav a[href*='linkedin.com']")
+
+          reference: https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
