@@ -1,1 +1,87 @@
 I. Functions in JavaScript
+
+  function multiply(a, b) {
+    var result = a * b;
+    console.log(result);
+    return result;
+  }
+
+  var multiplied = multiply(3, 4);
+
+  Three Types of Functions:
+    1. Named Functions:
+        Executed when called by name.
+
+    2. Anonymous Functions:
+        Run once triggered by a specific event.
+
+    3. Immediately invoked function expressions:
+        Run the moment the browser encounters them.
+
+          (function() {
+            ...
+          }())
+
+
+XI. Sidebar: Dot and Bracket notation
+  var course = {
+    instructor: "Edward Reyes",
+    ...
+  }
+
+  Dot Notation:
+    course.title;
+
+  Bracket Notation:
+    course["title"];
+
+    Example Object:
+        WP:image // property of example object.
+
+        course.WP:image; // produces an error!
+        course["WP:image"]; // works just fine.
+
+Quiz:
+2. Immediately Invoked Function Expressions
+    A: execute as soon as the browser reads them.
+7. What happens if you create a new object using an object constructor, but
+   don't add all necessary arguments to declare all properties?
+    A:  The object is created with undeclared properties set to "undefined."
+8. Define "closure."
+    A: A function that remembers the environment they were created in.
+9. Code format for closure:
+        var add = (function () {
+          var counter = 0;
+          return function () {counter += 1; return counter}
+        })();
+
+        add();
+
+11. Object example:
+
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyecolor = eye;
+      }
+13. Immediately Invoked Functional expression.
+      (function IIFE() {
+        // All code here
+      }());
+
+14. Anonymous Function:
+      var anon = function() {
+          alert('I am anonymous');
+      }
+      anon();
+
+16. Arguments.
+
+      function argCheck(parameter1, parameter2, parameter3) {
+        console.log(parameter + parameter2 + parameter3);
+      }
+      // Function being called with values for the Arguments
+      argCheck(1, 2, 3, 4);
+
+18. Functions are best described as [A: mini programs] within JavaScript program.
