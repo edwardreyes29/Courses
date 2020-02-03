@@ -87,14 +87,14 @@ II. Target elements in the DOM with querySelector methods.
         // Get the first element matching specified selectors(s):
         document.querySelector(".main-nav a");
 
-        // Get all elements mathicn specified selectors(s):
+        // Get all elements matching specified selectors(s):
         document.querySelectorAll(".post-content p");
 
         .selector specifies class
         #selector specifies id
 
         e.g.
-          // Return first intsance of element containing class "masthead"
+          // Return first instance of element containing class "masthead"
           document.querySelector(".masthead");
 
           // Return all instances of the A element.
@@ -109,3 +109,61 @@ II. Target elements in the DOM with querySelector methods.
           document.querySelectorAll(".social-nav a[href*='linkedin.com']")
 
           reference: https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
+
+          /* Make numerous queries simultaneously using different selectors
+             separated by a comma. */
+          document.querySelectorAll(".menu li a, .social-nav li a")
+
+
+
+
+          Use querySelector & querySelectorAll instead of any of the
+          previous getElementBy methods.
+
+          reference: https://developer.mozilla.org/e
+
+III. Access and change elements
+
+    Element.innerHTML
+        DOMString representing the markup of the element's content.
+        Ex: document.querySelector(".main-title").innerHTML
+          returns "Welcome to Moonwalk Manor"
+
+        (!) If you want to change the innerHTML, simply assign a new value to it.
+        Ex: document.querySelector(".main-title").innerHTML = "Hello There"
+
+    Element.id
+        (!) You can assign a new id to and element.
+        Ex: document.querySelector("#showcase").id = "slideshow"
+
+    Element.className will return string with all classnames assigned.
+    If you want a list instead, use Element.classList
+
+    Element.classList[index] = aValue
+    - Doesn't change value, because it's read only.
+    - If it's read only, you would have to use methods
+
+IV. Access and change classes
+
+  When you encounter read only elements, you have to use methods to interact
+  with them.
+
+  Five methods for classList:
+    1. add
+      Ex: document.querySelector(".masthead").classList.add("new-class")
+      // Will add 'new-class" to the class list of this element.
+    2.
+      Ex: document.querySelector(".masthead").classList.remove("clear")
+      // Will remove class 'clear' from the classList of this element.
+    3. item
+      Ex: document.querySelector(".masthead").classList[1]
+    4. toggle - toggle and element on/off
+      Ex: document.querySelector(".new-class").classList.toggle("masthead")
+      /* When invoked, it will remove class name 'masthead' or add it back on
+      depending on the previous state */
+
+    5. contains - checks if class value exist in class attribute of the element.
+      Ex: document.querySelector(".masthead").classList.contains("clear") // true
+          document.querySelector(".masthead").classList.contains("oranges") // false
+
+V. Access and change attributes
