@@ -167,3 +167,8 @@ IV. Access and change classes
           document.querySelector(".masthead").classList.contains("oranges") // false
 
 V. Access and change attributes
+
+
+    Element.attributes
+      - Returns a NamedNodeMap object assigned attributes of the corresponding
+        HTML element
