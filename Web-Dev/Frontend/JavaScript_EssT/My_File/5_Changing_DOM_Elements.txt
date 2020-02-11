@@ -172,3 +172,92 @@ V. Access and change attributes
     Element.attributes
       - Returns a NamedNodeMap object assigned attributes of the corresponding
         HTML element
+
+      var result = element.hasAttribute(name);
+      var attribute = element.getAttribute(attributeName);
+      Element.setAttribute(name, value);
+      Element.removeAttribute(attrName);
+
+VI. Add DOM elements
+
+  Better way of adding new DOM elements is by breaking them into their
+  individual components and adding them to the DOM tree.
+    1. Create element
+    2. Create the text node that goes inside the element
+    3. Add the text node to the element
+    4. Add the element to the DOM tree
+
+
+    Three new DOM element creation methods
+    .createElement(); // Create an element.
+    .createTextNode();  // Create text node
+    .appendChild(); /* Place one child node
+    inside another */
+
+VII. Add inline CSS to an element
+
+    JavaScript adds inline CSS to that element by accessing style attr in the DOM.
+
+    Inline CSS:
+      Add any CSS property to any element via JavaScript using the style attr.
+
+      Ex:
+        document.querySelector(".cta a").style;
+        // find an element with class .cta with an 'a' element.
+
+        // Set color to green for this element
+        document.querySelector(".cta a").style.color = "green"
+
+
+        inline css is an attribute, and its values is a string of css properties.
+        Therefore, you can use:
+
+
+        .hasAttribure("style"); // does the element have a style?
+        .getAttribute("style"); // Get the inline styles.
+        .setAttribute("style", "color:red"); // Add CSS property
+        .removeAttribute("style"); // Remove inline styles.
+
+
+    (!) Inline SS is opinionated:
+    Inline CSS overrides whatever CS is applied to an element.
+    Use JS to add or remove classes in order to manipulate CSS styling
+    and preserve the separation from content, presentation, and interactivity.
+
+
+
+
+
+Chapter Quiz:
+
+  Hans is changing the attr in JS. How can he change the attributes for img tag
+  that is currently using the arrow.gif image in the src attribute?
+
+  <script>
+    function myFunction() {
+      document.getElement("myImg").src = "arrow.gif";
+    }
+  </script>
+
+  Using the classlist methods on an element changes the
+  A: classes applied to that element in the current browser window
+
+  How do you add DOM elements to your JavaScript code?
+  <script>
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new.");
+    para.appendChild(node);
+    var element = document.getElementById("div1");
+    element.appendChild(para);
+  </script>
+
+
+  What is the code format for changing old class to new class that Will
+  dipslay in the "myDiv" div tag?
+
+
+  The style property of an element only list the inline styles.
+
+
+  The new element created using createElement() method is added to
+  the browser memory only.
