@@ -1,5 +1,13 @@
 I. What is the command line?
 
+  Not all software need a GUI, like servers or embedded applications.
+
+  CLI:
+    - Command-line interface
+    - Send typed commands
+    - Display text output
+    - Shell or interpreter (environment used)
+
 II. How commands are structured
 
 III. Write commands in a shell at the prompt
