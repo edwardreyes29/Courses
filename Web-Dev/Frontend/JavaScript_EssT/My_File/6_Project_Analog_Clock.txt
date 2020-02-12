@@ -1,0 +1,33 @@
+I. Create an analog clock: Project Breakdown
+  Using JavaScript & CSS to create a working analog clock.
+
+  1. HTML document containing SVG image of a clock.
+  2. Use objects and methods to get currnt time
+  3. use variables to hold data, use methods to breakdown time into
+     minutes and seconds.
+  4. Use operators to translate that information into degress of a circle.
+
+
+
+II. Use CSS to move clock hands
+
+
+III. Use JavaScript to move clock hands
+
+
+IV. Get the current hour, minute, and second with the Date() object
+
+
+V. Show the current time using fancy math
+
+
+
+VI. Make the clock move forward second by second
+
+
+
+VII. Solve the pesky "return to zero" problem
+
+
+
+Quiz
