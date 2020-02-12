@@ -1,0 +1,75 @@
+I. Files, folders, and navigation
+  file: Determines file type
+    EX: file myfile.txt
+
+  stat: Display ownership, modification information, etc.
+    EX: stat myfile.txt
+
+  cd: change the working directory
+  pwd: print name of current/working directory
+
+  (!) Directories with spaces in their names will treat it as two
+      separate words.
+
+    1. First solution:
+      cd 'Exercise Files'/
+
+    2. Second solution: Escape each space character individually
+      cd Exercise\ Files
+
+      ls -R: list subdirectories recursively
+      - Will list everything in the folder
+      - Helpful for searching whole structure of folders
+
+   cd ..: to go back a directory. The two dots represent the parent directory
+          of the current directory.
+
+   Ex: [dep/hr/policies] cd ..
+       [dep/hr] cd ..
+       [dep]
+
+       or
+
+       [dep/hr/policies] cd ../../
+       [dep]
+
+    Ex: To do to a different directory two levels up (using a relative path)
+      [dep/hr/policies] cd ../../finance/spreadsheets
+      [finance/spreadsheets]
+
+    cd -: used to go back to the previously used folder.
+
+    Ex: [edward@edward-pc spreadsheets]$ cd -
+        /home/edward/Coding/Courses/Web-Dev/Basics/Linux_Command_Line/Exercise Files/departments/hr/policies
+        [edward@edward-pc policies]$ cd -
+        /home/edward/Coding/Courses/Web-Dev/Basics/Linux_Command_Line/Exercise Files/departments/finance/spreadsheets
+
+
+II. A little more about ls
+  list contents of a directory
+
+  [edward@edward-pc Exercise Files]$ ls -l
+  total 148
+  drwxr-xr-x 7 edward edward   4096 Jun 18  2018 departments
+  -rwxr-xr-x 1 edward edward    160 Jun 18  2018 dupes.txt
+  -rwxr-xr-x 1 edward edward 130340 Jun 18  2018 log.tar.gz
+  -rwxr-xr-x 1 edward edward   1474 Jun 18  2018 poems.txt
+  -rwxr-xr-x 1 edward edward    129 Jun 18  2018 simple_data.txt
+  -rwxr-xr-x 1 edward edward     63 Dec 10  2018 test.sh
+
+  first column:
+    * d for directory (folders are generally blue text)
+    * l for link
+    * - for folder
+  next set of columns:
+    * show representation of permissions on the file.
+
+  next shows owner:
+
+  then size in bytes (use -h for readability):
+
+
+III. Create and remove folders
+
+
+IV. Copy, move, and delete files and folders
