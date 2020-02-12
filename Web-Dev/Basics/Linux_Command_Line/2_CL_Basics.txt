@@ -3,15 +3,80 @@ I. What is the command line?
   Not all software need a GUI, like servers or embedded applications.
 
   CLI:
-    - Command-line interface
-    - Send typed commands
-    - Display text output
-    - Shell or interpreter (environment used)
+    * Command-line interface
+    * Send typed commands
+    * Display text output
+    * Shell or interpreter (environment used)
+      * Bash: bourne-again Shell
 
 II. How commands are structured
+  General Command Syntax:
+    command + option(s) + argument(s)
+
+    EX: ls -lh /usr/bin
+    EX: sort -u users.txt
+    EX: grep -i "needle" haystack
+
+    * The command is the program you're running.
+        (!) There will always be a command
+        ls - lists files in a folder
+
+    * Options tell the program how to operate.
+        * Changes behavior of the command
+        * Start with a dash
+        * Usually one letter
+        * Most commands offer one or more option(s)
+
+        EX: ls -l /var/log
+          * This will show a long listing of the files in a directory
+
+        EX: ls -l -a -h /var/log
+          * (-a) Tells command to show all files, not just the hidden ones
+          * (-h) Tells command to make file sizes human readable
+
+        -l -a -h: -lah
+        (!) options with two dashes cannot be combined the same way.
+
+    * Arguments tell the command what to operate on.
+        Usually a file path.
 
 III. Write commands in a shell at the prompt
+  Ctrl-Shift-Plus: increases size of screen
+
 
 IV. Helpful keyboard shortcuts in terminal
+  Tab completion:
+    * Automatically completes a file or folder name
+    * Makes guesses based on the contents of the path
+
+  Ctrl-C (^C):  cancels command
+  Ctrl-E (^E): Move to end of line
+  Ctrl-A (^A): Move to beginning of a line text
+  (^): Caret, shorthand for Ctrl key
+  Ctrl-Left arrow: Move left one word
+  Ctrl-Right arrow: Move right one word
+  Ctrl-U: Crop from cursor to start
+  Ctrl-K: Crop from cursor to end
+  Ctrl-Y: Past cropped text
+  Ctrl-Shift-C: Copy to clipboard
+  Ctrl-Shift-V: Paste from clipboard
+  Ctrl-R: Search command history
 
 V. Finding help for commands
+  * You don't have to memorize everything
+  * Only remember basics
+
+  *man: open manual pages
+      Built-in documentation for commands
+
+      Syntax: man command
+      EX: man ls
+      (!) while in manual page, press H for help
+        * press F for forward
+        * press B for back
+        * press Q to exit help/man
+  * many commands have a help option, just type --help after command for
+    for a brief summary
+
+  *apropos "description of a command":
+    Help you look up a command by its description rather than its name
