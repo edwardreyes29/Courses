@@ -58,9 +58,14 @@
 
 /* Make all arms rotate around the same center point. */
 /* Optional: Use transition for animation. */
+/* Grouped styling */
 #hour,
 #minute,
 #second {
     transform-origin: 300px 300px;
-    transition: transform .5s ease-in-out;
+    transition: transform .2s ease-in-out;
+    /**
+      The transition causes the arrow to reverse and go back to zero, since
+      the second hand goes back to position zero, causing a weird animation.
+    */
 }

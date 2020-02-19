@@ -1,0 +1,72 @@
+I. What are DOM elements?
+  Everything that happens in the browser is registered as an event
+
+  Trigger specific actions or behaviors when specific interactions occur.
+
+  Event Handling: Building JavaScript functionality around events is called
+                  event handling.
+
+                  1. Identify the DOM node the interactive behavior will be
+                     attached to.
+
+                     e.g. Call to action button.
+                  2. Identify an event you want to occur (on-click) &
+                     bind that to the DOM node.
+
+                  3. Create function that is triggered when the event fires.
+
+II. Some typical DOM events
+
+  Browser-level events: Browser behavior
+    e.g. Load, window resize, etc.
+
+  DOM-level events: Content interaction
+    e.g. Click,focus, submit, etc.
+
+  Reference: https://developer.mozilla.org/en-US/docs/Web/Events
+
+  Common Browser-Level events
+
+  * Load - when resource and dependents have finished loading
+  * Error - When a resource failed to load
+  * Online/offline - self-explanatory
+  * Resize - when a viewport is resized
+  * Scroll - when a viewport is scrolled up/down/left/right
+
+  Common DOM events
+
+  * Focus - when an element receives focus (clicked, tabbed to)
+  * Blur - when an element loses focus (leaving form field)
+  * Resets/submit - form-specific Events
+  * Mouse events - click, mouseover, drag, drop, etc.
+
+  Other Events:
+  * Media events - relate to audio/video playback
+  * Progress events - monitor ongoing browser Progress
+  * CSS transition events - transition start/run/end
+
+
+
+III. Trigger functions with event handlers
+
+
+IV. Add and use event listeners
+
+  Event Listeners: listens for an event to occur and passes event to
+  specified function.
+
+
+V. Pas arguments via event listeners
+
+
+Quiz:
+
+Include event "onclick" in a button that displays time:
+<html>
+<body>
+  <button onclick="this.innerHTML=Date()">The time is = </button>
+</body>
+</html>
+
+Event handlers (element.event = function()) you cannot trigger several
+different functions uing a single event

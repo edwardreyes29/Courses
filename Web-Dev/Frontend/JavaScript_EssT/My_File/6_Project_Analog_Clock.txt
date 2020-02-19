@@ -7,8 +7,6 @@ I. Create an analog clock: Project Breakdown
      minutes and seconds.
   4. Use operators to translate that information into degress of a circle.
 
-
-
 II. Use CSS to move clock hands
 
 
