@@ -1,19 +1,122 @@
 I.Initializing a package.json file
+     $ npm init: base command to initialize a new package.json file
 
+    package name is what will be published. Only if you will publish it if it doesnt exist.
+
+    When installing new packages, they will appear in the package.json file.
 
 II. Adding node packages
+    package.json file in npm directory is installed locally.
 
+    Syntax:
+      $ npm install <package-name>
+
+      e.g. $ npm install express
+
+      This will install a new dependency in the package.json file.
+
+
+      // Install dependencies that you want to use in the project but not want
+      // to be used at the final project. Save as a dev dependency.
+
+        $ npm install <add multiple dependency> --save-dev
+        e.g. $ npm install babel-cli babel-preset-stage-0 babel-preset=es2015 --save-dev
+
+        devDependencies: tells npm to install these as dev tools. Meaning they
+                         won't be included in your production bill, but used
+                         throughout development. Compling a production bill will
+                         not include these packages.
+
+                         babel -> helps complies es6 code to make it
+                         understandable for web to understand.
 
 III. Managing global directory
+  When you install global packages, they will reside in these Directories
+
+  Unix systems (Mac/Linux):
+    * /usr/local/lib/node_modules OR
+    * /usr/local/lib/node OR
+    * /home/edward/nodejs/lib/node_modules/
+
+  Windows:
+    *%AppData%\npm\node_modules
+
+
+  Same commands for global installs:
+    Use -g or -global
+
+    $ npm install -g react
 
 
 IV. Updating a package
+    Update or install a specific version of a package.
 
+    Syntax:
+      $ sudo npm install <package-name>@5.2.0 -g
+
+    To check which packages are outdated:
+     $ npm outdated
+     $ npm outdated -g
+
+        Package  Current  Wanted  Latest  Location
+        eslint     5.2.0  5.16.0   6.8.0  global
+        npm       6.13.4  6.13.7  6.13.7  global
+
+      $ npm update eslint
+      - it works, sometimes.
+      $ npm install <package>
+      - install it again.
+
+        e.g. $ sudo npm install eslint -g
+             $ npm outdated -g
+             Package  Current  Wanted  Latest  Location
+             npm       6.13.4  6.13.7  6.13.7  global
 
 V. Removing a package
+    babel-preset-es2015 has been deprecated, so well want to remove this package.
 
+    Syntax: (Sudo not required)
+    $ npm uninstall <package-name>
+    e.g. $ npm uninstall babel-preset-es2015
+         $ npm install babel-preset-env
 
 VI. Semantic versioning
+          "dependencies": {
+            "express": "^4.17.1"
+          },
+          "devDependencies": {
+            "babel-cli": "^6.26.0",
+            "babel-preset-env": "^1.7.0",
+            "babel-preset-stage-0": "^6.24.1"
+          }
 
+      1.4.2 -> Major-releases.Minor-releases.Patch-releases
+      Semantic versioning:
+        ^1.x.x -> (Caret) All minor and patches ok.
+        ~1.5.x -> (Tilde) All patches only
 
 VII. Introduction to package-lock.json
+
+ Concept: Controls versioning of projects.
+ 
+  What is this file and purpose?
+
+  e.g. Pacakge.json without Package-lock
+    latest version for express is "^4.15.4"
+
+    Installs latest 4.x.x version due to caret --> 4.25.3
+
+    This will breaks the app.
+
+    This is where package-lock.json kicks it.
+      package.json -> input
+      package-lock.json -> output
+        - will guarantee the same install everytime we do an npm install as
+          long as we commit the package-lock.json file into our repo, anyone
+          else working on the project can do npm installs without breaking the
+          code.
+
+    e.g. Package.json with Package-lock
+        latest version for express is "^4.15.4"
+
+        Doing an npm install of express will install proper version -> 4.15.4
