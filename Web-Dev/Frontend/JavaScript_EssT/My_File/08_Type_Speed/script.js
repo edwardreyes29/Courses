@@ -6,6 +6,12 @@ const resetButton = document.querySelector("#reset");
 const theTimer = document.querySelector(".timer");
 // console.log(theTimer.innerHTML);
 
+// TODO: Add wpm score
+// TODO: add array of texts to test
+// TODO: add highscore board
+// TODO: add number of errors.
+
+
 var timer = [0,0,0,0]; // minutes, seconds, 100th of sec, 1000th of sec
 var interval;
 var timerRunning = false;

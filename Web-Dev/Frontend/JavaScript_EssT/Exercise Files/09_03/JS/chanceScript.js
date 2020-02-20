@@ -7,6 +7,8 @@ while (MAX) {
     let randomValue = Math.floor(Math.random() * (MAX - MIN)) + MIN;
 
     if (randomValue == testNumber) {
+        console.log(randomValue + " = " + testNumber);
+        console.log("Found it!");
         break;
     }
 

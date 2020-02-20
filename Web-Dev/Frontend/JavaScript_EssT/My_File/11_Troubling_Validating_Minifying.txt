@@ -1,0 +1,52 @@
+I. JavaScript validation and troubleshooting
+  Learning how to troubleshoot is key to mastering this language.
+
+II. Troubleshooting JavaScript
+  Usually, 'Unexpected end of input' means some curly brace or
+  parentheses have not been closed.
+
+III. Send troubleshooting info to the console
+  Console is the go to for troubleshooting JavaScript.
+
+  Refereces (Console): https://developer.mozilla.org/en-US/docs/Web/API/Console
+
+  Useful console methods: info & error
+
+  use console.info()
+  or
+  use console.error()
+
+IV. Step through your JavaScript with browser tools
+  Logging information in the console is a good way to debug for simple scripts,
+  but with more complex scripts with more complex funcons and objects, this is
+  not good enough.
+
+  Browser developer tools.
+  * Chrome: Sources (course on this??)
+
+
+
+
+V. Online script linting
+reference to JSLint: http://jslint.com
+- Checks quality of code.
+- sifts through your code, will say everything is wrong.
+- Very strict and some errors are not very important
+
+reference to JSHint: http://jshint.com
+- make sure ES6 is toggled on.
+- Can fix and edit code on the spot, then copy and paste to original file!!!
+
+
+VI. Automate script linting
+
+
+VII. Online script minification
+
+
+
+VIII. Automate script minification
+
+
+
+Quiz:

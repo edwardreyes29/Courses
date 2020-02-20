@@ -1,0 +1,5 @@
+break:
+  terminate the current loop.
+
+continue:
+  terminate the current iteration of the loop.

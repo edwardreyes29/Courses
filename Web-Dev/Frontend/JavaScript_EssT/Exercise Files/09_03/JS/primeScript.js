@@ -12,5 +12,9 @@ function primeTest(testValue) {
 
 for (let i = 2; i<=CEILING; i++) {
     let result = primeTest(i);
-    console.log(i + " is a prime number.");
+    // use continue to only display prime numbers
+    if ( result == false) {
+      continue; // skips to next iteration.
+    }
+    console.log(i + " is a prime number");
 }
