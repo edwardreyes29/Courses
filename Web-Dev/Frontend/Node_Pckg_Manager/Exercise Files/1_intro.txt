@@ -1,0 +1,14 @@
+No prior experience with npm required.
+Some experience with JS-based projects would help.
+
+I. What are packages and npm?
+  reference: https://www.npmjs.com
+
+  JavaScript, React, Angular, Node.js, or Express
+  - used NPM or package manager to install dependencies. (.json)
+
+
+II. Installing Node/npm on Linux:
+https://www.youtube.com/watch?v=JS2aIYd5ADI
+
+1. go to home directory, check hidden files, look at .bashrc to export path to node version

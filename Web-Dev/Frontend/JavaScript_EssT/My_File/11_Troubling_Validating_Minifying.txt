@@ -39,6 +39,16 @@ reference to JSHint: http://jshint.com
 
 
 VI. Automate script linting
+  Requirements (NodeJS & NPM)
+  There are command line tools for JS Linters.
+  Course: Up and Running with NPM (Node Package Manager)
+
+  Atom: linter-eslint
+  https://atom.io/packages/linter-eslint
+
+
+  NPM: XO
+  https://npmjs.com/package/xo
 
 
 VII. Online script minification
