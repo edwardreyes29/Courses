@@ -1,0 +1,155 @@
+I. Working with a npm cache
+  npm keeps cache of install npm modules so it doesn't have to get them
+  everytime. But sometimes that leads to unexpected results.
+
+  (!) Sometimes npm cache gets confused. So clearing npm cached will be
+      one of your troubleshooting steps.
+
+  $ npm cache verify
+    - runs a report to verify cache.
+  $ npm cache clean --force
+    - forces to clean cache.
+
+II. Run an npm audit
+  An npm audit is basically a command that will check the dependencies of
+  your project and make sure they are safe to use.
+
+  (Make sure npm 6 installed to work properly)
+  $ npm -v
+
+  If version is not 6 or higher and want to update package:
+  $ sudo npm install npm -g
+  or
+  sudo npm install npm@latest -g
+
+  Lets install a package that may have some issues:
+      [edward@edward-pc npm]$ npm install socket.io
+      npm WARN saveError ENOENT: no such file or directory, open '/home/edward/Coding/Courses/Web-Dev/Frontend/Node_Pckg_Manager/package.json'
+      npm notice created a lockfile as package-lock.json. You should commit this file.
+      npm WARN enoent ENOENT: no such file or directory, open '/home/edward/Coding/Courses/Web-Dev/Frontend/Node_Pckg_Manager/package.json'
+      npm WARN Node_Pckg_Manager No description
+      npm WARN Node_Pckg_Manager No repository field.
+      npm WARN Node_Pckg_Manager No README data
+      npm WARN Node_Pckg_Manager No license field.
+
+    Now type:
+      $ npm audit
+
+      === npm audit security report ===
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                                Manual Review                                 │
+│            Some vulnerabilities require your attention to resolve            │
+│                                                                              │
+
+│         Visit https://go.npm.me/audit-guide for additional guidance          │
+└──────────────────────────────────────────────────────────────────────────────┘
+┌───────────────┬──────────────────────────────────────────────────────────────┐
+│ Low           │ Regular Expression Denial of Service                         │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ Package       │ braces                                                       │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ Patched in    │ >=2.3.1                                                      │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ Dependency of │ babel-cli [dev]                                              │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ Path          │ babel-cli > chokidar > anymatch > micromatch > braces        │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ More info     │ https://npmjs.com/advisories/786                             │
+└───────────────┴──────────────────────────────────────────────────────────────┘
+found 1 low severity vulnerability in 4357 scanned packages
+1 vulnerability requires manual review. See the full report for details.
+
+
+If issue is low or moderate, you can fix at your own leisure.
+But if issue is considered high or critical, you need to address this asap.
+
+III. Scripting in package.json
+  reference: https://docs.npmjs.com/misc/scripts
+
+  // in package.json
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+
+  Install nodemon, which is a utility to restart a node server whenever
+  you've made changes to the code.
+    $ npm install nodemon
+
+  Let's create the script.
+    "scripts": {
+      "start": "nodemon ./index.js --exec babel-node -e js",
+      "nodemonthis": "nodemon ./index.js --exec babel-node -e js" // to run your own scripts.
+    },
+
+    nodemon will run index.js and also make sure it uses babel first to
+    convert exec code into readable code for the web.
+
+    Then type:
+    $ npm start OR
+    $ nodemon ./index.js --exec babel-node -e js // woulb be the same thing.
+
+    To run your own script:
+    $ npm run nodemonthis
+
+IV. Intro to npx
+  NPX to resolve package pollution.
+
+  Need npm 5.2 or above.
+
+  Lets install angular cli package temporarily:
+  $ npx -p @angular/cli ng new myapp
+
+  doesn't show up in package.json
+
+  $ npx mocha
+  Can have mocha without actually installing mocha in application.
+
+  you could run a test file if it exist, so you can use a package without
+  installing it is the main purpose for npx.
+
+  [edward@edward-pc npm]$ npx cowsay hello!
+  npx: installed 10 in 8.011s
+   ________
+  < hello! >
+   --------
+          \   ^__^
+           \  (oo)\_______
+              (__)\       )\/\
+                  ||----w |
+                  ||     ||
+
+   Temporarily installs cowsay and runs the package with the command tha came
+   with the package.
+
+
+   Can even use in scripts!!
+
+   "scripts": {
+     "start": "nodemon ./index.js --exec babel-node -e js",
+     "nodemonthis": "nodemon ./index.js --exec babel-node -e js",
+     "sayhellothere": "npx cowsay hello there!"
+   },
+
+   $ npm run sayhellothere
+
+
+   references: https://www.npmjs.com/package/npx
+
+
+V. Alternatives to npm
+
+  1. yarn
+    switch between yarn and npm if necessary.
+
+    yarn usually faster. Could use npx to install yarn temporarily.
+
+  2. ni
+    reference: https://github.com/imkimchi/ni
+
+
+Conclusion:
+  Learn more -> Node.js, React, or Angular
+             -> Security subjects with JavaScript
+             -> npm publishing, management.
