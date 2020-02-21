@@ -42,6 +42,7 @@ VI. Automate script linting
   Requirements (NodeJS & NPM)
   There are command line tools for JS Linters.
   Course: Up and Running with NPM (Node Package Manager)
+  (Learning npm the Node Package Manager w/ Emmanuel Henri)
 
   Atom: linter-eslint
   https://atom.io/packages/linter-eslint
@@ -50,13 +51,61 @@ VI. Automate script linting
   NPM: XO
   https://npmjs.com/package/xo
 
+  1. install eslint:
+    npm install -g eslint
+  2. npm init
+
+  3. Configurations for eslint
+  $ eslint --init
+
+
+Doesn't work, error when it encountrs const type
+
+
 
 VII. Online script minification
+  minifying: removing unecessary white space, removing all comments, and
+  optimizing code so its easier to download and run for the browser.
+  However this makes the code completely unreadable.
+
+  Minify code in a separate file.
+
+  Tools:
+  - http://minifier.org
+
+  bytes saved:
+  Original script: 2082b, minified script: 1498b. Gain: 584b.
+
+  once minify, save it to a file named script.min.js (standard)
+
+  (!) In chrome, to debug minified JS, you can prettify the code (Look for {}
+  that highlights "prettify") to unminify the code.
+
 
 
 
 VIII. Automate script minification
+You can use a command line tool (NPM)
 
+uglify-js: https://www.npmjs.com/package/uglify-js
+or minifier (find in npm site)
 
+uglify-js now support es6
 
-Quiz:
+npm instal -g uglify-js
+
+To minify script: -o --> for output
+  $uglifyjs [file you want to uglify] -o script.min.js
+
+  e.g. uglify script.js -o script.min.js
+
+Conclusion:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+- Very good source for more information.
+
+TODO:
+ES6 Course
+Debug Web JavaScript
+jQuery ESST
+React Training
+Angular Training
