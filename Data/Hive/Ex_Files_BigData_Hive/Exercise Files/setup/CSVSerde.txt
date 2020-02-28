@@ -1,2 +1,0 @@
--- adding to table
-ALTER TABLE <table-name> SET SERDE 'com.bizo.hive.serde.csv.CSVSerde'
