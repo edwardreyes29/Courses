@@ -1,0 +1,49 @@
+I. What is SQL?
+  Structured Query Language
+    Programming language to access data stored in Oracle database.
+
+    SQL -> control what data you want to see from database.
+
+    SQL:
+      Run queries on DB
+      Modify Data
+      Modify Objects (tables)
+
+II. Database tables
+  Most fundamental unit of storage
+
+    e.g. Employee table:
+          columns: id, name, salary
+          rows: data matching each column
+
+III. Overview of table data types
+  * Helps maintain integrity
+
+  3 most common types:
+    1. VARCHAR2: variable length String datatype
+      - VARCHAR2(100) (supports strings up to length 100)
+    2. NUMBER
+      - NUMBER(10) (limits integers)
+      - NUMBER(3,3) (limits decimals)
+    3. DATE
+
+IV. SQL query structure
+
+  Clauses:
+    SELECT: Specify column names we want to return as part of the output of the
+            query. (Required)
+
+            Ex. SELECT id, name (only gets data from these two columns)
+
+            Ex. SELECT * (Returns all columns from the table)
+
+    FROM: Specify name of DB table from which we want to retrieve data. (Required)
+
+            Ex. FROM employees (select from employees table)
+
+    WHERE: (optional): Specify or filter which records(rows) we want to display
+                       as part of the query output.
+
+            Ex. WHERE name = 'Picard' (takes rows where names with Picard)
+
+            Ex. WHERE name = 'Picard' or name = 'Janeway'

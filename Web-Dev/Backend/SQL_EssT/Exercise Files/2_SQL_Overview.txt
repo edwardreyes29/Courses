@@ -1,0 +1,179 @@
+SQLiteStudio:
+ ctrl + f9 to run query
+
+Goal: Basic Knowledge to use SQL
+
+  This course uses SQLite3
+  - Install database (command + O)
+  - Open SQL editor
+
+I. About SQL
+  Statement:
+    SELECT * FROM Countries WHERE Continent = 'EUROPE';
+
+  Clauses:
+    FROM: Specifies which table the SELECT statement will use.
+    WHERE: Specifies which rows will be selected.
+
+
+  CRUD:
+    Create, Read, Update, Delete
+  Statements:
+    SELECT: statement is used for all queries that return values.
+    INSERT: used to add row to a table.
+    UPDATE: Change data in table.
+    DELETE: Used to remove data in tables.
+
+
+II. Database organization
+  Database has tables
+
+  Tables have rows and columns
+    Rows (Records)
+    Columns (Fields)
+
+  Each Tables has a column of unique keys.
+    Keys are used to create relationships between tables.
+
+  (!) Tables are related by keys:
+    Ex. item table will have an id field, and the sale table will have
+        a corresponding item_id field that relates to the item table id field.
+
+
+III. SELECT Statement
+
+  SELECT dataSource
+    - Returns results of a query.
+
+    Ex. SELECT 'Hello, World!'
+      - The data source is the String 'Hello, World!'
+      - The column title will be the String itself.
+
+  AS: clause that creates an alias name for a column.
+
+  SELECT dataSource AS fieldName
+    Ex. Change title name of column to "Result"
+
+      SELECT 'Hello, World!'
+
+  SELECT *
+    - To get all columns in the table.
+
+  ORDER BY fieldName
+    - Order query by a specific column
+
+    Ex. SELECT * FROM Country ORDER BY Name;
+
+  SELECT fieldName1, fieldName2 FROM tableName
+    - Select columns from a table.
+
+    Ex. SELECT Name, LifeExpectancy AS "Life Expectancy" FROM Country;
+      Single quotes used for literal string, everything else use double.
+
+
+IV. Selecting rows
+  Use WHERE clause to select rows with specific values.
+
+  Ex. Select countries that are in the continent Europe.
+    SELECT Continent FROM Country WHERE Continent = 'Europe';
+
+  Ex. Order by name.
+    SELECT Continent FROM Country WHERE Continent = 'Europe' ORDER BY Name;
+
+  Ex. Limit rows by 5.
+    SELECT Continent FROM Country WHERE Continent = 'Europe' LIMIT 5;
+
+  Ex. To get the next 5, use OFFSET:
+    SELECT Continent FROM Country WHERE Continent = 'Europe' LIMIT 5 OFFSET 5;
+
+
+  (!) Clauses have to be in a particular order.
+    WHERE must be before an ORDER BY
+    LIMIT and OFFSET have to be last.
+    FROM must be first.
+
+V. Selecting columns
+  List columns in SELECT statement.
+  Can be listed in any order.
+
+  Ex. To select all Countries.
+    SELECT * FROM Countries;
+
+  Ex. Select columns Name, Continent, & Region
+    SELECT Name, Continent, Region FROM Country;
+    SELECT Name AS Country, Continent, Region FROM Country;
+
+
+
+VI. Counting rows
+
+  SELECT COUNT(*) FROM Country;
+    - Gets number of all rows in the Country table.
+
+    Ex. Get number of rows where population is greater than a million:
+      SELECT COUNT(*) FROM Country WHERE Population > 1000000;
+
+    Ex. Get number of rows whose population is greater than 100 million &
+        countries are in the Continent of Europe:
+      SELECT COUNT(*) FROM Country WHERE Population > 100000000 AND Continent = 'Europe';
+
+  SELECT COUNT(fieldName) FROM tableName;
+    - Returns number of rows from this column with data (not null)
+
+    Ex. Get the number of rows from the column LifeExpectancy
+      SELECT COUNT(LifeExpectancy) FROM Country;
+
+
+VII. Inserting data
+
+  INSERT INTO tableName (col1, col2, ..., colN)
+    VALUES(col1_value, col2_value, ..., colN_value)
+
+  Ex. Insert character Link into the DB with his address.
+    INSERT INTO customer (name, address, city, state, zip)
+      VALUES('Link','123 Hateno Way',  'Hateno Village', 'Hyrule', '33333');
+
+
+VIII. Updating data
+
+  Use UPDATE Statement: Need to specify id (WHERE) or it will make changes to
+                        the entire table.
+
+  UPDATE tableName SET col1 = col1_value, ...,colN = colN_value WHERE id = X;
+
+  Ex. Update Jimi Hendrix's info whose id is 5
+    UPDATE customer SET address = '123 Music Ave.', zip = '98056' WHERE id = 5;
+
+
+
+IX. Deleting Data
+
+  Syntax: DELETE FROM fieldName WHERE id = x;
+
+  Ex. Delete rows with id 4 & 5
+    DELETE FROM customer WHERE id = 4;
+
+    DELETE FROM customer WHERE id = 5;
+
+
+
+
+Quiz
+
+1. The DELETE statement is used to remove rows from a table.
+
+2. The WHERE clause is used with UPDATE to determine which rows are updated.
+
+3. The INSERT statement is used to add a row to a table.
+
+4. Use COUNT(*) function to count all rows in a table.
+
+5. You can query columns in any order
+
+6. The WHERE clause is used with SELECT to filter rows.
+
+7. The SELECT statement is used for all queries.
+
+8. A PRIMARY KEY is the unique key for a table when exposed as a column.
+
+9. An SQL statement is terminated with a semicolon.
