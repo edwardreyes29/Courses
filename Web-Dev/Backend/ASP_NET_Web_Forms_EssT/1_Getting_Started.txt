@@ -1,0 +1,29 @@
+DemoApp Structure
+
+  App_Data: - For local database files
+            - Only folder that is write/write
+  Content: - CSS file
+
+  Script: - JavaScript
+
+  Web Config: Configure Web application
+
+  Global.asax: Code hat affects whole app (Important)
+
+  Site.Master: Basically the index.html page
+
+
+Quiz:
+
+1. What does the BundleConfig file do?
+  A: It renders the page
+
+2. What does "Cleaning" the solution mean?
+  A: Cleaning removes all intermediary files & does a build.
+
+3. Internet Information Services (IIS) is an extensible Web Server by
+   Microsoft. Needs .NET 3.5 & 4.7 to work.
+
+4. HTTP: GET & POST Request
+
+5. ASP.NET is more of a front-end UI framework with web forms.
