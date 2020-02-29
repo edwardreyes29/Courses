@@ -1,0 +1,24 @@
+What you should know:
+  ES6 => React
+
+  - JavaScript
+  - HTML & CSS
+  - Bit of React.js & Node.js
+
+I. What is ECMAScript 6?
+  - European Computer Manufacturer Association
+    - Provides ECMAScript standardizations.
+    - 2015 ECMAScript
+
+    Comes with:
+      - let & const
+      - classes
+
+II. ES6 browser support
+  reference: https://kangax.github.io/compat-table
+
+III. Using ES6
+  Transpiling ES6:
+    - Converts ES6 code to ES5 so it can be read by browsers that does
+      not support ES6
+    - Traceur, Babel.js, Closure

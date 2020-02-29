@@ -1,0 +1,128 @@
+I. Intro to Babel
+  * ES6 code in -> ES5 code out
+  * Used frequently with React
+
+II. In-browser Babel Transpiling
+  reference: https://babeljs.io
+  get CDN: http://cdnjs.com/libraries/babel-core
+
+  TIP: if you see "unreachable" in console, use older version of Babel.js
+
+III. Transpiling with webpack
+  reference: http://webpack.github.io
+  For larger scale projects.
+  Automates processes like:
+    - Transpiling
+    - Sass conversion
+    - etc.
+
+  Webpack: Helps load all dependencies
+  - CSS, images, node modules and more.
+
+
+  Step 1:
+    sudp npm install -g Webpack@1.12.2
+    npm install --save-dev babel-loader@5.3.2
+    npm install --save-dev babel-core@5.8.29
+
+  Step 2: Create Webpack config file: webpack.config.js
+
+        module.exports = {
+          entry: './script.js',
+          output: {filename: 'bundle.js'}, // Can name this whatever you like, but most people call it bundle.js
+          module: {
+            loaders: [ // array of things you want to load
+                {test: /\.js?/, loader: 'babel-loader', exclude: /node_modules/} // test any file ending with .js, specify loader, and exclude node_modules.
+            ]
+          }
+        };
+
+    Step 3: Run webpack
+      Result:
+        [edward@edward-pc start]$ webpack
+        Hash: 4d3a34ef4877f970d080
+        Version: webpack 1.12.2
+        Time: 344ms
+          Asset    Size  Chunks             Chunk Names
+        bundle.js  1.7 kB       0  [emitted]  main
+          + 1 hidden modules
+
+      This shows that our file has been converted to this bundle.js file.
+
+    Step 4: In index.html, specify the location of the bundle.js file.
+
+      <head>
+        <script src="bundle.js"></script>
+        <!-- <script src="script.js">
+        </script> -->
+        <title>Working with Babel</title>
+      </head>
+
+    Step 5: install webpack at version one
+
+      npm install webpack@1.12.2 --save-dev
+
+IV. Migrating to webpack 3
+  Syntax is a little different. Upgrade previous file to webpack3
+
+  Step 1: install webpack 3.1.0 in dev dependency to replace the webpack 1.12.2 version.
+    npm install webpack@3.1.0 --save-dev
+
+  Step 2: In wepback.config.js, add this to the first line
+    var webpack = require('webpack'); // require webpack
+
+  Step 3: Upgrade babel-core to 6.25.0 in dev dependency & babel-loader to
+          7.1.1
+
+  Step 4: install babel-preset-env version 1.6.0 in devDependencies
+    npm install babel-preset-env@1.6.0 --save-dev
+
+    will enable all transformations. For es2016-2017
+
+  Step 5: in webpack.config, change loaders -> rules
+
+  Step 6: Add one last file in start folder, the .babelrc file
+
+  Results:
+  [edward@edward-pc start]$ webpack
+  Hash: 3b44b3af71d3ab75b597
+  Version: webpack 3.1.0
+  Time: 511ms
+      Asset    Size  Chunks             Chunk Names
+  bundle.js  2.8 kB       0  [emitted]  main
+     [0] ./script.js 308 bytes {0} [built]
+  [edward@edward-pc start]$
+
+
+  (!) If error occurs when trying to run webpack, try running it directly from
+      the node_modules foler.
+
+      $ ./node_modules/.bin/webpack
+
+      OR
+
+      Go to the package.json file, and in scripts, create an npm build script.
+
+        Ex.
+          "scripts": {
+            "build": "./node_modules/.bin/webpack"
+          }
+
+          Then run it:
+          $ npm run build
+
+Quiz:
+
+1. When you use Babel, what is the output?
+A: code that works in the browser.
+
+2. What attribute must you add to a script tag when using the in-browser
+   transpiler?
+A: type="text/babel"
+
+3. What does webpack help developers do?
+A: Automate processes like transpiling and sass to css conversion.
+
+4. What is the most important change in the webpack config file from webpack 1
+   to webpack 3?
+A: the object key called "loaders" becomes "rules"

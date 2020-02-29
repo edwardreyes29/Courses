@@ -1,4 +1,4 @@
-var nameBuilder = function(firstName="Joe", lastName="Doe") {
+var nameBuilder = function(firstName="Edward", lastName="Reyes") {
 			console.log(firstName + " " + lastName);
 		};
 

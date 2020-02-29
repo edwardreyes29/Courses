@@ -1,0 +1,22 @@
+I. Let keyword
+
+
+II. Const keyword
+
+
+III. Template strings
+
+
+IV. Spread operators
+
+
+V. Maps
+
+
+VI. Sets
+
+
+VII. The for...of loop
+
+
+Quiz
