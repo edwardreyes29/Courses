@@ -71,5 +71,50 @@ II. A little more about ls
 
 III. Create and remove folders
 
+mkdir: crate a directory
+  e.g. mkdir new_folder
+  e.g. mkdir new_foler/folder_inside_new_folder
+
+
+  You can create multiple directories with one mkdir command.
+
+  [edward@edward-pc Exercise Files]$ mkdir departments/customerservice/documents departments/customerservice/cases departments/customerservice/awards
+  [edward@edward-pc Exercise Files]$ ls -l departments/customerservice/
+  total 12
+  drwxr-xr-x 2 edward edward 4096 Feb 29 17:24 awards
+  drwxr-xr-x 2 edward edward 4096 Feb 29 17:24 cases
+  drwxr-xr-x 2 edward edward 4096 Feb 29 17:24 documents
+
+mkdir -p: creates any parent folder needed.
+
+  Ex. In this example, the legal folder does not exist, so it's created using -p
+    mkdir -p departments/legal/contracts
+
+rmdir: remove a directory
+  - In order to remove a folder, it must be empty.
 
 IV. Copy, move, and delete files and folders
+   cp: copy
+
+    cp source dest
+
+    Ex. cp poems.txt poems2.txt
+
+    Can even copy files into a different path.
+    Ex. copy simple_data.txt into the destination directory.
+      [edward@edward-pc Exercise Files]$ cp simple_data.txt  departments/hr/employee\ info/
+      [edward@edward-pc Exercise Files]$ ls departments/hr/employee\ info/
+      simple_data.txt
+
+    mv: move files between folder or rename files.
+
+      Ex. move poems2.txt into the marketing directory
+        [edward@edward-pc Exercise Files]$ mv poems2.txt  departments/marketing/
+        [edward@edward-pc Exercise Files]$ ls departments/marketing/
+        poems2.txt
+
+      Ex. rename the poems2.txt to literature.txt
+        [edward@edward-pc Exercise Files]$ mv departments/marketing/poems2.txt departments/marketing/literature.txt
+        [edward@edward-pc Exercise Files]$ ls -l departments/marketing/
+        total 4
+        -rwxr-xr-x 1 edward edward 1474 Feb 29 17:41 literature.txt
