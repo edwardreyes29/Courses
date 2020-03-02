@@ -1,3 +1,6 @@
+Lookup: Linux Foundation Cert Prep: Essentil Commands (Ubuntu)
+
+
 I. Files, folders, and navigation
   file: Determines file type
     EX: file myfile.txt
@@ -118,3 +121,334 @@ IV. Copy, move, and delete files and folders
         [edward@edward-pc Exercise Files]$ ls -l departments/marketing/
         total 4
         -rwxr-xr-x 1 edward edward 1474 Feb 29 17:41 literature.txt
+
+    dot (.) represents the current directory.mv
+
+      Ex. mv departments/marketing/literature.txt .
+
+          - moves the literature.txt file into the current directory.
+
+   wildcards: characters that stand for patterns.
+    two most common:
+      * - any number of characters
+      ? - only one character
+
+
+      Ex. Move any file ending with .txt to marketing folder in departments directory.
+        $ mv *.txt department/marketing/
+
+    Using the asterisks by itself would represent everything within a folder.
+      Ex. Move everything in the marketing folder to the current folder.
+
+        $ mv departments/marketing/* .
+
+    'rm': remove file.
+
+      Ex. Remove the literature.txt file in the current direcotry.
+        rm literature.txt
+
+      Ex. (?) wildcard, remove files similar poems files. Assume poems3.txt &
+          poems4.txt exist in the current directory.
+
+          $ rm poems?.txt
+
+
+
+    Deleting Recusrively.
+
+      Using rmdir to remove a directory is only possible if the directory is
+      empty. Use rm instead to invoke its -r recursive option to remove everything
+      within the directory recursively.
+
+
+      Ex. Delete customerservice directory and everything inside it.
+        $ rm -r departments/customerservice
+
+
+V. Find files from the command line
+ Sometimes you need to find a file but you don't know where it is.
+
+ 'find' command: search files in a directory hierarchy
+
+  Ex.  Find a file that starts with "poe"
+    $ find . -name "poe*"
+
+    -name -> specifies what type your looking for, it could be date or something else.
+  Ex. Find a file that starts with "do"
+    $ find -name "do*"
+
+
+  Ex. Find a file/folder in the current directory "." that starts with a letter "d"
+    find . -name "d*"
+
+  Ex. Find everything in the current directory that has the letter "d"
+    [edward@edward-pc Exercise Files]$ man find
+    [edward@edward-pc Exercise Files]$ find . -name "*d*"
+    ./departments
+    ./departments/engineering/drawings
+    ./departments/finance/spreadsheets
+    ./departments/finance/documents
+    ./departments/hr/employee info/simple_data.txt
+    ./departments/hr/candidates
+    ./weapons/RoyalSword
+    ./simple_data.txt
+    ./dupes.txt
+    ./new_folder
+
+    Ex. Search a different direcoty (Documents in home directory) for anything
+    that as a d in it as well.
+
+      $ find ~/Documents/ -name "*d*"
+
+VI. User roles and sudo
+
+  User Roles:
+    Linux is a multiuser environent.
+      Meaning they can keep separate files individually.
+      Switch user using 'su' command.
+
+
+    Roles:
+      Normal user:
+        - modify their own Files
+        - cannot make system changes
+      Superuser (root): modify any file, make system changes.
+        - disabled by default, only use when needed.
+
+    'sudo' command gives you root privileges, which tells the system
+    to run whatever command with superuser privileges.
+
+    Ex. Trying to list the root directory will be denied, use sudo.
+
+      $ sudo ls /root
+
+    'sudo -k': to give up privileges.
+    'sudo -s': to assign yourself superuser privileges.
+
+VII. File permissions.
+
+  rwxrwxrwx  the_file
+
+  first group: 'rwx' represents user/owner of the file
+  second: represents group that owns the Files
+  last: represents all other users.
+
+  'rwx' -> read write execute
+  r -> read contents of the file but can't write on it.
+  w -> make changes to a file but not read it
+  x -> someone can run the file/program without loading it up into another program first.
+
+
+  'chmod': Change the permission on a file by modifying the file mode bits.
+
+    Two methods to represent permission:
+      1. Octal (e.g., 755, 644, and 777)
+      2. Symbolic (e.g., a=r, g+w, and o-x)
+
+
+
+    Octal File Permssion:
+
+      Read(4)
+      Write(2)
+      Execute(1)
+
+
+      User = r w x = 4 + 2 + 1 = 7
+      Group = r - x = 4 + 0 + 1 = 5
+      Others = r - - = 4 + 0 + 0 = 4
+
+      Octal Values:
+        0: ---
+        1: --x
+        2: -w-
+        3: -wx
+        4: r--
+        5: r-x
+        6: rw-
+        7: rwx
+
+    Symbolic File Permssions:
+      User(u): u+rwx
+      Group(g): g=r
+      Others(o): o-rwx
+      A(a)
+
+      + adds permissions
+      - removes permissions
+      = add permission but removes others.
+
+      Comparing Octal & Symbolic
+
+        777 -> a+rwx -> rwxrwxrwx
+        755 -> u+rx,g=rx,o=rx -> rwxr-xr-x
+        644 -> u=rw,g=r,o=r -> rw-r--r--
+        700 -> a+rw,g-rwx,o-rwx -> rwx-----
+
+
+        ./test.sh -> run an executable file, which is a program that can run on its own.
+
+        Ex. Check it's permissions
+          [edward@edward-pc Exercise Files]$ ls -l test.sh
+          -rwxr-xr-x 1 edward edward 63 Dec 10  2018 test.sh
+
+        User can read, write, and execute. 7
+        Group can only read and execute. 5
+        Others can also read and execute. 5
+
+        Ex Change permission to 644 or a-x, removing User,Groups,and others ability to execute this script.
+          $ chmod 644 test.sh
+          OR
+          $ chmod a-x test.sh
+
+          [edward@edward-pc Exercise Files]$ ls -l test.sh
+          -rw-r--r-- 1 edward edward 63 Dec 10  2018 test.sh
+
+          Loses its ability to run as an executable, need to use bash interpreter
+          to run the script.
+
+            $ bash test.sh
+
+
+        (!!!!) 'cat' command shows contents of a file.
+        (!!!!) 'touch' create a new file.
+
+            [edward@edward-pc Exercise Files]$ cat test.sh
+            #!/usr/bin/env bash
+            echo -e "\n\tHello from the Test Script!\n"
+
+        Ex. take away read permission from superuser.
+
+        Symbolic:
+          $ chmod u-r test.sh
+
+        Octal:
+          $ chmod 244 test.sh
+
+          [edward@edward-pc Exercise Files]$ ls -l test.sh
+          --w-r--r-- 1 edward edward 63 Dec 10  2018 test.sh
+
+
+          Now as a superuser, you are denied permission to read the file (cat)
+            [edward@edward-pc Exercise Files]$ cat test.sh
+            cat: test.sh: Permission denied
+
+        Ex. Reset all changes to original
+            chmod 755 test.sh
+
+
+
+        (!) 644 is the starting permission number for any new file created by
+            the user.
+
+
+          Ex. Create a new file call 'newfile'
+
+            [edward@edward-pc Exercise Files]$ touch newfile
+            [edward@edward-pc Exercise Files]$ ls
+            departments  log.tar.gz  new_folder  simple_data.txt  weapons
+            dupes.txt    newfile     poems.txt   test.sh
+            [edward@edward-pc Exercise Files]$ ls -l newfile
+            -rw-r--r-- 1 edward edward 0 Mar  1 20:21 newfile
+
+        Ex. Change ownership from user to root.
+
+          $ sudo chown root test.sh
+            - can no longer write to file.
+          $ sudo chown edward test.sh
+            - switch back to me.
+
+          chgrp -> change group.
+
+
+          Changing permission is useful for working with web servers and securing certain files.
+
+VIII. Create hard and symbolic links (Linux only)
+
+  Links: A file that acts as a reference to another file
+    - used to having multiple copies of a file in different places.
+
+  Two kinds of links:
+    1. Hard link:
+          Points to data on the disk (inode)
+    2. Soft link (symlink: symbolic link):
+          Points to a file on the disk (relative path)
+
+    'ln' - make links between files.
+
+    ln [OPTION]...[-T] TARGET LINK_NAME
+
+
+    Ex. Create a soft (-s) link for the poems.txt file and call it writing.text
+      $ ln -s poems.txt writing.txt
+      $ ls -l
+      lrwxrwxrwx 1 edward edward      9 Mar  1 20:46 writing.txt -> poems.txt
+
+    Ex. Read the writing.txt file
+      cat writing.txt
+      - making changes to this file affects the original file.
+
+    (!) Moving the original file breaks the link, since it relies on a specific
+    path to the original.
+
+
+    Ex. Create a hard link (leave out -s OPTION)
+      $ ln poems.txt
+      $ ls -l
+      -rwxr-xr-x 2 edward edward   1474 Jun 18  2018 words.txt
+      lrwxrwxrwx 1 edward edward      9 Mar  1 20:46 writing.txt -> poems.txt
+
+      It appears as a regular file when listed, but its a pointer to the data
+      that the original file references. Doesn't matter if the file is removed since
+      a hard link points to the underlying data for a file instead of the file itself.
+      (!) Every file is a hard link to it's own data.
+
+
+IX. The Linux filesystem
+
+    Filesystem Hierarchy Standard
+    - Defines common locations on the filesystem
+    - a standard linux distros follows.
+
+    Common Parts of a Linux Filesystem:
+
+      /       -> root (highest level of filesystem hierarchy)
+      home    -> stores user home folders
+      root    -> stores root's home folder
+      etc     -> configuration files for many tools
+      bin     -> stores binaries (programs)
+      sbin    -> stores binaries (programs)
+      lib     -> libraries and shared modules
+      dev     -> represents devices on the system
+        -> good place to find out how linux system works
+      mnt     -> where local and remote filesystem are mounted
+      media   -> where removable storage is mounted
+
+      Part of the linux system itself:
+      proc    -> virtual filesystem representing processes
+      sys     -> virtual filesystem representing kernel values.
+
+Quiz:
+
+  1. Other user's home folders kept in /home/
+     Superuser's home folder is /root
+
+  2. A symbolic link will break if the link or the referenced file is moved.
+
+  3. The command
+      $ ln -s outcome.txt report.txt
+    creates a symlink named 'report.txt' that refers to 'outcome.txt'
+
+  4. File permission let us control who can read, write, and execute a file.
+
+  5. 'sudo' is the command to use if we want to execute  using superuser privileges.
+
+  6. To find files in Alice's home folder with 'report' in the name, write:
+    $ find /home/alice -name "*report*"
+
+  7. To rename the file 'report.txt' to 'output.txt', write:
+    $ mv report.txt output.txt
+
+  8. To delete a folder called 'Photos' which contains many subfolders, write:
+    $ rm -rf Photos
+      (-f is force, -r is recursive)
