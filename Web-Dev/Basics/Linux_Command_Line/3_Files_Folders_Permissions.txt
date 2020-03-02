@@ -452,3 +452,16 @@ Quiz:
   8. To delete a folder called 'Photos' which contains many subfolders, write:
     $ rm -rf Photos
       (-f is force, -r is recursive)
+
+  9. The rmdir command can only delete an empty folder
+
+
+  10. If a file path has a spcace in it, you can wrap the path in quotes, or
+      your can escape a space with the '\' character.
+
+  11. If your curent working director is /home/alice/Documents/Financial and you
+      want to change it to /home/alice, you can use:
+
+      $ cd ../../
+        This uses relative path indicators. two dots represent the paretn folder
+        for any given folder.
