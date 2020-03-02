@@ -3,13 +3,29 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		
 
+		var books = new Set();
+		books.add('The Road');
+		// Chain on different add functions.
+		books.add('Sidhartha')
+				 .add('Tale of Two Cities');
 
+		console.log(books);
+		console.log('How many books? ', books.size)
+		console.log('has The Road? ', books.has('The Road'));
+		console.log('has Lord of the Rings', books.has('Lord of the Rings'));
+		books.delete('The Road');
+		console.log('has The Road still? ', books.has('The Road'));
+
+		// Create an Array with duplicates and convert it into a set.
+		var data = [4,2,4,4,2,5,1,6,7,8,2,7];
+		var set = new Set(data); // All duplicates are removed
+		console.log('data.length', data.length); // 14
+		console.log('set.size', set.size); // 7, since there are only 7 unique numbers.
 
 	</script>
 	<title>Sets</title>
 </head>
 <body>
-</body>	
+</body>
 </html>

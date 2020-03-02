@@ -3,29 +3,44 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		
-		var course = new Map();
-		course.set('react', {description: 'ui'});
-		course.set('jest', {description: 'testing'});
+
+		var course = new Map() // Constructor function tht will build a new Map.
+		course.set('react', {description: 'ui'}); // To set values within new map, pass in a key value pair
+		course.set('jest', {description: 'testing'}); // key is a string, value is an object {}
 
 		console.log(course);
-		console.log(course.react);
+		console.log(course.react); // undefined, unlike objects, can't use dot notaion to return values.
 		console.log(course.get('react'));
 
+		/** other methods:
+
+
+			console.log(course.size);
+			console.log(course.has('vue')); // Checks if it key exists.
+			console.log(course.has('react'));
+			console.log(course.keys());
+
+		*/
+
+		// Pass an array of values into this map
+		// You can pass an array into the new Map constructor
 		var details = new Map([
 			[new Date(), 'today'],
 			['items', [1, 2]]
 		]);
 
-		console.log(details.size);
-
 		details.forEach(function(item) {
 			console.log(item);
-		});
+		})
 
+		console.log(details.size);
+
+
+		console.log(details.has(new Date()));
+		console.log(details.has('items'));
 	</script>
 	<title>Maps</title>
 </head>
 <body>
-</body>	
+</body>
 </html>

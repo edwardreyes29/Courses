@@ -1,22 +1,54 @@
 I. Let keyword
+  Let - to create block scoping in JS for variables.
 
 
 II. Const keyword
-
+  Allows constant variables that cannot be reassigned.
 
 III. Template strings
+  Allows you to tap into the functionality of template languages to format
+  JavaScript code with variables.
 
+  Template strings allow for a lot of dynamic content to be added within text
+  that are to be outputted.
 
 IV. Spread operators
-
+  Can turn elements of an array into arguments of a function call.
+  Or
+  Into elements of an array literal.
 
 V. Maps
+  * Holds key value pairs.
+      Any value may be uses as a key or a value.
+  * Use one if you want to use something other than a string as a key.
+      e.g. A function or an array can be a key, or even a number.
+  * Utilize key value pairs that are always the same values.
+  * Need to iterate in order.
+      Maps iterates their elements in insertion order.
+
 
 
 VI. Sets
 
+  * Collections of values
+  * Can be of any type, but each value must be unique
+
 
 VII. The for...of loop
+  Loop over iterable objects: Arrays, Strings, Maps, & Sets
 
+  Most likely use case is to iterate trough maps and sets
 
-Quiz
+Quiz:
+
+1. Why might you use the 'let' keyword instead of 'var'?
+A: To enforce block scoping.
+
+2. What happens if you try to reset a variable that has been declared as a constant?
+A: console error
+
+3. Are spaces recognized within a template string?
+A: Yes, any spaces or characters are recognized.
+
+4. What punctuation makes up the spread operator?
+A: ...

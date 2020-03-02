@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
-	<script type="text/babel"></script>
+	<style type="text/css">
+		div {
+			height: 100px;
+			width: 100px;
+			background-color: #ff0000;
+			float: left;
+			margin: 3px;
+			cursor: pointer;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js">
+	</script>
+	<script type="text/babel">
+		var x = 10;
+
+		if(x) {
+			// var x = 4; // Changes the global value of x
+			let x = 4; // Local scope
+		}
+
+		var boxNum = 0;
+		/** Render 45 divs onto a page using a for loop. */
+		for(let i=0; i<45; i++) { /* use let for i, which instead of having i being
+			overwritten each and every time we go to the loop, let stores this value
+			with all of our divs. */
+			var div = document.createElement('div');
+			// This assigns a function to the div which will add it to section.
+			div.onclick = function() {
+				alert("you clicked on a box #" + i); // alerts the position of the box clicked.
+			};
+			document.getElementsByTagName('section')[0].appendChild(div);
+		}
+		var section = document.getElementsByTagName('section')[0];
+		console.log(section);
+	</script>
 	<title>Let Keyword</title>
 </head>
 <body>
+	<header>
+		<h1>Click on a box</h1>
+	</header>
+	<section></section>
 
-</body>	
+</body>
 </html>

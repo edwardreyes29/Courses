@@ -3,10 +3,26 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
+		var cats = ["Tabby", "Siamese", "Persian"];
+		var dogs = ["Golden Retriever", "Australian Cattle Dog", "Sheep Dog"];
+
+		/* Add cats & dogs into the array.
+
+			Initially, they appears like Array(3) and Array(3) instead of by thier names.
+
+			Use spread operator by adding three dots before the variable name
+
+			Now the elements within the array are added to the animals array
+			"Fish", "Lizard", "Kangaroo", "Bird", "Tabby", "Siamese", "Persian",
+			"Golden Retriever", "Australian Cattle Dog", "Sheep Dog"]
+
+		*/
+		var animals = ["Fish", "Lizard", "Kangaroo", "Bird", ...cats, ...dogs];
+		console.log(animals);
 
 	</script>
 	<title>Spread Operators</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
