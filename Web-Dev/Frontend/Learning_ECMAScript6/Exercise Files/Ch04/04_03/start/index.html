@@ -3,13 +3,33 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		
+
+		var studentList = function(students) {
+			console.log(students);
+		};
+		studentList(["Joe", "Cindy", "Jeanne"]);
 
 
-	
+		// Arrow function usage, if one argument, remove parentheses is optional.
+		var studentList2 = students => console.log(students);
+		studentList2(["Brian", "Chris", "Joey"]);
+
+		// Practice 1
+		var add = function(num1=1, num2=2) {
+			console.log(num1+num2);
+		};
+		add(4,8);
+
+		// Practice 2
+		var multiply = (num1,num2) => console.log(num1*num2);
+		multiply(4,8);
+
+		// Practice 3
+		var name = (firstName, lastName) => console.log(`Hello ${firstName} ${lastName}`);
+		name("Leeroy", "Jenkins");
 	</script>
 	<title>Arrow Functions</title>
 </head>
 <body>
-</body>	
+</body>
 </html>

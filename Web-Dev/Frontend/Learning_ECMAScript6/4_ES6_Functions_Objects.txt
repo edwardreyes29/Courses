@@ -1,0 +1,53 @@
+I. Default function parameters
+
+
+
+II. Enhancing object literals
+  Gives us way to shorten object literals.
+
+  New ES6 funcion:
+    repeat(): method constructs and returns a new string which contains the
+    specified number of copies of the string on which it is called, concatenated
+    togeter.
+
+
+
+III. Arrow functions
+
+    => // fat arrow
+
+    var variable = argument => statements
+
+IV. Arrow functions and the 'this' scope
+  Can help deal with scope of 'this' in JS.
+
+
+V. De-structuring assignment
+
+    Provides an easy way to extract data from arrays & objects and assign
+    them to variables
+
+
+
+VI. Generators
+  Function hat allows us to pause functions in the middle of executions to be used later.
+  e.g. function* aFunction() {
+        yield; // keyword to pause the function.
+        yield;;
+        ...
+        yield
+      }
+
+      reference: https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js
+      use the browser polyfill and paste into html befor text/babel script.
+
+
+VII. Symbols
+
+
+
+VIII. Iterators
+
+
+
+Quiz:

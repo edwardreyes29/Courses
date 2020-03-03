@@ -3,11 +3,46 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		
+		function add(x=5,y=7) {
+			console.log(x+y);
+		}
+		add(); // If no argumnets passesd, it's returns NaN, if params are not assigned in the function.
+
+		function haveFun(activityName="hiking", time=3) {
+			console.log(`Today I will go ${activityName} for ${time} hours.`)
+		}
+		haveFun(); // Uses default Parameters
+		haveFun("Biking", 5); // When you pass arguments, the new values take place of the defaults.
+		// defaults are useful when you want to use a defualt value when another value is not available.
+
+		// Practice 1
+		function sayTwoWordSentence(word1="What's", word2="up!") {
+			console.log(`${word1} ${word2}`);
+		}
+
+		sayTwoWordSentence();
+		sayTwoWordSentence("Hello", "there");
+
+		// Practice 2
+		function salesTaxFinalPrice(price=1.00, salesTax=0.0725) {
+			let finalPrice = price + (price * salesTax);
+			console.log(`Final purchasing price is $${finalPrice.toFixed(2)}`);
+		}
+		salesTaxFinalPrice();
+		salesTaxFinalPrice(79.99);
+
+		// Practice 3
+		function greetHappyBirthday(name="Edward", age=29) {
+			console.log(`Happy ${age}th Birthday ${name}!`)
+		}
+
+		greetHappyBirthday();
+		greetHappyBirthday("Ellie", 5);
+
 
 	</script>
 	<title>Default Parameters</title>
 </head>
 <body>
-</body>	
+</body>
 </html>

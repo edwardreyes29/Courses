@@ -2,7 +2,70 @@
 <html>
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js"></script>
 	<script type="text/babel">
+		// Create a Generators
+		function* director() {
+			yield "Three";
+			yield "Two";
+			yield "One";
+			yield "Action";
+		};
+		// Store the call of the generator function in a variable called action.
+		var action = director();
+
+		// (!) each time we used a yield statement we need to restart the function.
+		// Use the next function to jump to the next yield
+
+		console.log(action.next().value); // Three, done: false
+		console.log(action.next().value); // Two, done: false
+		console.log(action.next().value); // One, done: false
+		console.log(action.next().value); // Action, done: false
+		console.log(action.next().done); // done: true
+
+		// (!) Yields are generally used for some asynchronous event.
+		// External event or timer.
+
+		// Timer example
+		function* eachItem(arr) {
+			for(var i=0; i<arr.length; i++) {
+				yield arr[i]; // yield the curret item in the array.
+			}
+		}
+
+		// Pass in a list of strings. This is storing each letter into eachItem generator.
+		var letters = eachItem(["a","b","c","d","e","f","g"])
+
+		// var abcs = setInterval(function(){
+		// 	var letter = letters.next();
+		// 	if(letter.done) { // if done is true meaning out of yeild statements.
+		// 		clearInterval(abcs);
+		// 		console.log("Now I now my ABC's");
+		// 	} else {
+		// 		console.log(letter.value);
+		// 	}
+		// },
+		//
+		// 	500); // 500 miliseconds to print each letter.
+
+
+		function* start() {
+			yield "Ready...";
+			yield "set...";
+			yield "GO!"
+		};
+
+		var announcer = start();
+
+		var startRace = setInterval(function(){
+			var announcement = announcer.next();
+				if(announcement.done) {
+					clearInterval(startRace);
+					console.log("And there off!");
+				} else {
+					console.log(announcement.value);
+				}
+		}, 1000);
 
 
 
@@ -10,13 +73,5 @@
 	<title>Generators</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
-
-
-
-
-
-
-
-

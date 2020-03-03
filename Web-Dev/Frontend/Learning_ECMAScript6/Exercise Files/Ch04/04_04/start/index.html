@@ -3,13 +3,81 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		
-		
 
-	
+			var person = {
+				first: "Doug",
+				actions: ['bike', 'hike', 'ski', 'surf'],
+				printActions: function() { // declare a funciton called printActions
+					var _this = this; can't call this within the inner function (not sure why, but if you run into this, remembe to do this)
+					this.actions.forEach(function(action) { // printAction has a function that prints the actions
+						var str = _this.first + " likes to " + action; // this has fallen out of scope, so create
+						// a separate variable to be a new placeholder for 'this' and use it within the foEach function.
+						console.log(str);
+					});
+				}
+			};
+			person.printActions();
+
+
+			// Alternate way to deal with this scope using bind(this)
+			var person2 = {
+				first: "Louie",
+				actions: ['bike', 'hike', 'ski', 'surf'],
+				printActions: function() { // declare a funciton called printActions
+					this.actions.forEach(function(action) { // printAction has a function that prints the actions
+						var str = this.first + " likes to " + action; // this has fallen out of scope, use bind
+						console.log(str);
+					}.bind(this));
+				}
+			};
+			person2.printActions();
+
+			// Handle this with an arrow function
+			var person3 = {
+				first: "Mark",
+				actions: ['bike', 'hike', 'ski', 'surf'],
+				printActions() { // Method for this object which uses a function to print it's actions.
+					console.log(this.actions); // Is an array.
+					this.actions.forEach(action => {
+							var str = this.first + " likes to " + action;
+							console.log(str);
+					});
+				}
+			};
+			person3.printActions();
+
+
+			var character1 = {
+				name: "Link",
+				actions: ['Jump', 'swing', 'glide', 'aim', 'shoot'],
+				weapons: ['Master Sword', 'Iron Sledgehammer', 'Royal Bow', 'Savage Lynell Sword'],
+				printActions() {
+					this.actions.forEach(action => {
+						let str = this.name + " can " + action;
+						console.log(str);
+					});
+				},
+				printWeapons() {
+					this.weapons.forEach(weapon => {
+						console.log(weapon);
+					});
+				}
+			};
+			character1.printActions();
+			character1.printWeapons();
+
+
+
+
+
+
+
+
+
+
 	</script>
 	<title>Arrow Functions and 'this'</title>
 </head>
 <body>
-</body>	
+</body>
 </html>

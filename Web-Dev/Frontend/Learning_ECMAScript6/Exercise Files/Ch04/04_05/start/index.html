@@ -3,12 +3,84 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		
+
 		var cities = ["Spokane", "Boston", "Los Angeles", "Seattle", "Portland"];
-		
+		console.log(cities[0]);
+		console.log(cities[3]);
+
+
+		// Destructuring [firstPos, secondPos,..., nthPos]
+		var [first,,,fourth] = ["Spokane", "Boston", "Los Angeles", "Seattle", "Portland"];
+		console.log(first);
+		console.log(fourth);
+
+
+		var sandwich = {
+			title:"Reuben",
+			price: 7,
+			description: "Cleveland's favorite sandwhich",
+			ingredients: ['bread', 'corned beef', 'dresing', 'sauerraut', 'cheese']
+		};
+
+		console.log(sandwich.title);
+		console.log(sandwich.price);
+
+		// Destructuring
+		var {title, price} = {
+			title:"Cubano",
+			price: 8,
+			description: "From the movie with the guy who directed Iron Man 1 & 2",
+			ingredients: ['bread', 'roasted pork', 'pickles', 'cheese']
+		};
+
+		console.log(title);
+		console.log(price);
+
+		var vacation = {
+			destination: "BottleRock",
+			travelers: 2,
+			activity: "Wine Tasting",
+			cost: 4000
+		};
+
+		function vacationMarketing({destination, activity}) {
+			return  `Come to ${destination} and do some ${activity}`;
+		}
+
+		console.log(vacationMarketing(vacation)); //passing the object to a function
+		// that will parse it and grab destination & activity.
+
+		// Practice 1
+		var bike = {
+			model: "BMX",
+			price: 120,
+			description: "Used for bike sports and doing tricks",
+			warranty: "2 years"
+		};
+
+		function viewBikeInfo({model,price,description}) {
+			return `Model: ${model}\nPrice: $${price}\nAbout: ${description}`;
+		}
+
+		// Practice 2
+		var person = {
+			name: "Stone Cold Steve Austin",
+			height: 1.87,
+			weight: 113.305,
+			occupation: "Pro Wrestler"
+		}
+
+		function bmi({height, weight}) {
+			return weight / (height * height);
+		}
+
+		console.log(person.name);
+		console.log(bmi(person));
+
+
 	</script>
 	<title>Destructuring Assignment</title>
 </head>
 <body>
-</body>	
+</body>
 </html>

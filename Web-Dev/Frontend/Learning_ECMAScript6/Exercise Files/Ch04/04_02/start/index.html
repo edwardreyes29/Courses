@@ -3,20 +3,115 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		
 
-		
+		// ES5 Object
+		var cat = {
+			meow: function(times) {
+				console.log(Array(times+1).join("meow")); //Array(number_of_positions).join(character_or_word) will join character or word as a sring x amount of times.
+			}, // meowmeowmeow
+			purr: function(times) {
+				console.log(Array(times+1).join("purr"));
+			}, // purrpurrpurrpurr
+			snore: function(times) {
+				 console.log(Array(times+1).join("snore"));
+			} // snoresnoresnoresnorepurr
+		}
+		cat.meow(3);
+		cat.purr(4);
+		cat.snore(5);
+
+		// New ES6 repeat and function declaration
+		var dog = {
+			bark(times) {
+				console.log("bark".repeat(times));
+			},
+			woof(times) {
+				console.log("woof".repeat(times));
+			},
+			growl(times) {
+				console.log("growl".repeat(times));
+			}
+		};
+		dog.bark(3);
+		dog.woof(4);
+		dog.growl(5);
+
+		// Practice 1
+		var operation = {
+			add: function(num1=1, num2=1) {
+				console.log(num1+num2);
+			},
+			subtract: function(num1=1, num2=1) {
+				console.log(num1-num2);
+			},
+			multiply: function(num1=1, num2=1) {
+				console.log(num1*num2);
+			},
+			divide: function(num1=1, num2=2) {
+				console.log(num1/num2);
+			}
+		}
+
+		operation.add();
+		operation.subtract();
+		operation.multiply();
+		operation.divide();
+
+		var operation2 = {
+			add(num1=1, num2=1) {
+				console.log(num1+num2);
+			},
+			subtract(num1=1, num2=1) {
+				console.log(num1-num2);
+			},
+			multiply(num1=1, num2=1) {
+				console.log(num1*num2);
+			},
+			divide(num1=1, num2=2) {
+				console.log(num1/num2);
+			}
+		}
+
+		operation2.add(10,5);
+		operation2.subtract(10,5);
+		operation2.multiply(10,5);
+		operation2.divide(10,5);
+
+		// Practice 2
+		var transformer = {
+			transform() {
+				console.log("*Beep*\n*Boop*\nTransform commencing...");
+			},
+			spinAttack(times=1) {
+				console.log("spin".repeat(times));
+			}
+		}
+
+		transformer.transform();
+		transformer.spinAttack(8);
+
+
+		// Practice 3
+		var bobbyBBot = {
+			quote1() {
+				console.log("YOUR MOTHER WAS A FAT WHORE DID YOU KNOW THAT?");
+			},
+			quote2() {
+				console.log("BOW YOU SHITS!");
+			},
+			quote3() {
+				console.log("THERE'S A WAR COMING NED, I CAN FEEL IT.")
+			}
+		}
+
+		bobbyBBot.quote2();
+		bobbyBBot.quote3();
+		bobbyBBot.quote1();
+
+
 	</script>
 	<title>Object Literal Enhancement</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
-
-
-
-
-
-
-
-
