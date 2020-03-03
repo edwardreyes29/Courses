@@ -1,0 +1,16 @@
+I. Importance of HTML
+
+
+II. Basic HTML syntax
+
+
+III. The current state of HTML
+
+
+IV. HTML resources
+
+
+V. Choosing a code editor
+
+
+Quiz:
