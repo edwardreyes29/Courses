@@ -4,16 +4,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
 
+		const delay = (seconds) => {
+			return new Promise(resolve => { // resolve, occurs when promise is successful
+				setTimeout(resolve, seconds * 1000) // takes in callback function and number of miliseconds.
+			})
+		}
 
 	</script>
 	<title>Promises</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
-
-
-
-
-
-
