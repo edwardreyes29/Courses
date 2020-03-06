@@ -2,15 +2,59 @@
 <html>
 <head>
 	<script>
+		/**
+			Async & Fetch.
+
+			Fetch is by definition asynchronous, we make a request, and wait to get
+			some data back.
+		*/
+
+		// const githubRequest = async(loginName) => {
+		// 	try {
+		// 		var response = await fetch(`https://api.github.
+		// 			com/users/${loginName}/followers`);
+		// 			var json = await response.json(); // await response to turn into json.
+		// 			var followerList = json.map(user => user.login);
+		// 			console.log(followerList);
+		// 	} catch(e) { // take error e
+		// 		console.log("Data didn't load", e);
+		// 	}
+		// };
+		// githubRequest('edwardreyes29');
+
+		// Make into an anonymous funciton
+		(async(loginName) => {
+			try {
+				var response = await fetch(`https://api.github.
+					com/users/${loginName}/followers`);
+					var json = await response.json(); // await response to turn into json.
+					var followerList = json.map(user => user.login);
+					console.log(followerList);
+			} catch(e) { // take error e
+				console.log("Data didn't load", e);
+			}
+		})('edwardreyes29');
+
+
+		// break code
+		((loginName) => {
+			try {
+				var response = fetch(`https://api.github.
+					com/users/${loginName}/followers`);
+					var json = response.json(); // calling function as soon as page loads,
+					// theres no response yet so no value for response and no value to be parsed
+					var followerList = json.map(user => user.login);
+					console.log(followerList);
+			} catch(e) { // take error e
+				console.log("Data didn't load", e);
+			}
+		})('edwardreyes29');
+
 
 
 	</script>
 	<title>Async and Fetch</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
-
-
-
-

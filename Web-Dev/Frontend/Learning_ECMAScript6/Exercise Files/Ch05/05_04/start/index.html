@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
-	<script type="text/babel">
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script> -->
+	<!-- <script type="text/babel"> -->
+	<script>
 
-		
+		// Async and await
+
+		const delay = (seconds) => {
+			return new Promise(
+				(resolve) => setTimeout(resolve, seconds * 1000)
+			)
+		};
+
+		// First use of Async function -> version of babel might affect this, may not support async.
+		const countToFive = async() =>  {// async keyword, suggest this is an Asynchronous funciton
+			console.log('zero seconds');
+			await delay(1); // will wait for value of delay called with one second to be returned before executing any further.
+			console.log('one second');
+			await delay(1);
+			console.log('two seconds');
+			await delay(3);
+			console.log('five seconds');
+		};
+
+		countToFive();
+
+		// const countToFiveNotAsync = () => { // async keyword, suggest this is an Asynchronous funciton
+		// 	console.log('zero seconds');
+		// 	delay(1); // will wait for value of delay called with one second to be returned before executing any further.
+		// 	console.log('one second');
+		// 	delay(1);
+		// 	console.log('two seconds');
+		// 	delay(3);
+		// 	console.log('five seconds');
+		// }
+		//
+		// countToFiveNotAsync();
 
 	</script>
 	<title>Async</title>

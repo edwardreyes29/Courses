@@ -18,3 +18,16 @@ V. Async with fetch
 
 
 Quiz:
+1. What is the purpose of promises?
+  A: to help developers manage asynchronous behavior in JavaScript.
+
+2. How do you return a promise object?
+  A: User return new promise()
+
+3. What do you pass in to the fetch function?
+  A: A url that you want to fetch from.
+
+4. Async/await in Node.js?
+  A: use node version 8
+
+5. Fetch is already asynchronous.

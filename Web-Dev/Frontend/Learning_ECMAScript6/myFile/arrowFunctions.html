@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+
+
+    // map() creates a new array populated with results of calling provided function.
+    const array1 = [1, 4, 9, 16];
+    // pass a function to map
+    const map1 = array1.map(x => x * 2);
+    console.log(map1);
+
+
+
+    // Arrow functions
+    // (singleParam) => {statements}
+    // parameter list fo ra function with no paramteres shoud be written with pair of parentheses.
+    // () => { statements }
+
+    const materials = [
+      'Wood',
+      'Egg',
+      'Flint',
+      'Amber',
+      'Ancient Core'
+    ]
+
+    const results = materials.map(material => material.length);
+    console.log(results);
+  </script>
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
