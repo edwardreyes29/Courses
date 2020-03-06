@@ -1,0 +1,20 @@
+I. Intro to Promises
+  Asynchronous, means some sort of waiting is going on.
+
+II. Building Promises
+  Promises are often used to load data.
+
+
+III. Loading data with fetch
+
+
+
+IV. Async and await
+
+
+
+V. Async with fetch
+
+
+
+Quiz:

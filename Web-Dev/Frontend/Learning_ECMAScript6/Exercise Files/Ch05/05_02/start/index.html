@@ -4,15 +4,42 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
 
-		
+			// Fetch data from api of people in space.
+			const spacePeople = () => {
+				return new Promise((resolves, rejects) => {
+					const api = 'http://api.open-notify.org/astros.json';
+					const request = new XMLHttpRequest();
+					// Open a get request to the api and make a connection.
+					request.open('GET', api);
+					request.onload = () => {
+						if(request.status === 200) {
+							resolves(JSON.parse(request.response));
+							console.log(JSON.parse(request.response)); // this gets sent to then.
+						} else {
+							rejects(Error(request.statusText));
+						}
+					};
+					request.onerror = (err) => rejects(err);
+					request.send(); // send request once we've created it.
+				});
+			};
+
+			// The function that will fire as soon as promise resolves is 'then'
+			spacePeople().then(
+				// Take space data, and comma separate from an error.
+				// function(spaceData) {
+				// 	console.log(spaceData);
+				// },
+				(spaceData) => console.log(spaceData),
+				(err) => console.error(
+					new Error('Cannot load space people')
+				)
+			);
+
 
 	</script>
 	<title>Building Promises</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
-
-
-
-

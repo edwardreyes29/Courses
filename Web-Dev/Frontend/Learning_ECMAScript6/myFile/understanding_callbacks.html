@@ -10,9 +10,73 @@
       Callback invoked after something else happens.
     */
 
-    let logCall = function()
+		// function is defined before being passed into setTimeout function
+    let logCall = function() {
       console.log("locCall was called back.");
     }
+		setTimeout(logCall, 3000); // logCall is the callback funciton
+
+
+		// Standard is using anonymous functions for callbacks
+		setTimeout(function() {
+			console.log("The anonymous function was called back.");
+		}, 5000);
+
+
+		// Common applications for callbacks are event listeners, like clicking on a button.
+		let btn = document.querySelector("#item1");
+		console.log(btn);
+
+		// the callback function is passed with param in case you want to do something with event object.
+		btn.addEventListener("click", function(e) {
+			console.log(e);
+			alert("The button was clicked");
+		})
+
+
+		// Example of making your own callback function.
+
+		let students = [{name:"Mary",score:90,school:"East"},
+		{name:"James",score:100,school:"East"},
+		{name:"Steve",score:40,school:"East"},
+		{name:"Gabe",score:90,school:"West"},
+		{name:"Rachel",score:85,school:"East"},
+		{name:"Rochelle",score:95,school:"West"},
+		{name:"Lynette",score:75,school:"East"}];
+
+		// Make this function resusable by not having a specific callback
+		let processStudents = function(data, callback) {
+			for (let i = 0; i < data.length; i++) {
+				if (data[i].school.toLowerCase() === "east") {
+					if (typeof callback === "function") { // if callback is a function
+						callback(data[i]); // invoke callback and pass in the data.
+					}
+				}
+			}
+		}
+
+		processStudents(students, function(obj) {
+			if (obj.score > 60) {
+				console.log(obj.name + " passed.");
+			}
+		});
+
+
+		let determineTotal = function() {
+			let total = 0,
+					count = 0;
+
+			processStudents(students, function(obj) {
+					total = total + obj.score;
+					count++;
+			})
+			console.log("Total score: " + total + " - Total Count: " + count);
+		}
+
+		determineTotal();
+
+
+
 
 
 
@@ -27,5 +91,14 @@
 	<title>Promises</title>
 </head>
 <body>
+	<div id="content">
+		<h1>Click the Button.</h1>
+		<div class="bullets">
+			<ol>
+				<li id="b1"><button id="item1">Click!</button>
+				</li>
+			</ol>
+		</div>
+	</div>
 </body>
 </html>

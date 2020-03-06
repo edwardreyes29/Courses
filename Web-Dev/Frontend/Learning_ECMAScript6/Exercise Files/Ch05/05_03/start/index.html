@@ -4,37 +4,67 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
 
-		const spacePeople = () => {
-			return new Promise((resolves, rejects) => {
-				const api = 'http://api.open-notify.org/astros.json';
-				const request = new XMLHttpRequest();
-				request.open('GET', api);
-				request.onload = () => {
-					if(request.status === 200) {
-						resolves(JSON.parse(request.response));
-					} else {
-						rejects(Error(request.statusText));
-					}
-				};
-				request.onerror = err => rejects(err);
-				request.send();
-			});
-		};
 
-		spacePeople().then(
-			spaceData => console.log(spaceData),
-			err => console.error(
-				new Error('Cannot load space people')
-			)
-		);
+		// Use fetch funciton to simplify code below.
+		fetch('http://api.open-notify.org/astros.json') // Return the entire Response object.
+			.then(function(res) {
+				return res.json() // arrow function res => res.json()
+			})
+			.then(console.log);
+
+
+		// Fetch can also be returned from functions.
+		const getPeopleInSpace = () =>
+			fetch('http://api.open-notify.org/astros.json')
+				.then(res => res.json());
+
+		// Using fetch, we can return data using Promises.
+		const spaceNames = () =>
+			getPeopleInSpace()
+				.then(json => json.people) // get json data that is returned from getPeopleInSpace
+				.then(people => people.map(p => p.name)) // map over them, get array of names.
+				.then(names => names.join(', ')) // get each name and join with comma and space.
+
+		getPeopleInSpace()
+			.then(console.log); // execute code and  console.log it
+
+		spaceNames()
+			.then(console.log);
+
+
+
+
+		// const spacePeople = () => {
+		// 	return new Promise((resolves, rejects) => {
+		// 		const api = 'http://api.open-notify.org/astros.json';
+		// 		const request = new XMLHttpRequest();
+		// 		request.open('GET', api);
+		// 		request.onload = () => {
+		// 			if(request.status === 200) {
+		// 				resolves(JSON.parse(request.response));
+		// 			} else {
+		// 				rejects(Error(request.statusText));
+		// 			}
+		// 		};
+		// 		request.onerror = err => rejects(err);
+		// 		request.send();
+		// 	});
+		// };
+		//
+		// spacePeople().then
+		// 	// accept argument spaceData and log it, using fat arrow notation.
+		// 	spaceData => console.log(spaceData),
+		// 	err => console.error(
+		// 		new Error('Cannot load space people')
+		// 	)
+		// );
+
+
+
 
 	</script>
 	<title>Building Promises</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
-
-
-
-
