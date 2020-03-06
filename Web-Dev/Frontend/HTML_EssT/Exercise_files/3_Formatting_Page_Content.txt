@@ -1,0 +1,56 @@
+I. Formatting content with html
+  <pre> tag:
+    - used for snippets
+    - respects white space
+
+    Don't rely on presentational tags for styling, use CSS.
+    Rely on logic tags. like <em> instead of <i>
+    Screen readers will change it's vocal inflection when reading text within
+    <em> tags.
+    <strong> instead of <b>
+
+II. Using headings
+  Use headings appropriately by assigning same level of importance. Ignore
+  visual properties.
+
+  Limit use of h1.
+
+  Don't skip a series of headings, e.g. from h2 to and h5.
+
+III. Formatting paragraphs
+  html has to be backwards compatible, but it's pretty forgiving, but must
+  format completely.
+
+  margins collapse between different tag, so if h1 has 20 margin bottom and
+  paragraph has 20 margin top, it doesn't double or stack.
+
+  <p>&nbsp;</p> nonbreaking space character.
+
+IV. Controlling line breaks
+  When you need to force a hard return without creating a new element.
+  <br>
+    - creates a line break
+    - no closing tag needed.
+    - Doesn't create new section of content.
+
+  <br />
+    - self closing tag, needed for XHTML
+    - seen for image tags or other tags may use this. But for html5 not needed.
+
+V. Emphasizing Text
+  <dl>: definition list
+
+  <b> purely presentational
+  <strong> means you're strongly emphasizing text.
+  - screen readers.
+
+VI. Displaying special characters
+
+
+VII. Controlling Whitespace
+
+
+VIII. Displaying Images
+
+
+Challenge:
