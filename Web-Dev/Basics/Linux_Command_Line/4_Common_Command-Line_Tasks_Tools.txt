@@ -1,0 +1,71 @@
+I. Unix philosophy
+    * Programs should do one thing and do it well
+    * Should use text interfaces (take in text, and output text)
+    * Many modular tools rather than one big one
+    * Standard GNU tools follow this pattern
+
+    * Dedicated tools rather than multifunction tools.
+    - Assembly Line of Dedicated Tools
+    * Modularity and Flexibility
+
+II. Use pipes to connect commands together
+  Pipes: Take output of one command and send it to another.
+  (|) pipe character: Type inbetween commands that you want to pipe together.
+  e.g. cat users.txt | sort -u |
+
+  New commands:
+    echo -- write arguments to the standard output
+    wc -- word, line, character, and byte count
+
+      Ex. Use the echo command.
+          (base) [edwardreyes@Edwards-MacBook-Pro Exercise Files]$ echo "hello"
+                 hello
+
+      Ex. Pipe the wc command with the echo command
+        (base) [edwardreyes@Edwards-MacBook-Pro Exercise Files]$ echo "hello" | wc
+               1       1       6
+               (1 line of text, 1 word, 6 characters.)
+        (base) [edwardreyes@Edwards-MacBook-Pro Exercise Files]$ echo "hello world from the command line" | wc
+              1       6      34
+              (1 line, 6 words, 34 characters (counts newline character in the end) )
+
+
+III. View text files with cat, head, tail, and less
+  Tools for Text:
+    cat
+      - concatenate (v.): to link together.
+      - Often used to print contents of a file to the screen.
+      - Can be used to output text file contents to the screen or to another tool
+      - Can't see entire text if it's too long.
+    head, tail
+      - View lines from the beginning or end of a file.
+      - head: shows first ten lines
+      - tails: shows last ten lines.
+        Ex. head poems.txt OR tail poems.txt
+        Ex. Show first 5 lines using n OPTION
+          $ head -n5 poems.txt
+        Ex. Show last 3 lines using n OPTION
+          $ tail -n3 poems.txt
+        Ex. -n numbers all lines of text.
+          $ cat poems.txt | cat -n
+        Ex. show last three lines using cat while showing lines of text.
+          $ cat poems.txt | cat -n | tail -n3
+          (base) [edwardreyes@Edwards-MacBook-Pro Exercise Files]$ cat poems.txt | cat -n | tail -n3
+                  53	In the forests of the night:
+                  54	What immortal hand or eye,
+                  55	Dare frame thy fearful symmetry?
+        * Order matters with Pipes
+        Ex. do tail before cat
+          $ cat poems.txt | tail -n5 | cat -n
+          1
+          2	Tyger Tyger burning bright,
+          3	In the forests of the night:
+          4	What immortal hand or eye,
+          5	Dare frame thy fearful symmetry?
+
+          (I shows last 5 lines first then add line numbers)
+    less
+      - Paginates text and provides navigation controls.
+      - opposite of more
+        Ex. Shows an interface where you could move around like in the manual pages to navigate contents.
+Should be familiar looking at text to get comfortable with the command line.

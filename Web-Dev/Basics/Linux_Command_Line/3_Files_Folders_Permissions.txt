@@ -195,7 +195,7 @@ V. Find files from the command line
     ./dupes.txt
     ./new_folder
 
-    Ex. Search a different direcoty (Documents in home directory) for anything
+    Ex. Search a different directory (Documents in home directory) for anything
     that as a d in it as well.
 
       $ find ~/Documents/ -name "*d*"
