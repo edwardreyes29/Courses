@@ -3,7 +3,7 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		
+
 		class Vehicle {
 			constructor(description, wheels) {
 				this.description = description;
@@ -14,17 +14,27 @@
 			}
 		}
 
+		var motorcycle = new Vehicle("motorcycle", 2);
+		motorcycle.describeYourself();
+
+		// New class that will inherit from Vehicle class, extending class
+		class SemiTruck extends Vehicle {
+			constructor(mpg) {
+				super("semi truck", 18); // refer back to Vehicle class
+				this.mpg = mpg;
+			}
+			showMPG() {
+				console.log(`MPG is ${this.mpg}`);
+			}
+		}
+
+		var groceryStoreSemi = new SemiTruck(21);
+		groceryStoreSemi.describeYourself();
+		groceryStoreSemi.showMPG();
+
 	</script>
 	<title>Classes</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
-
-
-
-
-
-
-
-

@@ -3,26 +3,27 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		
+
 		var attendance = {
 			_list: [],
-			set addName(name) {
-				this._list.push(name);
+			set addName(name) { // Not functions? so can't invoke attendance.addName(name);
+				this._list.push(name); // push a name to the array.
 			},
 			get list() {
-				return this._list.join(', ');
+				return this._list.join(', '); // list will return elements of _list array joined by a comma & space.
 			}
 		};
 
 		attendance.addName = 'Joanne';
-		console.log("List getter:", attendance.list);
-		console.log("Underscore list (prop)", attendance._list);
+		console.log("List getter: ", attendance.list);
+		console.log("Underscore list (prop)", attendance._list)
 
 		attendance.addName = 'Anna';
 		attendance.addName = 'Charlie';
 		console.log(attendance.list);
 
-		console.log("============= Classes ============== ")
+
+		console.log("============ Classes ============");
 
 		class Hike {
 			constructor(distance, pace) {
@@ -37,21 +38,13 @@
 			}
 		}
 
-		const mtTallac = new Hike(10, 2);
-		console.log(mtTallac.lengthInHours);
+		const runyonCanyon = new Hike(10, 2);
+		console.log(runyonCanyon.lengthInHours);
 
 
 	</script>
 	<title>Getters and Setters</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
-
-
-
-
-
-
-
-
