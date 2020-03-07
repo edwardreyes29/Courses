@@ -45,12 +45,37 @@ V. Emphasizing Text
   - screen readers.
 
 VI. Displaying special characters
-
-
+  - Use symbols reserved for HTML -> named character entity.
+    e.g. "<" -> "&lang;" left angle-bracket.
+         "&" -> &amp;
+         trademark -> "&trade;"
 VII. Controlling Whitespace
-
+  - To add additional white space, must use non-breaking space entities.
+  &nbsp; not meant to be used to aesthetics.
+  Formula&nbsp;One -> in text would break a newline together in browser.
 
 VIII. Displaying Images
+
+  <img> - display an image.
+    - src: tell browser where to find image
+    - alt: for descriptive text (especially for screen readers)
+    - height & width: for dimensions
+
+    src="_images/lowcountry.jpg"
+    the directory path to the images.
+    <img> // doesn't need closing tag.
+
+    width="300" no units displayed. Default is in pixels.
+
+    <img src"..." align="right"> the align attribute is now deprecated, it's
+    now the responsibility of CSS to take care of alignments but it's still
+    supported.
+
+
+
+
+
+
 
 
 Challenge:

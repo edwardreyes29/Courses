@@ -1,0 +1,131 @@
+I. The value structure
+
+  Semantics:
+    How to structure documents that illustrate the meaning of the contents
+
+    Assistive technology & search engines doesn't care about website visual layout.
+      - Structure of the page has to convey structure of the content (hierarchy)
+
+    Sectioning elements:
+      <h1>...<h6>
+      <article>
+      <aside>
+      <nav>
+      <section>
+
+    Semantic Elements:
+      <header>
+      <main>
+      <footer>
+
+II. Controlling document outlines
+  What type of document outline you want to generate.
+  Use semantic elements to describe the outline of the web page.
+
+  current outline:
+  1. Untitled Section
+
+  After adding a <h1>:
+  1. My Big Blog
+
+  After adding more heading levels:
+  1. My Big Blog
+    1. Things I like
+      1. My favorite books
+        1. Fiction
+        2. Non-fiction
+
+
+  End result after adding proper headings:
+    1. My Big Blog
+      1. Things I like
+        1. My favorite books
+            1. Fiction
+            2. Non-fiction
+        2. My favorite movies and shows
+            1. Movies
+            2. TV Shows
+        3. My favorite music
+            1. Jazz
+            2. Rock
+            3. Americana
+        4. Spotlight favorite
+
+        HTML -> semantic sectioning to make outlines more meaningful.
+
+    <nav> -> creates new section that is specific to navifation to this site.
+    <article>
+    <section> -> sections for different category, music, books, etc..
+    <aside> -> tells site that this part is not critical but related to other sections.
+
+    1. My Big Blog
+      1. Untitled Section (or NAV)
+      2. Things I like
+        1. My favorite books
+            1. Fiction
+            2. Non-fiction
+        2. My favorite movies and shows
+            1. Movies
+            2. TV Shows
+        3. My favorite music
+            1. Jazz
+            2. Rock
+            3. Americana
+        4. Spotlight favorite
+
+III. The nav element
+  <nav> contains main navigation functionality for the page.
+  W3C: <nav> element represents a seciton of page that links to other pages
+      or to other parts within the page: a section with navigation links.
+
+      footer can have links, but using a <footer> is enough
+
+
+    Ex. Adding nav to links to other web-pages.
+
+    <nav>
+      <ul>
+        <li><a href="intro.htm" title="Introduction to HTML">Introduction to HTML</a></li>
+        <li><a href="syntax.htm" title="HTML syntax">HTML syntax</a></li>
+        <li><a href="structure.htm" title="Structuring pages">Structuring pages</a></li>
+        <li><a href="links.htm" title="Creating links">Creating links</a></li>
+        <li><a href="reference.htm" title="HTML Reference">HTML reference</a></li>
+        <li><a href="next.htm" title="Next steps">Next steps</a></li>
+      </ul>
+    </nav>
+
+    If you have links to other references and not navigating internally in the original site,
+    then it doesn't need <nav>
+
+
+IV. The article element
+  <article> represents ac complete/self-contained composition in a document,
+  page, application, or site. Like a magazine, newspaper, technical or scholarly article,
+  essay, report, or blog/social media post.
+
+  Think of articles that as individual elements that can stand alone.
+
+V. The section element
+
+
+
+VI. The aside element
+
+
+
+VII. The div element
+
+
+
+VIII. Other semantic elements
+
+
+
+IX. Using WAI-ARIA roles
+
+
+
+Challenge:
+
+
+Quiz:
