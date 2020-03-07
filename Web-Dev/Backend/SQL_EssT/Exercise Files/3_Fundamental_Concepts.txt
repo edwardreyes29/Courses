@@ -1,0 +1,104 @@
+I. Creating a table
+
+  CREATE TABLE test (
+    a INTEGER, // Column definition or table schema.
+    b TEXT
+  );
+  OR
+  CREATE TABLE test (a INTEGER, b TEXT);
+
+  Schema declarations
+    name TYPE
+
+
+    // Insert rows
+
+    INSERT INTO table VALUES (val_in_col_1,...,val_in_col_n)
+
+    Ex. Insert 3 rows adding values to both columns
+      INSERT INTO test VALUES(1, 'a');
+      INSERT INTO test VALUES(2, 'b');
+      INSERT INTO test VALUES(3, 'c');
+      SELECT * FROM test;
+
+II. Deleting a table
+  DROP TABLE test;
+  DROP TABLE IF EXISTS test;
+
+III. Inserting rows
+  Syntax:
+    INSERT INTO tableName VALUES ( colValue_1, colValue_2,..., colValue_N);
+
+    INSERT INTO tableName ( cola, colb ) VALUES ( colValue_a, colValue_b);
+
+    INSERT INTO tableName DEFAULT VALUES; // Gives a row with NULL in all columns
+
+  Ex. Insert all rows from item table and insert it into test table:
+    INSERT INTO test ( a, b, c ) SELECT id, name, description from item;
+
+IV. Deleting rows
+  Syntax: DELETE FROM tableName WHERE colName = some_value;
+
+  Deleting rows is destructive, not easily reversible nor possible.
+
+  Audition rows first before deletion, some rows may have same column values.
+
+  Syntax: SELECT * FROM tableName WHERE colName = some_value;
+  Ex.
+    SELECT * FROM test WHERE a = 1;
+    DELETE FROM test WHERE a = 1;
+
+V. The NULL value
+  Special state for a result with no value.
+  Lack of value, can't test for it.
+    Ex. SELECT * FROM test WHERE a = NULL;
+    - returns no results because NULL is not a value
+
+  Ex. Need to use special condition called IS NULL
+    SELECT * FROM test WHERE a IS NULL;
+
+  Ex. Check to see if rows where columns aren't NULL
+    SELECT * FROM test WHERE a IS NOT NULL;
+
+    SELECT * FROM test WHERE b IS NULL;
+    SELECT * FROM test WHERE c =
+
+  You can create tables with a NOT NULL constraint to prevent
+  rows being inserted without a value.
+
+  Ex. Create a table where a and b columns can't be NULL:
+      CREATE TABLE test (
+        a INTEGER NOT NULL,
+        b TEXT NOT NULL,
+        c TEXT
+      );
+
+
+      INSERT INTO test VALUES(1, 'this', 'that');
+      - this works fine
+      INSERT INTO test (b, c) VALUES ('one', 'two');
+      - this produces an error, since a will result in a NULL VALUE
+        - NOT NULL constraint failed.
+        - only c can have a NULL value.
+
+
+VI. Constraining Columns
+
+
+VII. Changing a schema
+
+
+VIII. ID columns
+
+
+IX. Filtering data
+
+
+X. Removing duplicates
+
+
+XI. Ordering output
+
+
+
+XII. Conditional expressions
