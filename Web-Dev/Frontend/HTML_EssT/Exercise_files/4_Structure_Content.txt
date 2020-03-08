@@ -189,11 +189,66 @@ VIII. Other semantic elements
 
   <footer> -> contains info about its section such as who wrote it, links, copyright data, and the like.
            -> wont be needed as often, but not always on the bottom.
-IX. Using WAI-ARIA roles
 
+IX. Using WAI-ARIA roles
+  Creating accessible sites.
+
+  Landmark Roles Attribute:
+
+  - application, article, banner, etc.
+
+  <header role="banner">
+    <h1>HTML Essential Training</h1>
+    <h2>Structuring Pages</h2>
+    <nav role="navigation">
+      <ul>
+        <li><a href="intro.htm" title="Introduction to HTML">Introduction to HTML</a></li>
+        <li><a href="syntax.htm" title="HTML syntax">HTML syntax</a></li>
+        <li><a href="structure.htm" title="Structuring pages">Structuring pages</a></li>
+        <li><a href="links.htm" title="Creating links">Creating links</a></li>
+        <li><a href="reference.htm" title="HTML Reference">HTML reference</a></li>
+        <li><a href="next.htm" title="Next steps">Next steps</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main role="main"> -> Specs say just use element if they have the same name, but most screen readers don't know this yet, so stick with this for the time being.
+  ...
+  </main>
+
+
+  This page is now more accessible, screen readers can now jump specifically to
+  main content, skip navigation, jump to navigation, read article and more.
+
+  references: W3C using WAI-ARIA in HTML
 
 
 Challenge:
 
 
 Quiz:
+
+2. <head> is a sectioning element used once on a page
+   <header> is a semantic element that can be used many times on a page.
+
+3. When you structure HTML documents in a way that illustrates meaning of the content,
+  you are using semantics.
+
+4. Example of a section element: <h1>
+   Example of a semantic element: <nav>
+
+5. Best way to generate document outlines:
+  A: heading tags.
+
+6. <nav> element represents part of an HTML page that links to other pages, or to
+  parts within the current page.
+
+7. If an HTML section contains a complete, self-contained, independently
+   distributable piece of content, you should make it an article element.
+
+8. <section> element represents a thematic grouping of content.
+
+9. Related content -- for instance a sidebar -- is typically represented by
+  an aside element.
+
+10. You should use the <div> element when you're structuring or grouping content
+    that does not need a specific semantic meaning.
