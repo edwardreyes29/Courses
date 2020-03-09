@@ -84,20 +84,132 @@ V. The NULL value
 
 VI. Constraining Columns
 
+  // NOT NULL constraint
+  CREATE TABLE test (a TEXT, b TEXT, c TEXT NOT NULL);
+  INSERT INTO test (a,b) VALUES ('one', 'two'); // produces error
+
+  // DEFAULT VALUE constraint
+  CREATE TABLE test (a TEXT, b TEXT, c TEXT DEFAULT 'panda');
+  INSERT INTO test (a, b) VALUES ('lion', 'tiger');
+  SELECT * FROM test
+
+  //UNIQUE constraint
+  CREATE TABLE test (a TEXT UNIQUE, b TEXT, c TEXT DEFAULT 'panda');
+  INSERT INTO test (a,b) VALUES('one','two');
+  INSERT INTO test (a,b) VALUES('one','two'); // produces error
+  // [18:48:28] Error while executing SQL query on database 'test': UNIQUE constraint failed: test.a
+  INSERT INTO test (a, b) VALUES ('uno', 'two');
+
+  (!) NULL maybe exempt form unique constraint depending one the system.
+
+
+  // Combine constraints
+  CREATE TABLE test (a TEXT UNIQUE NOT NULL, b TEXT, c TEXT DEFAULT 'panda');
+
 
 VII. Changing a schema
 
+  // Create a new column
+  ALTER TABLE test ADD d TEXT;
+  - would create a new column with NULL values.
 
-VIII. ID columns
+  // Create a new column with default value.
+  ALTER TABLE test ADD e TEXT DEFAULT 'panda';
 
+  code:
+    DROP TABLE IF EXISTS test;
+    CREATE TABLE test (a TEXT, b TEXT, c TEXT);
+    INSERT INTO test VALUES ('one', 'two', 'three');
+    INSERT INTO test VALUES ( 'two', 'three', 'four');
+    INSERT INTO test VALUES ('three', 'four', 'five');
+
+    SELECT * FROM test;
+
+    ALTER TABLE test ADD d TEXT;
+    ALTER TABLE test ADD e TEXT DEFAULT 'panda';
+
+VIII. ID
+
+  code:
+    DROP TABLE IF EXISTS test;
+    CREATE TABLE test (
+        id INTEGER PRIMARY KEY, // generate id
+        a INTEGER,
+        b TEXT
+    );
+    INSERT INTO test (a, b) VALUES (10, 'a'); // insert row
+    INSERT INTO test (a, b) VALUES (11, 'b'); // insert row
+    INSERT INTO test (a, b) VALUES (12, 'c'); // insert row
+    SELECT * FROM test;
+
+  Column that holds a unique value for each row on the table.
+  ID columns are automatically populated
+  Creating ID column is not standardized and may be different on different systems.
+
+
+  SQLite
+    id INTEGER PRIMARY KEY
+      - will automatically create integer primary key sequentially and force
+        unique value constraint.
+
+  (!) A table may only have one primary key/id column.
 
 IX. Filtering data
+
+  WHERE clause can help you get the rows you are looking for.
+
+  // Construct a query that looks for countries less than 100k in
+  // descending order.
+
+  SELECT Name, Continent, Population FROM Country
+    WHERE Population < 100000 ORDER BY Population DESC;
+
+
+  WHERE takes in boolean logical expression and rows are returned
+  if boolean expression evaluates as true.
+
+  // Expand expression using OR (boolean operator)
+  SELECT Name, Continent, Population FROM Country
+    WHERE Population < 100000 OR Population IS NULL ORDER BY Population DESC;
+
+  // Expand using AND boolean operator
+  SELECT Name, Continent, Population FROM Country
+    WHERE Population < 100000 AND Continent = 'Oceania' ORDER BY PopulatIon DESC;
+
+  // Unique to SQL, LIKE OPERATOR
+    LIKE '%word'
+      - % is a wild card, says any word containing 'word'
+
+      // Find continents that contain the word 'island'
+        SELECT Name, Continent, Population FROM Country
+          WHERE Name LIKE '%island%' ORDER BY Name;
+
+      // ends with the word 'island'
+        WHERE Name LIKE '%island' ORDER BY Name;
+
+      // start with the word 'island'
+        WHERE Name LIKE 'island%' ORDER BY Name;
+
+      // Match any rows where the second character is an 'a'
+        WHERE Name LIE '_a%' ORDER BY Name;
+  // IN operator
+    Used to select results that match values in a list.
+
+    Ex. Find rows where Continent matches Europe or Asia and order by Name
+      WHERE Continent IN ('Europe', 'Asia') ORDER BY Name;
 
 
 X. Removing duplicates
 
 
+
+
+
+
 XI. Ordering output
+
+
+
 
 
 

@@ -1,18 +1,84 @@
 I. Exploring the anchor element
 
+<link> is used to request external resources for a page.
+<a> anchor tag -> used for links.
+
+  <a href="seed.html">Planting a Seed</a>
+  - makes the inner HTML a clickable
+  - href tells web browser where to go once clicked.
+    - href: hypertext reference
+    - target: whether to open on a new tab.
+    - rel: relationship of the target object to the link object
+      -(update portfolio)
+    - title: for assistive devices. A descriptive text of where this link is
+             going to go.
 
 II. Linking to pages within your site
 
 
 III. Linking to external pages
+  - GLUT Links -> external links
+  - You need the protocol for absolute link (http/https)
 
+  - target="_blank"
+    - to open link to a new tab.
 
 
 IV. Linking to downloadable resources
+  * give user ability to download certain files
+  * may need scripting for security purposes.
+  * use download attribute.
+  * if it runs a file it does not recognize, it usually starts a download.
+    - unless if the file ends with something like a .exe where the browser
+    - has other security protocols to handle that.
+  * zip is something a browser can download,
+  * pdf is something a browser can open.
+    - to force download on a pdf:
+    - give it a download attribute.
+      <a href="file.pdf" download>file.pdf</a>
 
+    Ex. <p>Download our <a href="_assets/syntax.pdf"
+      title="HTML syntax reference" download>HTML syntax PDF</a> reference!</p>
+
+  * you may have resources created on the fly. Like JS scanning a page and
+    creating a pdf and giving it a weird naming convention, you may want to
+    force a name on a link that is being downloaded.
+    <a href="file.pdf" download="Give name of file here">file.pdf</a>
+
+    Ex. <p>Download our <a href="_assets/syntax.pdf"
+      title="HTML syntax reference" download="Sponge_Bob_Square_Pants">HTML syntax PDF</a> reference!</p>
 
 
 V. Linking to page regions
+  * anchors allow us to jump to different sections within a document (fragment identifiers).
+
+  * fragment identifiers jump to the id attribute specified in the link
+    <h1 id="top">Using fragment identifiers</h1>
+    <p><a href="#one" title="section one">Link to Section 1</a></p>
+    <p><a href="#two" title="section two">Link to Section 2</a></p>
+    <p><a href="#three" title="section three">Link to Section 3</a></p>
+
+    <h3 id="one">Section 1</h3>
+    <h3 id="two">Section 2</h3>
+    <h3 id="three">Section 3</h3>
+
+  * Jump down on a page needs ability to jump back up as well
+    <p><a href="#top" title="back to the top">Back to top</a></p>
+
+
+  * Jump to region of another page, without having to deal with the rest of the site.
+    Ex. Jump to section two of the destination.htm, by using the sections id.
+    <p>Link to <a href="destination.htm#two" title="destination">Section 2</a> of the destination.htm page</p>
+
+  * Jump to another websites section (e.g. w3c table of contents):
+
+    https://www.w3.org/TR/html52/browsers.html#navigating-to-a-fragment-identifier
+
+    #navigating-to-a-fragment-identifier is the id.
+
+    <p><a href="https://www.w3.org/TR/html52/browsers.html#navigating-to-a-fragment-identifier"
+      title="W3C fragment identifiers">Fragment identifiers</a> as defined by the W3C</p>
+
 
 
 
