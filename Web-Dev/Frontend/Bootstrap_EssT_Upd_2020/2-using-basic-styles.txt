@@ -1,0 +1,36 @@
+I. Basic styles overview
+  Browser Styles -> Use own css to make sites look better.
+  Bootstrap will go in-between the two to provide changes to make things look better.
+
+II. Basic typography
+  Typography
+    * Reboot.css styles
+      - normalize styles to they look similar in different devices & browsers
+    * Rems vs Ems
+    * Avoid margin-top
+      - only add margins at the bottom of elements
+    * inherit when possible
+    * border-box sizing -> has automatic sizing
+    * Native font stacks -> differs on device.
+    * Special styles
+
+    Role of the container in this situation is to make the page responsive.
+
+
+III. Typographic utilities
+
+
+IV. Blockquotes and lists
+
+
+V. Using colors with Bootstrap
+
+
+VI. Work with images
+
+
+VII. CSS variables
+
+
+
+Quiz:

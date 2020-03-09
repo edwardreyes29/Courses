@@ -1,0 +1,41 @@
+Ray Villalobos:
+What you should know:
+  Basics of HTML & CSS:
+
+  -HTML EssT
+  -CSS Fundamentals (no need)
+
+I. Intro
+
+
+II. Installation options
+  CDN:
+    * Requires network connectivity throughout development.
+
+  Preprocessed:
+    * Offline development is possible.
+
+    * CSS & JS files -> Preprocessed
+    * Bootstrap CDN
+      * browser cache bootstrap so it will load it in memory.
+    * Source files
+    * Package managers
+
+    use bootstrap.min.css & bootstrap.min.js
+
+III. Creating a basic template
+  Also need jQuery
+  popper.js
+
+  Okay so the outline is:
+    1. bootstrap
+      1. css
+        1. bootstrap.min.css
+      2. images
+      3. js
+        1. bootstrap.min.js
+        2. jquery.slim.min.js
+        3. popper.min.js / popper.js
+
+
+Quiz:
