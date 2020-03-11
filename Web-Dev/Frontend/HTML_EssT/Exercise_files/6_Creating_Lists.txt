@@ -1,0 +1,80 @@
+I. Unordered lists
+
+  Unordered lists: -> Use for navigation
+    <ul> -> parents list tag that tells what kind of list will follow
+      <li> -> primary way of grouping information.
+
+    When are list appropriate?
+      - Are they in a group?
+      e.g. Navigation, group of links
+
+      Can have nested lists!
+
+        <ul>
+          <li>...</li>
+          <li>...</li>
+          <li>Three
+            <ul>
+              <li>3.1</li>
+              <li>3.2</li>
+            </ul>
+          </li>
+          <li>Four</li>
+
+II. Ordered lists
+-> use for timelines.
+  Similar to unordered list
+  <ol> -> Shows numbers instead of bullets.
+       -> can control how sequence is represented
+
+       <ol start="6"> -> order list starting at 6
+       <ol start="6" reversed> -> order list starting 6 downward
+
+
+       can change type as well:
+       <ol type="i"> -> lowercase roman numerals
+       <ol type="I"> -> uppercase roman numerals
+       <ol type="A"> -> uppercase letter sequence
+       <ol type="a"> -> lowercase letter sequence
+
+       Must consider if order matters.
+
+
+III. Definition lists
+  OR description lists.
+    Two parts: Terms & Description
+  <dl> -> definition list
+    <dt> -> definition term (always comes first)
+    <dd> -> definition description
+
+    <dl>
+      <dt>Unordered list</dt>
+      <dd>Grouping of list items in no specific order</dd>
+      <dt>Ordered list</dt>
+      <dd>Grouping of list items in a specific order</dd>
+      <dt>Description list</dt>
+      <dd>Grouping of terms and descriptions</dd>
+    </dl>
+
+    in dd you cant put tables or anything you like like another list.
+
+    For glossaries, dictionaries, etc.
+
+    Multiple terms:
+    <dt>DL</dt>
+    <dt>Description list</dt>
+    <dt>Definition list</dt>
+    <dd>
+      <p>List that groups content together by terms and descriptions. Used frequently for FAQs, glossaries, and dictionaries</p>
+      <p>Until HTML5, Definition Lists were frequently used to mark up dialog. That practice is discouraged now but no suitable semantic alternative has been proposed, leading to its continued widespread use for dialog</p>
+    </dd>
+
+
+    Multiple descriptions
+    <dt>Technical Reviewers</dt>
+    <dd>Simon Allardice</dd>
+    <dd>Garrick Chow</dd>
+    <dd>Josh Fitgatner</dd>
+
+
+Quiz:
