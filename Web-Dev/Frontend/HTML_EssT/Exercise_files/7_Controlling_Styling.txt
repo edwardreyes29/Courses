@@ -2,7 +2,8 @@ I. HTML & CSS
 
 
 II. Creating inline styles
-
+  <h2 style="color: red;">Style me using the "style" attribute.</h2>
+  <h2 style="color: red; font-weight: normal;">Style me using the "style" attribute.</h2>
 
 
 III. The style element

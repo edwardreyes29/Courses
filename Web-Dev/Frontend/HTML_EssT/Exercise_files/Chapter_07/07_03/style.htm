@@ -3,9 +3,36 @@
 <head>
 <meta charset="utf-8">
 <title>embedded styles</title>
+<style>
+  /**
+    Global styling:
+
+
+    inline styling takes precedence
+  */
+  h2 { /* selector */
+    color: green;
+    font-weight: normal;
+  }
+
+  /* class selector */
+  .alert {
+    color: purple;
+  }
+
+  h2.alert2 {
+    color: blue;
+  }
+</style>
 </head>
 <body>
 <h1>Using embedded styles</h1>
-<h2 style="color:red; font-weight: normal;">Style me using the "style" element.</h2>
+<h2 style="color:red;">Style me using the "style" element.</h2>
+<h2>1 Style me global styling.</h2>
+<h2>2 Style me global styling.</h2>
+<h2 class="alert">3 Style using class selector.</h2>
+<p class="alert">4 Style using class selector.</p>
+<h2 class="alert2">More specific selector.</p<
+
 </body>
 </html>
