@@ -1,0 +1,24 @@
+I. HTML and JavaScript
+
+
+II. The Script element
+
+
+
+III. Writing a function
+
+
+
+IV. Using the DOM
+
+
+
+V. Listening for an event
+
+
+
+VI. Responding to events
+
+
+
+VII. Externalizing JavaScript

@@ -43,11 +43,38 @@ VI. Generators
 
 
 VII. Symbols
-
+  * New type of primitive in ES6
+  * Used as unique IDs
+  * Define customized iteration behavior
 
 
 VIII. Iterators
 
+  * Processing items in a collection
+  * Using for loops, while loops, map()
+
+  New Protocols:
+    * Iterable - JS objects define their own iteration behavior
+    * Iterator - standard way to produce a sequence of values.
+
+    * An object is an iterator when it understands how to access each
+      item in a collection and keeps track of current position.
+
+    String is iterable.
+
+    var variable = 1;
+    console.log(typeof title); // see type
 
 
 Quiz:
+
+3. The arrow function points to whatever the function returns.
+4. Why might you want to use arrow functions in your code?
+  A: to keep 'this' in scope.
+5. De structuring can be used in functions, objects, and arrays.
+6. How doe we hit pause in a generator?
+  A: use the 'yield' keyword.
+7. Why are Symbols primarily used?
+  A: To create unique ids.
+8. What is te iterable protocol?
+  A: A way to customize iteration behavior.
