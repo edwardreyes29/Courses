@@ -1,3 +1,4 @@
+
 html {
 	margin: 0;
 	padding: 0;
@@ -28,3 +29,11 @@ p {
 	margin: 0;
 	margin-bottom: 1em;
 }
+a {
+	text-decoration: none;
+	color: red;
+}
+a:hover {
+	color: black;
+}
+
