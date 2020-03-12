@@ -4,19 +4,34 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
 
-	
+			const id = Symbol() ;
+			// Factory functions are functions that create things, in this case a symbol
+			const courseInfo = {
+				title: "ES6",
+				topics: ["babel", "syntax", "functions", "classes"],
+				id: "js-course" // Would not create a naming conflict, 523423 will still be the course id.
+			};
+
+			courseInfo[id] = 532423;
+			console.log(courseInfo[id]); // Symbol(): 532423
+			console.log(courseInfo);
+
+			// Practice 1
+			const studentID = Symbol();
+
+			const studentInfo = {
+				name: "Edward Reyes",
+				classes: ["Bio 101", "Chem 101", "Finance 101"]
+			}
+
+			studentInfo[studentID] = 108587204;
+			console.log(studentInfo[studentID]);
+			console.log(studentInfo);
+
 
 	</script>
 	<title>Symbols</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
-
-
-
-
-
-
-
-

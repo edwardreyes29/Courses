@@ -4,18 +4,88 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
 
+		var title = 'ES6';
+		console.log(typeof title[Symbol.iterator]);
+		// Symbol.iterator is a method that returns a default iterator of an object.
+		// in this case it's a funciton.
+
+
+		var iterateIt = title[Symbol.iterator](); // Call the symbol iterator function
+		console.log(iterateIt.next()); // Call next function to retrieve each item that is part of the String.
+		console.log(iterateIt.next());
+		console.log(iterateIt.next());
+		console.log(iterateIt.next());
+		// loops throught the string until done is false.
+
+
+		// Practice 1
+		var number = '12345678'
+		var iterateNumber = number[Symbol.iterator](); // return the default iterator of this object to run it.
+		console.log(iterateNumber.next());
+		console.log(iterateNumber.next());
+		console.log(iterateNumber.next());
+		console.log(iterateNumber.next());
+		console.log(iterateNumber.next());
+		console.log(iterateNumber.next());
+		console.log(iterateNumber.next());
+		console.log(iterateNumber.next());
+		console.log(iterateNumber.next());
+		console.log(iterateNumber.next());
+
+
+
+
+		// Create your own iterator.
+		function tableReady(arr) {
+			var nextIndex = 0;
+			return {
+				next() {
+					if(nextIndex < arr.length) {
+						return {value: arr.shift(), done: false} // shift() removes first element from array and returns it. Chagning the length of the array in the process.
+					} else {
+						return {done: true} // return this object.
+					}
+				}
+			}
+		};
+
+		var waitingList = ['Vee', 'Ruther', 'Chris', 'Brian'];
+		var iterateList = tableReady(waitingList); // tableReady function, pass array waitingList as an argument.
+
+		console.log(`${iterateList.next().value}, your table is ready`);
+		console.log(`${iterateList.next().value}, your table is ready`);
+		console.log(`${iterateList.next().value}, your table is ready`);
+		console.log(`${iterateList.next().value}, your table is ready`);
+		console.log(`Is this finisehd? ${iterateList.next().done}`);
+
+		// Practice 2, create another iterator.
+		function lineReady(arr) {
+			var nextIndex = 0;
+			return { // return an object with a method called next
+				next() {
+					if(nextIndex < arr.length) {
+						return {value: arr.shift(), done: false};
+					} else {
+						return {done: true};
+					}
+				}
+			}
+		};
+
+		var line = ['person 1', 'person 2', 'person 3', 'person 4'];
+		var iterateLine = lineReady(line);
+
+		console.log(`${iterateLine.next().value}, please go to line 1`);
+		console.log(`${iterateLine.next().value}, please go to line 2`);
+		console.log(`${iterateLine.next().value}, please go to line 3`);
+		console.log(`${iterateLine.next().value}, please go to line 4`);
+		console.log(`${iterateLine.next().done}, please wait!`);
+
+
 
 	</script>
 	<title>Iterators</title>
 </head>
 <body>
-</body>	
+</body>
 </html>
-
-
-
-
-
-
-
-
