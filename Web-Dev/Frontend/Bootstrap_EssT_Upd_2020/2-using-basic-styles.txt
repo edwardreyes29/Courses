@@ -2,6 +2,11 @@ I. Basic styles overview
   Browser Styles -> Use own css to make sites look better.
   Bootstrap will go in-between the two to provide changes to make things look better.
 
+  Changes to defaults:
+    Reboot, makes platforms consistent between browsers
+
+    1 rem = 16 px, uses rems instead of pixels.
+
 II. Basic typography
   Typography
     * Reboot.css styles
@@ -13,20 +18,114 @@ II. Basic typography
     * border-box sizing -> has automatic sizing
     * Native font stacks -> differs on device.
     * Special styles
+      - Match headlines
+      - create lead paragraphs
+
+    Display Styles
+      <div class="display-1">Exotic Pets</div>
+      <div class="display-2">Exotic Pets</div>
+      <div class="display-4">Exotic Pets</div>
+
+    Lead paragraph:
+     <p class="lead">
 
     Role of the container in this situation is to make the page responsive.
 
-
 III. Typographic utilities
 
+  Horizontal Alignment:
+    * text-justify
+      - Both sides are aligned to edges of the text
+      - text(-XX)-POS
+          XX: sm > 576px md > 768px > lg > 992px > xl > 1200px
+          POS: left center right
+
+        e.g. text-lg-center
+          Whenever viewport reaches breakpoint of 992px, center it.
+
+    * Line Height Alignment
+      - align-SID 
+          SID: baseline, top, middle, bottom, 
+               text-bottom, text-top, right
+
+    * Capitalization
+      - text-TYP
+          TYP: lowercase, uppercase, capitalize, monospace
+    
+    * Text Styles
+      - font-STYL 
+        STYL: italic weight-normal 
+              weight-light weight-lighter 
+              weight-bold weight-bolder 
+
+    * Text Modifiers:
+      - text-decoration-none 
+        - removes underline in links
+      - text-reset 
+        - gets rid of links color, makes it same color as parent color.
+
+    * Flow:
+      - text-FLOW 
+        FLOW: wrap nowrap break truncate 
 
 IV. Blockquotes and lists
+  * Lists 
+    - list-unstyled: no bullets
+  * Inline Lists 
+    - list-inline: on UL 
+    - list-inline-item: on each LI
+
 
 
 V. Using colors with Bootstrap
 
+  * Text colors
+    - text-COLOR: for text
+      COLOR: primary secondary success danger warning info 
+             light dark body black-50 white-50 muted white
+
+             body assigns color depending on what rules was specified for the body
+  * Background colors
+    - bg-COLOR: for text
+      COLOR: primary secondary success danger warning info 
+             light dark white transparent
+
+  (!) Can combine rules:
+  <p class="bg-danger text-white">
 
 VI. Work with images
+
+  Basic Images:
+    * img-fluid: responsive images
+    * img-thumbnail: rounded 1px border
+
+  Rounded: 
+    * ROUNDED(-SID) (-SHA) (-SIZ) 
+      SID: top right bottom left
+      SHA: circle pill
+      SIZ: 0 sm lg
+
+  Aligning Images:
+    * float-left or float-right
+    * text-center: center line 
+    * mx-auto: center block
+
+  Figures:
+    * figure on the <figure> tag 
+    * figure-img: on the images  -> gives some room between image and following paragraph
+    * figure-caption: on the text 
+
+    (!) Can override css styling
+
+    To center images<figure class="text-center">
+        <img class="img-fluid rounded-circle" src="images/testimonial-janeh.jpg" alt="Jane Photo">
+        <figcaption>During the summer, our rabbit, Tonto, began to have severe redness  and itching on his belly and feet. I'm very thankful to the veterinarians and staff at Wisdom for the excellent care Tonto received, and for nipping his allergies in the bud, so to speak.</figcaption>
+      </figure>
+
+
+    (!) if images are displayed as blocks, use mx-auto to center
+
+
 
 
 VII. CSS variables
