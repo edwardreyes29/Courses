@@ -6,9 +6,37 @@
 	<title>Controlling typography</title>
 	<style>
 		body {
-			width: 70%; /* All visual content should cover 70% of the page */
-			margin: 0 auto; /* top bottom left right */
+			width: 70%;
+			/* All visual content should cover 70% of the page */
+			margin: 0 auto;
+			/* top bottom left right */
+			font: 100% Arial, Helvetica, sans-serif;
 		}
+
+		h1 {
+			/*
+				More specfic rules takes precedence even over parents.
+			*/
+			/** font, "fallback font", serif -> quotation marks if name has spaces, serif is fall back family.*/
+			font-family: Georgia, "Times New Roman", serif;
+			/* Georgia is a system font  -> can't install a font for another computer. */
+			font-size: 2em;
+			/* em, pixels. em is relative measurement, so whatever default, give twice that */
+			font-weight: normal;
+			font-style: italic
+			margin: 1em 0 .4em /* Top, right, bottom, left (clockwise fashion) top = 1em, left and right = 0, bottomg = .4em */
+		}
+
+		p {
+			/* font-family: Arial, Helvetica, sans-serif; */
+			font-size: 1em;
+			line-height: 1.6; /** single spacing to double spacing */
+			text-align: justify; /* set how edge of paragraphed should be aligned */
+			width: 60%;
+			margin: 0 /* zero margins initially */
+			margin-bottom: 1em; /* 1 margin below each paragraph &*/
+		}
+		/* Use margins to control spacing around elements */
 	</style>
 </head>
 
