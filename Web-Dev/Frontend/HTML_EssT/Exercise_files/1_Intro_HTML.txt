@@ -1,16 +1,55 @@
 I. Importance of HTML
+  Learn HTML, CSS, JS
 
+  HTML provides essential structure of web pages.
+
+  Tags:
+    <p> = paragraph
+    <n> = navigation
 
 II. Basic HTML syntax
 
+  Tag:
+    <p>   opening tag
+    </p>  closing tag
+  Element:
+    <p>HTML uses tags to identify page content. This text, for example, is a paragraph.</p>
+
+  Attributes: specific & global ones like lang
+    <p lang="en">
+    Tells contents of this paragraph is English.
+
+    Two types of attributes.
+    1. informative
+    2. functional, like the href attribute.
+
+
+    Nesting, parent elements and child elements
+      <p lang="en">HTML uses tags to <em>identify page content</em>. This text, for example, is a paragraph.</p>
+
 
 III. The current state of HTML
+  W3C -> HTML5 -> HTML5.1
+    - Clear milestones
+    - Stable specification
+    - Focuses on building applications
+    - drag and drop
+    - location detection
+    - supporting drawing services
 
+  WHATWG -> HTML
+    - Living standard
+    - Nor version numbers
+    - Undergoes constant updates and revisions.
+    - HTML 4.0, XTHML 1.0, HTML 5.0 -> Which DOCTYPE to use. (NOW its 5.2)
+
+  Track both specifications and how both differ and track which new specifications
+  are making into the browsers.
 
 IV. HTML resources
-
+  references: www.w3.org -> html5
 
 V. Choosing a code editor
-
+  Team -> Editor: Dreamweaver, sublime OR CMS: wordpress.
 
 Quiz:

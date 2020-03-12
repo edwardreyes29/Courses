@@ -1,0 +1,57 @@
+I. Exploring an HTML document
+  firefox -> firebug
+  chrome -> web inspector
+
+  DOCTYPE tells which version of HTML will be used.
+
+  body tag: where main content of the page will appear.
+
+II. DOCTYPE declarations
+    Tells browser which html is being used.
+
+
+III. The document head
+  <meta charet="utf-8">
+    * tells browser the type of encoding that will be used.
+
+  <meta name="description" content="A page for exploring HTML documents">
+    * Used for search engine results and being able to search within your own site.
+
+    Structure:
+      - DOCTYPE
+      - html
+        - head
+          - meta for encoding
+          - meta for description and content
+          - title to display web page title
+
+
+IV. The document body
+
+    All visible content.
+
+    <h1> top level heading.
+
+
+V. Understanding content models
+
+  Content Models:
+    These define the type of content expected inside an element and control
+    syntax rules such as element nesting.
+
+    HTML 4:
+      Two types: Block-level and in-line
+        Block: p, h1, h2
+        in-line: b, em, a
+
+    HTML 5:
+      Seven main models:
+        1. Flow
+        2. Metadata
+        3. Embedded
+        4. Interactive
+        5. heading
+        6. Phrasing
+        7. Sectioning
+
+Quiz:
