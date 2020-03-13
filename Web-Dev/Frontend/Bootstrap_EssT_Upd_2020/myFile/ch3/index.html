@@ -1,67 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <title>Bootstrap</title>
-  </head>
 
-  <body>
-    <style>
-      img {
-        width: 100px;
-        display: block;
-      }
-    </style>
-    
-    <header style="height: 50vh; background: url(images/background.jpg) no-repeat center center; background-size: cover; margin-bottom: 20px;">
-        <img src="images/wisdompetlogo.svg" alt="Wisdom Pet Logo">
-    </header>
-    
-    <section id="services">
-      <h1>Using Containers Demo</h1>
-        <article>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Bootstrap</title>
+</head>
+
+<body>
+  <style>
+    img {
+      width: 100px;
+      display: block;
+    }
+  </style>
+
+  <header
+    style="height: 50vh; background: url(images/background.jpg) no-repeat center center; background-size: cover; margin-bottom: 20px;">
+    <div class="container">
+      <img src="images/wisdompetlogo.svg" alt="Wisdom Pet Logo">
+  </header>
+  </div>
+
+  <h1>Using Containers demo</h1>
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <article class="col">
           <img class="mx-auto" src="images/icon-exoticpets.svg" alt="Icon">
           <h3>Exotic Pets</h3>
           <p>We offer specialized care for reptiles, rodents, birds, and other exotic pets.</p>
         </article>
-    
-        <article>
+
+        <article class="col">
           <img class="mx-auto" src="images/icon-grooming.svg" alt="Icon">
           <h3>Grooming</h3>
-          <p>Our therapeutic grooming treatments help battle fleas, allergic dermatitis, and other challenging skin conditions.</p>
+          <p>Our therapeutic grooming treatments help battle fleas, allergic dermatitis, and other challenging skin
+            conditions.</p>
         </article>
-    
-        <article>
+
+        <article class="col">
           <img class="mx-auto" src="images/icon-health.svg" alt="Icon">
           <h3>General Health</h3>
-          <p>Wellness and senior exams, ultrasound, x-ray, and dental cleanings are just a few of our general health services.</p>
+          <p>Wellness and senior exams, ultrasound, x-ray, and dental cleanings are just a few of our general health
+            services.</p>
         </article>
-    
-        <article>
+
+        <article class="col">
           <img class="mx-auto" src="images/icon-nutrition.svg" alt="Icon">
           <h3>Nutrition</h3>
-          <p>Let our nutrition experts review your pet's diet and prescribe a custom nutrition plan for optimum health and disease prevention.</p>
+          <p>Let our nutrition experts review your pet's diet and prescribe a custom nutrition plan for optimum health
+            and
+            disease prevention.</p>
         </article>
-    
-        <article>
+
+        <article class="col">
           <img class="mx-auto" src="images/icon-pestcontrol.svg" alt="Icon">
           <h3>Pest Control</h3>
-          <p>We offer the latest advances in safe and effective prevention and treatment of fleas, ticks, worms, heart worm, and other parasites.</p>
+          <p>We offer the latest advances in safe and effective prevention and treatment of fleas, ticks, worms, heart
+            worm, and other parasites.</p>
         </article>
-    
-        <article>
+
+        <article class="col">
           <img class="mx-auto" src="images/icon-vaccinations.svg" alt="Icon">
           <h3>Vaccinations</h3>
-          <p>Our veterinarians are experienced in modern vaccination protocols that prevent many of the deadliest diseases in pets.</p>
+          <p>Our veterinarians are experienced in modern vaccination protocols that prevent many of the deadliest
+            diseases
+            in pets.</p>
         </article>
-    </section>
-    <!-- content container: makes site responsive-->
+      </div>
+    </div>
+  </section>
 
-    <script src="js/jquery.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+  <h1>Working with rows and columns demo</h1>
+  <style>
+    #services2 img {
+      width: 100%;
+      height: 200px;
+      max-height: 200px;
+    }
+  </style>
+
+  <div class="container" id="services2">
+    <!-- <div class="row row-cols-2 row-cols-lg-4"> -->
+    <div class="row vh-100 bg-secondary align-items-center justify-content-center">
+      <section class="col-3"> <!-- Try to take up 3 units of the grid-->
+        <img src="images/image.png" alt="sample image">
+        <h4>Exotic Pets</h4>
+        <p>We offer <strong>specialized</strong> care for <em>reptiles, rodents, birds,</em> and other exotic pets.</p>
+      </section>
+      <section class="col-3">
+        <img src="images/image.png" alt="sample image">
+        <h4>Grooming</h4>
+        <p>Our therapeutic <span class="font-weight-bold">grooming</span> treatments help battle fleas, allergic
+          dermatitis, and other challenging skin conditions.</p>
+      </section>
+      <section class="col-3 align-self-end">
+        <img src="images/image.png" alt="sample image">
+        <h4>General Health</h4>
+        <p>Wellness and senior exams, ultrasound, x-ray, and dental cleanings are just a few of our general health
+          services.</p>
+      </section>
+      <!-- <section class="col-3 col-lg-6">
+        <img class="img-fluid" src="images/image.png" alt="sample image">
+        <h4>Nutrition</h4>
+        <p>Let our nutrition experts review your pet's diet and prescribe a custom nutrition plan for optimum health and
+          disease prevention.</p>
+      </section>
+      <section class="col-3">
+        <img src="images/image.png" alt="sample image">
+        <h4>Pest Control</h4>
+        <p>We offer the latest advances in safe and effective prevention and treatment of fleas, ticks, worms, heart
+          worm, and other parasites.</p>
+      </section>
+      <section class="col-3">
+        <img src="images/image.png" alt="sample image">
+        <h4>Vaccinations</h4>
+        <p>Our veterinarians are experienced in modern vaccination protocols that prevent many of the deadliest diseases
+          in pets.</p> -->
+      </section>
+    </div>
+  </div>
+  <!-- content container: makes site responsive-->
+
+  <!-- <script src="js/jquery.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

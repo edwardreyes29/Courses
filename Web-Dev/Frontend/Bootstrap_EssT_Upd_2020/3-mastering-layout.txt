@@ -2,21 +2,79 @@ I. Layout overview
 
     Grid: First thing to master!
         12-Column Grid Breakpoints:
-            * Extra small
-            * small
-            * medium
-            * large
-            * Extra Large
+            * Extra small (< 576px) fluid up till 540px
+            * small (>= 576px) fluid up till 540px
+            * medium (>= 768px) fluid up till 720px (taking entire width of container)
+            * large (>= 992px) fluid up till 960px
+            * Extra Large (>=1200px) fluid up till 1140px
+
+            * .container-fluid is 100% fluid no matter what
 
         1. Containers
             1. Rows & columns
 
 II. Using containers 
+    Grid:
+        * Responsive 12-column 
+        * Flexbox Based 
+        * Classes: container, row, column
 
+    Grid Containers 
+        * container(-SIZ) 
+            SIZ: sm md lg xl fluid 
+            
+
+        * adds 15px padding to each side of the container
+            When add rows and columns, those paddings will be taken away.
 
 
 III. Working with rows and columns 
 
+    Rows:
+        * row
+        * row-cols(-BP)(-COL)
+            BP: sm >576px | md >768px | lg >992px | xl >1200px 
+            COL: 1-6
+        * no-gutters: delete space between
+    Columns:
+        * Up to 12 columns
+        * col(-BP)(-COL)
+            BP: sm >576px | md >768px | lg >992px | xl >1200px 
+            COL: 1-12
+
+    Aligning Columns:
+        * Vertical
+            align-TYP-DIR
+            TYP: items | self
+            DIR: start(top) | center | end(bottom)
+        * Horizontal
+            justify-content-DIR 
+            DIR: start | center | end | around | between
+
+    Ex. Set max two columns
+        <div class="row row-cols-2">
+    Ex. Set minimum 2 columns up to 4 columns max   
+        <div class="row row-cols-2 row-cols-lg-4">
+    Ex. remove 30px space
+        <div class="row row-cols-2 row-cols-lg-4 no-gutters">
+
+    Ex. Let column take up minimum 3 units and max 6 units
+     <section class="col-3 col-lg-6">
+        <img class="img-fluid" src="images/image.png" alt="sample image">
+        <h4>Nutrition</h4>
+        <p>Let our nutrition experts review your pet's diet and prescribe a custom nutrition plan for optimum health and
+          disease prevention.</p>
+      </section>
+
+    Ex. Center columns horizontally
+        <div class="row justify-content-center">
+
+    Ex. Center columns vertically
+        <div class="row vh-100 align-items-center justify-content-center"> // increase view height
+
+    Ex. Have column align itself to the bottom of it's container
+        <section class="col-3 align-self-end">
+            
 
 
 IV. Multiple column classes
