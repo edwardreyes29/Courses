@@ -126,10 +126,54 @@ VI. Work with images
     (!) if images are displayed as blocks, use mx-auto to center
 
 
-
-
 VII. CSS variables
 
+  New Feature in CSS.
 
+  Browser compatibility is an issue
+
+  * var() function and :root selector
+  * Doesn't change existing 
+
+  Variables:
+    * Color/Contextual Variables
+      --blue --indigo --purple --pink --red 
+      --orange --yellow --green --teal --cyan 
+      --white --gray --gray-dark --light --dark
+      --primary --secondary --success
+      --info --warning --danger
+
+    * Media Queries
+      --breakpoint-xs --breakpoint-sm --breakpoint-md
+      --breakpoint-lg --breakpoint-xl 
+
+    * Fonts
+      --font-family-sans-serif --font-family-monospace
+
+
+    // to define your own color pink
+    <style> 
+      root: {
+        --pink: #C4226F;
+        --danger: #FFBA00; /* Won't work, some are hard coded into the language */
+      }
+    </style>
+
+    <h1 style="color: var(--pink);">This text turns pink</h1>
+
+    class="text-danger" has !important assigned, so any attempted changes made in the root:
+    will be overwritten.
+
+    !important shouldn't be used lightly
+
+    * may not be compatible, and may be issues.
 
 Quiz:
+
+2. Bootstrap adds margin only at bottom of elements.
+
+3. With the text position class, the md represents > 768px 
+
+4. When you need a list with no bullets, use 'list-unstyled'
+
+6. img-fluid is used for responsive images.
