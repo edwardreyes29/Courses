@@ -79,24 +79,156 @@ III. Working with rows and columns
 
 IV. Multiple column classes
 
+    Multiple Rows & cols
 
+    * container(-SIZ) 
+        SIZ: sm | md | lg | xl | fluid 
+
+    * row row-cols(-BP)(-COL) 
+        BP: sm >576px | md >768px | lg >992px | xl >1200px 
+        COL: 1-6
+
+    * col(-BP)(-COL) 
+        BP: sm >576px | md >768px | lg >992px | xl >1200px 
+        COL: 1-12
+
+    container-fluid will adjust to screen size of the device and will always go to the edge of the screen
+    container-lg: will be responsive until it reaches 992px and will snap into lg breakpoints
+    row-cols-2: each row will have 2 elements
+
+    Row breakpoint
+        class="row row-cols-sm-2" while screen is >576px, set rows to 2, any smaller will reset the 
+        breakpoint.
+
+        <div class="row row-cols-1 row-cols-sm-2"> 
+            - At anything smaller than the sm breakpoint, set each row to have 1 element
+
+         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+            - rows will have 3 when hitting md breakpoint, rows will have 2 smaller than the md breakpoint,
+            and 1 smaller than the sm breakpoint
+
+    Col breakpoint (each row has 12 columns slots, and some columns can take up more than others)
+        <section class="col-6"> take up 6/12 spots
+            If row columns take up more than 12 slots, they will take up space in the next row.
+
+        <section class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            columns will take 6/12 column space at small breakpoint
+            columns will take 4/12 column space at medium breakpoint
+            columns will take 3/12 column space at large breakpoint
+            columns will take 2/12 column space at extra large breakpoint
+
+        * Using multiple rows makes more sense and easier.
 
 V. Offset columns 
 
+    Column Offsets
+    * offset-BP-COL
+        BP: sm >576px | md >768px | lg >992px | xl >1200px
+        COL: 1-11
 
+    <section class="col-sm-4 offset-sm-1">
+        Adds 1 column to the left, offset row by 1 column and shift the rest of
+        the columns to the right.
+
+        * used to be used for centering, but now there are alignment tools like flexbox.
+        * not very useful.
 
 VI. Nested columns 
+    To nest a column, create a new row withing an existing column
 
+    Nesting:
+        * row inside column
+        * Creates 12-col grid
+        * Use same classes
+
+    <section class="col-sm-8"><!-- Takes up 8/12 columns in grid-->
+      <img src="images/image.png" alt="sample image">
+      <h4>Exotic Pets</h4>
+      <p>We offer <strong>specialized</strong> care for <em>reptiles, rodents, birds,</em> and other exotic pets.</p>
+    </section>
+    <section class="col-sm-4"><!-- Takes up 4/12 columns (remainin) in grid-->
+      <div class="row">
+        <div class="col-sm-4"><!-- This creates a new grid not affected by outside column -->
+          <img src="images/image.png" alt="smaple image">
+        </div>
+        <div class="col-sm-4"><!-- This creates a new grid not affected by outside column -->
+          <img src="images/image.png" alt="smaple image">
+        </div>
+        <div class="col-sm-4"><!-- This creates a new grid not affected by outside column -->
+          <img src="images/image.png" alt="smaple image">
+        </div>
+      </div><!-- row -->
+    </section><!-- section -->
+
+    by default columns have a 15px gutter inbetween, take care of that by using no-gutters (specify in row class)
+
+    <div class="col-2 col-sm-4">
+        usual 2 columns, but after sm break point, columns will take up 4/12 grid space
 
 
 VII. Custom order 
+    Order:
+        * order(-BP) -ORD 
+            BP: sm >576px | md >768px | lg >992px | xl >1200px 
+            ORD: 1-12 
 
+    <section class="col order-3">
+        - shifts this column to the third position, so if its the first, it goes..you get it.
+
+        sometimes it won't work unless you specify order for each column.
+        Always specify order.
+
+    <section class="col order-2 d-flex"> 
+        - d-flex assumes you want to put things together, so text within same container as an image might appear on it's side
+        - add flex-column so both elements will appear one on top of the other.
+        <section class="col order-2 d-flex flex-column">
+            - (!) Now elements within this can now have their orders changed 
+
+    (!!) Might be useful for projects page.
+        <section class="col order-2 d-flex flex-column">
+        <img class="order-2" src="images/image.png" alt="sample image">
+        <h4 class="order-3">1. Exotic Pets</h4>
+        <p class="order-4">We offer <strong>specialized</strong> care for <em>reptiles, rodents, birds,</em> and other exotic pets.</p>
+      </section>
 
 
 VIII. Grid alignment options 
+    Vertical Alignment:
+        * Use in rows
+        * align-items-ALN 
+            ALN: start | center | end
+
+    Individual Alignment:
+        * Use in cols 
+        * align-self-ALN
+            ALN: start | center | end
+    
+    Horizontal Alignment:
+        * Use in rows 
+        * Need col width 
+        * justify-content-ALN
+            ALN: start | center | end | around | between 
+
+        align-items-center doesn't align items on the top, would need to nesting items
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                    </div>
+                    <div class="col">
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+            </div>
+        <div>
+
+        From the instructors explanation, it's taking the biggest item and its controlling centering in relationship to the tallest one.
 
 
-
+        Boostrap has flexbox capabilities, learn to use bootstrap layouts.
+        
 IX. Display properties 
 
 
