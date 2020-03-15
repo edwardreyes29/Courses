@@ -231,10 +231,47 @@ VIII. Grid alignment options
         
 IX. Display properties 
 
+    Position: Works exactly like CSS position property.
+    Position:
+        * Position classes  
+            fixed-top | fixed-bottom | sticky-top
+
+        iffy with support
+
+    Basic Display
+        * Mimics CSS
+        *d(-BP)-TYP 
+            BP: sm >576px | md >768px | lg >992px | xl > 1200px 
+            TYP: none | inline | inline-block | block 
+                 table | table-row | table-cell | flex | inline-flex
+
+    Print Display (Like for the acutal printer -> paper) 
+        * d-print-TYP
+            TYP: none | inline | inline-block | block 
+                 table | table-row | table-cell | flex | inline-flex
+            d-print-none -> won't allow to print on paper.
+            d-none d-print-block -> only shows up when sending this element to printer.
+
+    Basic Flex Container:
+        * d(-BP)(-inline)-flex 
+            BP: sm >576px | md >768px | lg >992px | xl >1200px 
+        
+            by default block, (-inline) is optional
+
+
+    (!) fixed-bottom takes element out of the container and sticks it to the bottom (handy for things like notifications)
+    
+
+      <div class="bg-info fixed-bottom">
+        <div class="item">Exotic Pets</div>
+        <div class="item">Grooming</div>
+        <div class="item">Health</div>
+      </div>
+
 
 
 X. Flexbox container options 
-
+    
 
 
 XI. Floating elements
