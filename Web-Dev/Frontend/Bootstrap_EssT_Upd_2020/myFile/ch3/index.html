@@ -481,7 +481,7 @@
 
   <div id="services9" class="container bg-danger">
 
-    <div class="bg-info" style="height:100vh">
+    <div class="bg-info d-flex flex-wrap align-content-stretch" style="height:100vh">
       <div class="item">Exotic</div>
       <div class="item">Grooming</div>
       <div class="item">Health</div>
@@ -490,6 +490,29 @@
       <div class="item">Vaccinations</div>
     </div>
   </div><!-- container -->
+
+  <h1>Individual flex elements</h1>
+  <!--**************************************************************************-->
+
+  <style>
+    #services10 .item {
+      background: #f0ad4e;
+      text-align: center;
+      border: 1px solid white;
+      padding: 0 5px;
+    }
+  </style>
+
+<div id="services10" class="container bg-danger">
+  <div class="bg-info d-flex" style="height: 100vh;">
+    <div class="item">Exotic</div>
+    <div class="item align-self-start">Grooming</div>
+    <div class="item align-self-end">Health</div>
+    <div class="item align-self-center">Nutrition</div>
+    <div class="item align-self-stretch">Pests</div>
+    <div class="item justify-self-end">Vaccinations</div>
+  </div>
+</div><!-- container -->
 
 
 

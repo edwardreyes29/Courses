@@ -268,28 +268,74 @@ IX. Display properties
         <div class="item">Health</div>
       </div>
 
-
-
 X. Flexbox container options 
     
+    Flex Container  
+    * Container/item classes
+    * d(-BP)(-inline)-flex
+        BP: sm >576px | md >768px | lg >992px | xl > 1200px 
+
+    Direction classes 
+    * flex(-BP)(-DIR)(-reverse)
+        BP: sm >576px | md >768px | lg >992px | xl > 1200px 
+        DIR: row | column 
+
+    Order (BP->breakpoint)
+    * order(-BP)-ORD 
+        BP: sm >576px | md >768px | lg >992px | xl > 1200px 
+        ORD: 1-12
+
+    Justify -> justify space between items 
+    *justify-content(-BP)-ALG)
+        BP: sm >576px | md >768px | lg >992px | xl > 1200px
+        ALG: start | end | center (horizontally) | around | between
+
+    Wrap -> Let you control whether elements wrap in relation to the space in their container.
+    * flex(-BP)-WRP(-reverse)
+        BP: sm >576px | md >768px | lg >992px | xl > 1200px
+        WRP: wrap | nowrap 
+
+    Vertical Alignment
+    * align-content(-BP)-ALG 
+        BP: sm >576px | md >768px | lg >992px | xl > 1200px
+        ALG: start | end | center | between | around | stretch (will make elements fit in containers vertically row)
 
 
-XI. Floating elements
+    <div class="bg-info d-flex flex-sm-column" style="height:100vh">
+    - flex remains a row until it reaches sm breakpoint and converts it to a column
 
 
-XII. Margin and padding
+XI. Individual flex elements
+    Align Self class:
+    * align-self(-BP)-ALG
+        BP: sm >576px | md >768px | lg >992px | xl > 1200px
+        ALG: start | end | center | baseline | stretch
+
+    * Controlling order 
+        * order(-BP)-ORD 
+            BP: sm >576px | md >768px | lg >992px | xl > 1200px
+            ORD: 1-12
+
+
+    (!) align-self-stretch is the default, it will take full height of the container.
+
+
+XII. Floating elements
+
+
+XIII. Margin and padding
 
 
 
-XIII. Visibility 
+XIV. Visibility 
 
 
 
-XIV. Sizing utilities 
+XV. Sizing utilities 
 
 
 
-XV. Using borders
+XVI. Using borders
 
 
 
