@@ -1,0 +1,186 @@
+1. Can delete properties from objects
+var myDog = {
+    "bark": "woof"
+}
+
+// Delete ourDog.bark (ourDog["bark"])
+delete ourDog["bark"];
+
+// Change switch to an object for better lookup
+function phoneticLookup(val) {
+  var result = "";
+
+2. Only change code below this line
+  switch(val) {
+    case "alpha":
+      result = "Adams";
+      break;
+    case "bravo":
+      result = "Boston";
+      break;
+    case "charlie":
+      result = "Chicago";
+      break;
+    case "delta":
+      result = "Denver";
+      break;
+    case "echo":
+      result = "Easy";
+      break;
+    case "foxtrot":
+      result = "Frank";
+  }
+
+
+  var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  }
+
+3. Use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. 
+.hasOwnProperty() returns true or false if the property is found or not.
+
+if (look.hasOwnProperty(val)) {
+    return true;
+}
+
+4. Manipulating Complex Objects
+    var ourMusic = [
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats": [ 
+      "CD", 
+      "Cassette", 
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    "artist": "System of a Down",
+    "title": "ATWA",
+    "release_year": 2001,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": false
+  }
+];
+
+5. Accessing nested objects
+    var ourStorage = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+ourStorage.cabinet["top drawer"].folder2;  // "secrets"
+ourStorage.desk.drawer; // "stapler"
+
+Ex.
+ // Setup
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+var gloveBoxContents = myStorage.car.inside["glove box"]; // Change this line
+
+6. Accessing nested arrays 
+    var ourPets = [
+  {
+    animalType: "cat",
+    names: [
+      "Meowzer",
+      "Fluffy",
+      "Kit-Cat"
+    ]
+  },
+  {
+    animalType: "dog",
+    names: [
+      "Spot",
+      "Bowser",
+      "Frankie"
+    ]
+  }
+];
+ourPets[0].names[1]; // "Fluffy"
+ourPets[1].names[0]; // "Spot"
+
+
+// Setup
+var collection = {
+  2548: {
+    album: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: [
+      "Let It Rock",
+      "You Give Love a Bad Name"
+    ]
+  },
+  2468: {
+    album: "1999",
+    artist: "Prince",
+    tracks: [
+      "1999",
+      "Little Red Corvette"
+    ]
+  },
+  1245: {
+    artist: "Robert Palmer",
+    tracks: [ ]
+  },
+  5439: {
+    album: "ABBA Gold"
+  }
+};
+
+// Only change code below this line
+function updateRecords(id, prop, value) {
+  
+  if (value == "") {
+    if (prop == "album") {
+      delete collection[id].album;
+    } else if (prop == "artist") {
+      delete collection[id].artist;
+    } else {
+      delete collection[id].tracks;
+    }
+  } else if (collection[id].hasOwnProperty(prop) && prop == "tracks") {
+      collection[id].tracks.push(value);
+  } else {
+    if (prop == "tracks") {
+      collection[id].tracks = [];
+      collection[id].tracks.push(value);
+    } else if (prop == "artist") {
+      collection[id].artist = value;
+    } else if (prop == "album") {
+      collection[id].album = value;
+    }
+  }
+
+  return collection;
+}
+
+updateRecords(5439, "artist", "ABBA");
