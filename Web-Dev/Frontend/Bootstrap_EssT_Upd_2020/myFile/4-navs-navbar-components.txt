@@ -1,21 +1,91 @@
 I. Navbar overview
 
+    Navigation Components:
+        * Navs -> parents to all other navigation components
+        * Tabs
+        * Pills
+        * Navbars -> most used
+            Navbar Components:
+                * Branding 
+                * Color schemes 
+                * Dropdowns 
+                * Form elements
 
 II. Create basic navigation
 
+    Basic Nav Classes:
+        * With/without ULs
+        * nav
+        * nav-item 
+        * nav-link
 
+    Nav Link Options:
+        * active 
+        * disabled
+
+    Nav Styles:
+        * nav-pills (button with round edges)
+        * nav-tabs
+
+    Nav Alignment
+        * justify-content-center
+        * justify-content-end (justify contents all the way to the right)
+        * nav-fill (want links to take entire width of container)
+        * nav-justified (force space between each element to be the same)
+        * flex-column
+
+    nav-fill -> allows text to take up more space if it has more text than the rest.
 
 III. Create a navbar 
 
+    Navbar Classes:
+        * navbar
+        * navbar-expand(-BP)
+            BP: sm >576px | md >768px | lg >992px | xl >1200px
 
+    Navbar Colors:
+        * bg-COLOR for backgrounds
+            COLOR: primary | secondary | success | danger 
+                   warning | info | light | dark | white
+        * navbar-light
+        * nav-dark 
+
+    navbar-nav Options:
+         navbar-nav container (where main links will go)
+            * nav-item
+            * nav-link 
+            * active (shows what is the current page)
+
+    Bootstrap is, by design, a mobile first framework, so navbar by default will stack elements on top of
+    each other.
 
 IV. Use branding and text 
 
+    Navbar Options:
+        * navbar-brand 
+        * Link or Headline 
+        * Using Images
+        * navbar-text 
+
+        Review spacing classes
 
 
 V. Add a dropdown to navigation 
 
+    A seprarate in component used in menus.
 
+    Requirements: a container.
+
+    Dropdown Setup:
+        * dropdown to align 
+        * dropdown-toggle on link 
+        * data-toggle="dropdown"
+        * dropdown-menus 
+            * dropdown-item 
+            *id & aria attributes (for accessibility)
+
+
+        aria-expanded="false" -> if drop down first and appears and doesn't have drop down show, set to false?
 
 VI. Add form elements
 
