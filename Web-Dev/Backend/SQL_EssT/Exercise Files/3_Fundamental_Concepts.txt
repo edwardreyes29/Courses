@@ -7,6 +7,14 @@ I. Creating a table
   OR
   CREATE TABLE test (a INTEGER, b TEXT);
 
+  Review:
+    CREATE TABLE courses (
+      courseCode INTEGER,
+      courseName TEXT,
+      numStudents INTEGER,
+      instructor TEXT
+    )
+
   Schema declarations
     name TYPE
 
@@ -201,16 +209,52 @@ IX. Filtering data
 
 X. Removing duplicates
 
+  SELECT DISTINCT column FROM table;
+    - get only unique results.
+
+    Ex. SELECT DISTINCT Continent FROM Country;
+      - Shows all continents once.
 
 
+    SELECT DISTINCT a FROM test;
+      // shows all unique values in column a 
+
+    SELECT DISTINCT a, b FROM test;
+      // shows all distinct rows where a & b are different.
 
 
 
 XI. Ordering output
 
-
-
-
+  SELECT Name FROM Country;
+  SELECT Name FROM Country ORDER BY Name;
+  SELECT Name FROM Country ORDER BY Name DESC;
+  SELECT Name FROM Country ORDER BY Name ASC;
+  SELECT Name, Continent FROM Country ORDER BY Continent, Name;
+    - Order by Continent first, then by name.
+  SELECT Name, Continent, Region FROM Country ORDER BY Continent DESC, Region, Name
+    - Order by Continent first in descending order, then region, the name.
 
 
 XII. Conditional expressions
+
+  CREATE TABLE booltest (
+      a INTEGER,
+      b INTEGER
+  );
+
+  INSERT INTO booltest VALUES (1,0);
+  SELECT * FROM booltest;
+
+// 1 or anything not zero = true, 0 = false.
+  SELECT 
+      CASE WHEN a THEN 'true' ELSE 'false' END as boolA, // returns false
+      CASE WHEN b THEN 'true' ELSE 'false' END AS boolB  // returns false
+      FROM booltest
+  ;
+
+  SELECT 
+    CASE a WHEN 1 THEN 'true' ELSE 'false' END AS boolA, // returns true
+    CASE b WHEN 0 THEN 'true' ELSE 'false' END AS boolB  // returns true
+    FROM booltest
+  ;

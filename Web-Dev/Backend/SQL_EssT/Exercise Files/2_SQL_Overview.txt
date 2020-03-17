@@ -132,6 +132,9 @@ VII. Inserting data
   Ex. Insert character Link into the DB with his address.
     INSERT INTO customer (name, address, city, state, zip)
       VALUES('Link','123 Hateno Way',  'Hateno Village', 'Hyrule', '33333');
+    
+    INSERT INTO customer (name, city, zip)
+      VALUES('Jimi Hendrix', 'Washington", "12345");
 
 
 VIII. Updating data
@@ -144,6 +147,9 @@ VIII. Updating data
   Ex. Update Jimi Hendrix's info whose id is 5
     UPDATE customer SET address = '123 Music Ave.', zip = '98056' WHERE id = 5;
 
+    UPDATE customer SET address = 'Hyrule Castle', city='Hyrule' WHERE id = 4;
+    
+
 
 
 IX. Deleting Data
@@ -154,6 +160,8 @@ IX. Deleting Data
     DELETE FROM customer WHERE id = 4;
 
     DELETE FROM customer WHERE id = 5;
+
+    DELETE FROM customer WHERE id = 7;
 
 
 
