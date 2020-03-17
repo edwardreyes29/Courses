@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // Multiply 
+    function multiply(arr, n) {
+        if (n <= 0) { // Base Case
+            return 1;
+        } else {
+            return multiply(arr, n - 1) * arr[n - 1];
+        }
+    }
+
+    var array = [1, 2, 3, 4, 5];
+    var result = multiply(array, array.length);
+    console.log(result);
+
+    // Finding Sum
+    function sum(arr, n) {
+        // Only change code below this line
+        if (n <= 0) {
+            return 0;
+        } else {
+            return sum(arr, n - 1) + arr[n - 1];
+        }
+        // Only change code above this line
+    }
+</script>
+
+<body>
+
+
+</body>
+
+</html>

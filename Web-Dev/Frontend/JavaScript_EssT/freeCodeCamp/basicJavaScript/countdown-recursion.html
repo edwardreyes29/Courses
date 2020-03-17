@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // Base case-> tells recursive function when it no longer needs to call itself. 
+    // eventually, if recursion is implemented correctly, base case will be reached.author
+    // Return an aray containing numbers 1 through n. n representing final number.
+    // Will need to call itself progressivley smaller values of n until it reaches 1.
+
+    function countdown(n) {
+        if (n < 1) {
+            return [];
+        } else {
+            const countArray = countdown(n - 1);
+            countArray.unshift(n);
+            return countArray;
+        }
+    }
+    console.log(countdown(-1));
+    console.log(countdown(10));
+
+
+    /*
+        Use Recursion to Create a Range of Numbers
+
+        We have defined a function named rangeOfNumbers with two parameters. 
+        The function should return an array of integers which begins with a 
+        number represented by the startNum parameter and ends with a number 
+        represented by the endNum parameter. The starting number will always 
+        be less than or equal to the ending number. Your function must use 
+        recursion by calling itself and not use loops of any kind. It should 
+        also work for cases where both startNum and endNum are the same.
+    */
+
+    function rangeOfNumbers(startNum, endNum) {
+        if (endNum <= startNum) {
+            return [startNum];
+        } else {
+            const countArray = rangeOfNumbers(startNum, endNum - 1);
+            countArray.push(endNum);
+            return countArray;
+        }
+    };
+
+    console.log(rangeOfNumbers(1,5));
+
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

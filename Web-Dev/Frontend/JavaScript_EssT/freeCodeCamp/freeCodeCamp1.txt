@@ -1,0 +1,324 @@
+1. Can delete properties from objects
+var myDog = {
+    "bark": "woof"
+}
+
+// Delete ourDog.bark (ourDog["bark"])
+delete ourDog["bark"];
+
+// Change switch to an object for better lookup
+function phoneticLookup(val) {
+  var result = "";
+
+2. Only change code below this line
+  switch(val) {
+    case "alpha":
+      result = "Adams";
+      break;
+    case "bravo":
+      result = "Boston";
+      break;
+    case "charlie":
+      result = "Chicago";
+      break;
+    case "delta":
+      result = "Denver";
+      break;
+    case "echo":
+      result = "Easy";
+      break;
+    case "foxtrot":
+      result = "Frank";
+  }
+
+
+  var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  }
+
+3. Use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. 
+.hasOwnProperty() returns true or false if the property is found or not.
+
+if (look.hasOwnProperty(val)) {
+    return true;
+}
+
+4. Manipulating Complex Objects
+    var ourMusic = [
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats": [ 
+      "CD", 
+      "Cassette", 
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    "artist": "System of a Down",
+    "title": "ATWA",
+    "release_year": 2001,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": false
+  }
+];
+
+5. Accessing nested objects
+    var ourStorage = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+ourStorage.cabinet["top drawer"].folder2;  // "secrets"
+ourStorage.desk.drawer; // "stapler"
+
+Ex.
+ // Setup
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+var gloveBoxContents = myStorage.car.inside["glove box"]; // Change this line
+
+6. Accessing nested arrays 
+          var ourPets = [
+        {
+          animalType: "cat",
+          names: [
+            "Meowzer",
+            "Fluffy",
+            "Kit-Cat"
+          ]
+        },
+        {
+          animalType: "dog",
+          names: [
+            "Spot",
+            "Bowser",
+            "Frankie"
+          ]
+        }
+      ];
+      ourPets[0].names[1]; // "Fluffy"
+      ourPets[1].names[0]; // "Spot"
+
+
+      // Setup
+      var collection = {
+        2548: {
+          album: "Slippery When Wet",
+          artist: "Bon Jovi",
+          tracks: [
+            "Let It Rock",
+            "You Give Love a Bad Name"
+          ]
+        },
+        2468: {
+          album: "1999",
+          artist: "Prince",
+          tracks: [
+            "1999",
+            "Little Red Corvette"
+          ]
+        },
+        1245: {
+          artist: "Robert Palmer",
+          tracks: [ ]
+        },
+        5439: {
+          album: "ABBA Gold"
+        }
+      };
+
+      // Only change code below this line
+      function updateRecords(id, prop, value) {
+        
+        if (value == "") {
+          if (prop == "album") {
+            delete collection[id].album;
+          } else if (prop == "artist") {
+            delete collection[id].artist;
+          } else {
+            delete collection[id].tracks;
+          }
+        } else if (collection[id].hasOwnProperty(prop) && prop == "tracks") {
+            collection[id].tracks.push(value);
+        } else {
+          if (prop == "tracks") {
+            collection[id].tracks = [];
+            collection[id].tracks.push(value);
+          } else if (prop == "artist") {
+            collection[id].artist = value;
+          } else if (prop == "album") {
+            collection[id].album = value;
+          }
+        }
+
+        return collection;
+      }
+
+      updateRecords(5439, "artist", "ABBA");
+
+7. do while loops
+    do {
+      //statements
+    } while (condtional)
+
+8. Replace loops using recursion.
+
+      Recursion, concept that a function can be expressed in terms of itself.
+
+      e.g. multiple the first n elements of an array to create product of those elements.
+      Originally you can use a for loop, looping through each element and multpling each 
+      of them to the product.
+
+      function multiple(arr, n) {
+        var product = 1;
+        for (var i = 0; i < n; i++) {
+          product *= arr[i];
+        }
+        return product;
+      }
+
+      Notice that:
+        multiply(arr,n) == multiply(arr,n-1) * arr[n-1]
+      You can rewrite multiple in terms of itself and never need to use a loop.
+
+      function multiply(arr, n) {
+        if (n <= 0) {
+          return 1;
+        } else {
+          return multiply(arr, n - 1) * arr[n - 1];
+        }
+      }
+
+
+9. Profile lookup
+
+10. Random fractions 
+  Math.random()
+
+11. Random Whole Numbers
+  1. Use Math.random() to generate random decimal
+  2. Multiply that by 20
+  3. Use Math.floor to round number down to nearest whole number.
+
+  Math.random never returns 1, so will result in 0 -> 19
+  
+    function randomWholeNum() {
+      return Math.floor(Math.random() * 10);
+    }
+
+12. Generate Random Whole Numbers within a Range
+  Math.floor(Math.random() * (max - min + 1)) + min 
+
+13. parseInt Function
+  turns strings into integer.
+
+  var a = parseInt("007"); // returns 7
+
+  Radix:
+    radix is the second argument, which specifies the base of the number 
+    in the string (binary, hex, dec).
+
+    var a = parseInt("11",2) // returns 3 since 0011 is 3 in binary.
+
+    function convertToInteger(str) {
+      return parseInt(str, 2);
+    }
+
+    convertToInteger("10011");
+
+14. Conditional Ternary Operator
+
+  condition ? statment-if-true : statement-if-false;
+
+  function findGreater(a, b) {
+    if(a > b) {
+      return "a is greater";
+    }
+    else {
+      return "b is greater";
+    }
+  }
+
+  This can be re-written using the conditional operator:
+
+  function findGreater(a, b) {
+    return a > b ? "a is greater" : "b is greater";
+  }
+
+15. Multiple Ternary Conditional Operators
+
+
+  function findGreaterOrEqual(a, b) {
+    if (a === b) {
+      return "a and b are equal";
+    }
+    else if (a > b) {
+      return "a is greater";
+    }
+    else {
+      return "b is greater";
+    }
+  }
+
+  The above function can be re-written using multiple conditional operators:
+
+  function findGreaterOrEqual(a, b) {
+    return (a === b) ? "a and b are equal" 
+      : (a > b) ? "a is greater" 
+      : "b is greater";
+  }
+
+  function checkSign(num) {
+    return (num > 0) ? "positive"
+        : (num < 0) ? "negative" : "zero";
+  }
+
+  checkSign(10);
+
+  16. Recursion countdown
+
+  ex. function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n); // last push happens last, so pushes higher values to end of array.
+    return countArray;
+  }
+}
+console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
+
+
+
+
+
+

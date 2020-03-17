@@ -322,22 +322,75 @@ XI. Individual flex elements
 
 XII. Floating elements
 
+    *float(-BP)-SID 
+        BP: sm >576px | md >768px | lg >992px | xl > 1200px
+        SID: left | right | none
+
+        clearfix will let outer class not lose track of items
+        
 
 XIII. Margin and padding
+    Margin/Padding 
+        * pb(-BP)(-N)SIZ 
+        PRO: m (margin) | p (padding) 
+        SID: t | r | b | l | x | y
+         BP: sm >576px | md >768px | lg >992px | xl > 1200px
+         SIZ: 0 1(1 rem) 2(1 1/2 rems) 3(2 rems) 4(2 1/2 rems) 5(3 rems) auto
 
+         pt -> padding top
+         pb -> badding bottom 
+         mt -> margin top
+         mr -> margin right
+
+         N -> n5 (negative value, only works or margins but not padding)
+
+        py-5: padding of 3 rems for y
 
 
 XIV. Visibility 
-
+    * invisible (won't appear on screen but will still take space), 
+      visible (only visible to screen readers)
+    * Display Property: use d-none to remove from screen
+        d(-BP)-TYP
+            TYP: none | inline | inline-block | block 
+                 table | table-cell | flex | inline-flex
 
 
 XV. Sizing utilities 
 
+    * SIZ(-AMT)
+        SIZ: w h mw mh vw vh min-vw min-vh 
+        AMT: 25 | 50 | 75 | 100 | auto
 
+    w-100 -> make width 100% of container size
+    w-25  -> 25% container size
+    
+    // Everyt other SIZ can only have AMT of 100
+    vw-100 -> width of current devices only option is 100
+    vh-100 -> only option is also 100
+
+    mw & mh are max width and max height
 
 XVI. Using borders
 
+    * BORDER(-SID)(-COL)(-0)    
+        SID: top | right | bottom | left
+        COL: primary | secondary | success | danger | warning
+             info | light | dark | white
 
 
+    * Rounded
+        SID: top | right | bottom | left 
+        SHA: circle | pill
+        SIZ: 0 sm lg
 
 Quiz:
+
+3. Best way to nest columns using Bootstrap?
+    A: row inside existing column
+
+4. Push will move columns to the _right_
+
+5. FALSE: by default, flex elements are inline level elements
+
+6. For maximum height -> mh-100

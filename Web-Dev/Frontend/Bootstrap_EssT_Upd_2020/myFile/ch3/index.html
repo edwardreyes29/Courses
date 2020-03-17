@@ -514,8 +514,107 @@
   </div>
 </div><!-- container -->
 
+<h1>Floating Elements</h1>
+  <!--**************************************************************************-->
 
+<style>
+  #services10 .item {
+    background: #f0ad4e;
+    text-align: center;
+    border: 1px solid white;
+    padding: 0 2px;
+  }
+</style>
 
+<div id="services10" class="container bg-danger">
+<div class="bg-info clearfix">
+  <div class="item float-left">Exotic</div>
+  <div class="item float-right">Grooming</div>
+  <div class="item float-left">Health</div>
+  <div class="item float-left">Nutrition</div>
+  <div class="item float-right">Pests</div>
+  <div class="item float-right">Vaccinations</div>
+</div>t
+</div><!-- container -->
+
+<h1>Margin/Padding</h1>
+<!--**************************************************************************-->
+
+<style>
+  #services11 .item {
+    background: #f0ad4e;
+    text-align: center;
+    border: 1px solid white;
+  }
+</style>
+
+<div id="services11" class="container bg-danger">
+<div class="bg-info d-flex">
+  <div class="item">Exotic</div>
+  <div class="item">Grooming</div>
+  <div class="item bg-danger mx-sm-auto pb-3 pt-5">Health</div>
+  <div class="item">Nutrition</div>
+  <div class="item">Pests</div>
+  <div class="item">Vaccinations</div>
+</div>
+</div><!-- container -->
+
+<h1>Visibility</h1>
+<!--**************************************************************************-->
+<style>
+  #services12 .item {
+    background: #f0ad4e;
+    text-align: center;
+    border: 1px solid white;
+    padding: 0 2px;
+  }
+</style>
+
+<div id="services12" class="container bg-danger">
+<div class="bg-info d-flex justify-content-center">
+  <div class="item">Exotic</div>
+  <div class="item invisible">Grooming</div>
+  <div class="item visible">Health</div>
+  <div class="item d-none">Nutrition</div>
+  <div class="item d-sm-none">Pests</div>
+  <div class="item">Vaccinations</div>
+</div>
+</div><!-- container -->
+
+<h1>Sizing Utilities</h1>
+<!--**************************************************************************-->
+
+<div class="container bg-danger vh-100">
+  <div class="bg-warning border p-1 w-25">Exotic</div>
+  <div class="bg-warning border p-1 w-50">Grooming</div>
+  <div class="bg-warning border p-1 w-75">Health</div>
+  <div class="bg-warning border p-1 ">Nutrition</div>
+  <div class="bg-warning border p-1">Pests</div>
+  <div class="bg-warning border p-1 vh-100">Vaccinations</div>
+</div><!-- container -->
+
+<h1>Borders</h1>
+<!--**************************************************************************-->
+
+<style>
+  #servicesFinal .item {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin: 10px;
+    background: #f5f5f5;
+    border: 3px solid yellowgreen;
+  }
+</style>
+
+<div id="servicesFinal" class="container">
+
+  <div class="item border"></div>
+  <div class="item border border-primary"></div>
+  <div class="item border-0 rounded-top"></div>
+  <div class="item rounded-circle"></div>
+
+</div><!-- container -->
 
 
 
