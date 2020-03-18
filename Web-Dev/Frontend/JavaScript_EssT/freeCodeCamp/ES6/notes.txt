@@ -1,0 +1,88 @@
+I. Let
+
+    Allows variable name to appear only once.
+
+II. Scopes
+
+    When you declare a variable with the var keyword, it is declared globally, 
+    or locally if declared inside a function.
+
+III. Declare Read-Only Variable with const keyword
+
+    Variables declared with 'const' keyword are read-only and cannot be reassigned a new value.
+    const -> immutable
+
+    uppercase -> immutable Variables
+    lowercase or camelCase -> for mutable (objects and arrays.)
+
+    'use strict';
+    const FAV_PET = "Cats";
+
+IV. Mutate an array declared with const 
+
+    'use strict';
+    const s = [5, 6, 7]; // you just can't assign a new array but you can still change it's values.
+    s[2] = 45; // works just as it would with an array declared with var or let. 
+    console.log(2); // returns [5, 6, 45]
+
+V. Prevent Object Mutation
+
+    (!) 'const' alone doesn't really protect your data from mutation. To ensure this, 
+    JavaScript provides a function Object.freeze to prevent data mutation
+
+    Ex. 
+        let obj = {
+            name: "FreeCodeCamp",
+            review: "Awesome"
+        };
+
+        Object.freeze(obj);
+        obj.review = "bad"; // will be ignored. Mutation not allowed
+        obj.newProp = "Test"; // will be ignored. Mutation not allowed
+
+    Ex. 
+        function freezeObj() {
+            'use strict';
+            const MATH_CONSTANTS = {
+            PI: 3.14
+            };
+            // Only change code below this line
+            Object.freeze(MATH_CONSTANTS);
+
+            // Only change code above this line
+            try {
+                MATH_CONSTANTS.PI = 99;
+            } catch(ex) {
+                console.log(ex);
+            }
+            return MATH_CONSTANTS.PI;
+        }
+        const PI = freezeObj();
+
+VI. Arrow Functions to Write Concise Anonymous Functions
+
+    // inline functions 
+    const myFunc = function() {
+        const myVar = "value";
+        return myVar;
+    }
+
+    // ES6 arrow function syntax for anonymous function
+    const myFunc = () => {
+        const myVar = "value";
+        return myVar;
+    }
+
+    // When there is no function body and only a return value, you can ommit 'return' keyword
+    const myFunc = () => "value";
+
+    Ex. 
+        var magic = function() {
+            'use strict';
+            return new Date();
+        };
+        console.log(magic());
+
+        // Arrow function 
+        const magic = () => new Date();
+        console.log(magic());
