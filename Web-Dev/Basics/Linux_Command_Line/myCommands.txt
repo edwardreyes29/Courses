@@ -1,0 +1,3 @@
+cp -r 04_0?b ../myFile/ch4/
+
+used to cp all file/folers that followed 04_0?b pattern to ch4 folder
