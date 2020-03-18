@@ -89,10 +89,63 @@ V. Add a dropdown to navigation
 
 VI. Add form elements
 
+    Form Classes:
+        * form-inline class 
+        * form-control class for input fields.
+        * Spacing as needed
 
+
+        mr-2 -> margin right 2 units
 
 VII. Control positioning 
 
-
+    Placement Options:
+        * fixed-top
+        * fixed-bottom
+        * sticky-top -> not fully compatible wil older browsers
+        * Spacing as needed
 
 VIII. Create collapsible content
+
+    Navigation should collapse when screen becomes very small.
+    Hamburger menu
+    Collapsable Content:
+        * collapse class -> goes on content that you want to collapse 
+        * navbar-collapse 
+        * id 
+
+    Toggler Classes
+        * navbar-toggler 
+        * Other Properties
+        * navbar-toggler-icon
+
+    <button class="navbar-toggler" type="button"
+      data-toggle="collapse"></button>
+
+      - data-toggle="collapse" tells bootstrap that this is a special element 
+        that javascript is going to control.
+
+    <button class="navbar-toggler" type="button"
+      data-toggle="collapse" data-target="#myTogglerNav"
+      aria-controls="myToggleNav" aria-expanded="false" aria-label="Toggle navigation"></button>
+
+      - aria-controls tells screen readers what this is doing and identifying that this
+        button controls element we called myTogglerNave
+        -aria-label -> what screen readers will actually read
+
+        The navigation bar will move navbar elements to the left. Add ml-auto to to the 
+        navbar element to shift them to the left
+
+
+Quiz:
+
+1. Nav is the parent to all other navigations
+
+2. To force the space between the elements to be the same, you use nav-justified.
+
+3. You use form-control classes for input fields.
+
+4. Sticky-top is currently the least supported feature in browsers. 
+
+5. What is needed to tie together the collapsable content with the item that is going to do the toggling?
+   A: ID
