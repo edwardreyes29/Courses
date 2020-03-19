@@ -1,0 +1,140 @@
+I. Understanding JOIN  
+
+    Related data from multiple tables.
+    ID columns create relationships.
+
+    JOIN query returns a result that includes related rows from multiple tables.
+
+    Imagine a Ven Diagram.
+    ID columns are used for this purpose.
+
+    Results of an inner join are rows from both table where the join condition 
+    is met. 
+
+    Left outer join: where all condition are met from the join + all rows
+                     rows from the left table where the conditions are not met.
+
+    Right outer join: most DB don't support right joins.
+
+    Full outer join: full effects of both left and right.
+        - Most DB's systems do not implement full outer join.
+
+II. Accessing related tables 
+
+    CREATE TABLE left ( id INTEGER, description TEXT); 
+    CREATE TABLE right ( id INTEGER, description TEXT);
+
+    INSERT INTO left VALUES (1, 'left 01' );
+    INSERT INTO left VALUES (2, 'left 02' );
+    INSERT INTO left VALUES (3, 'left 03' );
+    INSERT INTO left VALUES (4, 'left 04' );
+    INSERT INTO left VALUES (5, 'left 05' );
+    INSERT INTO left VALUES (6, 'left 06' );
+    INSERT INTO left VALUES (7, 'left 07' );
+    INSERT INTO left VALUES (8, 'left 08' );
+    INSERT INTO left VALUES (9, 'left 09' );
+
+    INSERT INTO right VALUES (6, 'right 06' );
+    INSERT INTO right VALUES (7, 'right 07' );
+    INSERT INTO right VALUES (8, 'right 08' );
+    INSERT INTO right VALUES (9, 'right 09' );
+    INSERT INTO right VALUES (10, 'right 10' );
+    INSERT INTO right VALUES (11, 'right 11' );
+    INSERT INTO right VALUES (11, 'right 12' );
+    INSERT INTO right VALUES (11, 'right 13' );
+    INSERT INTO right VALUES (11, 'right 14' );
+
+    SELECT * FROM left;
+    SELECT * FROM right;
+
+    // Join the tables. l is an alias for left.
+    // Since both columns have the same name (description) you NEED
+    // to give them aliases.
+    // ON  clause, tells the condition on which the tables will join.
+    // is the intersection of the Ven Diagram
+
+
+    // Inner join
+    SELECT l.description As left, r.description AS right
+        FROM left AS l
+        JOIN right As r ON l.id = r.id
+    ;
+
+    inner-join: Only matching ids are 6, 7, 8, 9
+        left    |   right 
+        left06  |   right 06
+        left07  |   right 07
+        left08  |   right 08
+        left09  |   right 09
+
+    // Left outer join
+    // Gets all of the left table + the joined part.
+    SELECT l.description As left, r.description AS right
+        FROM left AS l
+        LEFT JOIN right As r ON l.id = r.id
+    ;
+
+    left-join: Only matching ids are 6, 7, 8, 9
+        left    |   right 
+        left01  |   NULL
+        left02  |   NULL
+        left03  |   NULL
+        left04  |   NULL
+        left05  |   NULL
+        left06  |   right 06
+        left07  |   right 07
+        left08  |   right 08
+        left09  |   right 09
+
+    // Join sales table and items table!
+    SELECT s.id AS sale, i.name, s.price // so it sets the schema of the join table.
+        FROM sale AS s 
+        JOIN item AS i ON s.item_id = i.id
+    ;
+
+    // Table:
+    sale        |name       |price 
+    1           |Bar Code   |9999
+    ...         |...        |...
+    5           |Box of Pix |2995
+
+    if you need info on a column, but it has the same name as the on in ther
+    other table, you would need to create an alias for it.
+
+    SELECT s.id AS sale, s.date, i.name, i.description, s.price
+        FROM sale AS s
+        JOIN item AS i ON s.item_id = i.id
+    ;
+
+
+
+III. Relating multiple tables
+
+The sales table is the junction table. It contains its own id and ids for both
+customers and items. When we create a JOIN, it will be based on the sales.
+
+SELECT c.name AS Cust, c.zip, i.name AS Item, i.description, s.quantity AS Quan, s.price AS Price
+    FROM sale As s
+    JOIN item AS i ON s.item_id = i.id
+    JOIN customer AS c ON s.customer_id = c.id
+    ORDER BY Cust, Item
+;
+
+SELECT i.name AS Item, c.name AS Customer, s.quantity, s.price, c.state
+    FROM sale AS s
+    JOIN item AS i ON s.item_id = i.id
+    JOIN customer AS c ON s.customer_id = c.id
+;
+
+// Create a left outer join to show customers without sales
+INSERT INTO customer (name) VALUES ('Jane Smith');
+SELECT * FROM customer;
+
+// This gets everything in the customer table since its a left join
+// and all rows from sale & items where there is a sale;
+SELECT c.name AS Cust, c.zip, i.name AS Item, i.description, s.quantity AS Quan, s.price AS Price
+    FROM customer AS c    
+    LEFT JOIN sale AS s ON s.customer_id = c.id
+    LEFT JOIN item AS i ON s.item_id = i.id
+    ORDER BY Cust, Item
+;
