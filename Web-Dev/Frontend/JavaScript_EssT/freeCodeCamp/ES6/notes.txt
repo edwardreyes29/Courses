@@ -86,3 +86,38 @@ VI. Arrow Functions to Write Concise Anonymous Functions
         // Arrow function 
         const magic = () => new Date();
         console.log(magic());
+
+VII. Arrow functions with Parameters
+
+    // doubles input and returns it.
+    const doubler = (item) => item * 2;
+
+    // If an arrow function had a single argument, may omit parentheses.
+    const double = item => item * 2;
+
+    // Pass more than one arg, use parentheses.
+    const multiplier = (item, multi) => item * multi;
+
+
+VIII. Default Parameters for functions.
+
+ const greeting = (name = "Anonymous") => "Hello " + name;
+
+ console.log(greeting("John")); // Hello John
+ console.log(greeting()); // Hello Anonymous 
+
+
+IX. Rest Parameters w/ Function Parameters 
+
+    * Rest parameter allows you to create functions that take
+      a variable number of arguments.
+    * These arguments are stored in an array that can be accessed 
+      inside the function.
+    
+    function howMany(...args) {
+        return "You have passed " + args.length + " arguments.";
+    }
+    console.log(howMany(0,1,2)); // 3 arguments
+    console.log("string", null, [1, 2, 3], {})); // 4 arguments.
+
+      
