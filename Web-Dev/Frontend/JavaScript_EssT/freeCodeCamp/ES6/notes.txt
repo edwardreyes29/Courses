@@ -120,4 +120,91 @@ IX. Rest Parameters w/ Function Parameters
     console.log(howMany(0,1,2)); // 3 arguments
     console.log("string", null, [1, 2, 3], {})); // 4 arguments.
 
-      
+
+X. Spread Operator
+      const arr = [6, 89, 3, 45];
+      const maximus = Math.max(...arr); // Returns 89
+
+      ...arr returns an unpacked array -> it spreads the array.
+      (!) Only works in an argument to a function or in array literal.
+
+      ES5:
+      const maxiumus = Math.max.apply(null, arr); // also returns 89
+
+      Ex. Copy contents of arr1 to arr2 
+        const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+        let arr2;
+
+        arr2 = [...arr1];  // Change this line
+        console.log(arr2);
+
+XI. Destructuring Assignment to Extract Values from Objects.
+
+    ES5:
+        const user = { name: 'John Doe', age: 34 };
+
+        const name = user.name;     // name = 'John Doe'
+        const age = user.age;       // age = 34
+        
+    ES6: 
+        const { name, age } = user; // name = 'John Doe', age = 34
+
+
+    >>> Can assign new variable name by placing a colon and setting new name.
+
+    const { name: userName, age: userAge } = user;
+    // userName = 'John Doe', userAge = 34
+
+
+    >>> Use destructuring assignment to assign variables from Nest Objects.
+    const user = {
+        johnDoe: {
+            age: 34,
+            email: 'johnDoe@freeCodeCamp.com'
+        }
+    };
+
+    // extract values of the object properties.
+    const {johnDoe: {age, email}} = user;
+    OR 
+    const {johnDoe: {age: userAge, email: userEmail}} = user;
+
+    >>> Destructuring Assignment to Assigne Variables from Arrays 
+
+    ...arr spread unpacks an array into a comma-separated list, but cannot 
+    pick and choose which elements you want to assign.
+
+    Destructuring lets us do just that:
+        const[a, b] = [1,2,3,4,5,6]; // a -> first value, b -> second
+        console.log(a, b); // 1, 2, 5
+    
+    Can also access value at any index using commas to reach desired index:
+
+    const [a,b,,,c] = [1,2,3,4,5,6];
+    console.log(a,b,c); // 1, 2, 5
+
+    >>> Use Destructuring Assignment with the Rest Parameter to Reassign Array elements
+    const[a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+    console.log(a, b); // 1, 2
+    console.log(arr);  // [3, 4, 5, 7]
+
+    ...arr is the rest parameter, and it only works correctly as the last variable in the list.
+
+    >>> Use Destructuring Assignment to Pass an Object as a Function's Parameters
+    const profileUpdate = (profileData) => {
+        const { name, age, nationality, location } = profileData;
+        // do something with these variables.
+    }
+
+    const profileUpdate = ({name, age, nationality, location } ) => {
+        /* do something with these fields */
+    }
+
+XII. String Template Literals 
+
+    `Show value of x: ${x}`
+
+    Makes creating complex strings easier. Allows for multi-line strings.
+
+    const greeting = `Hello, my name is ${person.name}!
+    I am ${person.age} years old.`}
