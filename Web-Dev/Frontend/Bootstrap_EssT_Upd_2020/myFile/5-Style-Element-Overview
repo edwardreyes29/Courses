@@ -1,0 +1,119 @@
+I. Basic style element overview
+
+    buttons -> primarily for forms
+
+    progress bars -> for interface for progress.
+
+    list groups  -> useful for mobile projects. 
+
+II. Create Buttons 
+    
+    Button Options:
+        * btn: basic class
+        * btn-SIZ
+            SIZ: sm | lg
+        * Can be used on: <a> | <button> | <input>
+
+    Button Colors:
+        * btn-COLOR
+            primary | secondary | success | danger
+            warning | info | light | dark
+
+        * btn-outline-COLOR 
+            primary | secondary | success | danger
+            warning | info | dark 
+
+    Other options:
+        * btn-block: full width
+        * active 
+        * disabled
+
+    (!) Can add margin classes
+
+
+
+III. Button groups 
+    Button Group Classes:
+        * btn-group 
+        * btn-group-vertical
+        * btn-toolbar
+
+IV. Use badges 
+
+    Badge Classes:
+        * badge 
+        * badge-pill
+        * badge-COLOR
+
+    Badges are contextual. They will change size to fit container.
+
+V. Progress bar styles 
+
+    Progress Classes:
+        * progress: containers 
+        * progress-bar: item
+        * Style width, height
+        * Label text
+
+    Progress Styles:
+        * Use bg-COLOR
+            success | info | warning | danger 
+        * progress-bar-striped
+        * progress-bar-animated
+        * Multiple bars
+
+    Accessibility Properties:
+        * role="progressbar"
+        * aria-valuenow: current value of bar
+        * aria-valuemin: hold minumum value of element
+        * aria-valuemax: hold maximum value of element
+
+        Progress bar does not have an html element, so specifying role is important for screen readers.
+        Div are harder for screen readers to understand.
+
+VI. List groups 
+
+    List Group Classes:
+        * list-group: containers
+        * list-group-item: items
+        * li | button | a
+
+    List Group Styles:
+        * active | disabled 
+        * list-group-item-action: style 
+        * Use list-group-item-COLOR
+            COLOR: primary | secondary | success | danger | warning | info | light | dark
+
+        By default, list are stacked vertically.
+        * list-group-horizontal(-BP)
+         BP: sm >576px | md >768 | lg >992px | xl >1200px
+
+    Adding Badges (common):
+        * badge: classes
+        * justify-content-between
+
+
+VII. Breadcrumbs 
+
+    Indicates where you are in navigation structure of site or for secondary navigation.
+
+    Breadcrumb Links:
+        * breadcrumb: containers
+        * breadcrumb-item: items 
+        * active: style
+        * li | nav>a
+
+VIII. Shadows 
+
+    Shadows:
+        * shadow-none
+        * shadow-sm
+        * shadow 
+        * shadow-lg
+
+Quiz:
+
+1. Breadcrumbs are used to display channels within a website.
+2. Option most handy for mobile devices.
+    A: btn-block
+3. 
