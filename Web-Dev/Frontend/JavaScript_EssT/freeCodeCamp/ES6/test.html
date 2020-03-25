@@ -10,7 +10,7 @@
 
     //** Let **
     let camper = 'James';
-    let campe = 'bonds'
+    // let camper = 'bonds'
     // 'use strict'; --> doesn't work
     // x = 3.14;
     // console.log(x)
@@ -162,9 +162,56 @@
         average: 35.85
     };
 
-    const half = ({max, min}) => (max + min) / 2.0;
+    const half = ({ max, min }) => (max + min) / 2.0;
     console.log(half(stats));
 
+    // ES6 Declarative functions
+
+    // Only change code below this line
+    const bicycle = {
+        gear: 2,
+        setGear(newGear) {
+            this.gear = newGear;
+        }
+    };
+    // Only change code above this line
+    bicycle.setGear(3);
+    console.log(bicycle.gear);
+
+    // Classes 
+    class Thermostat {
+        constructor(temperature) {
+            this._temperature = temperature;
+        }
+        // getter
+        get temperature() {
+            return 5/9 *  (this._temperature - 32); 
+        }
+        // setter
+        set temperature(updatedTemp) {
+            this._temperature = updatedTemp * 9.0 / 5 + 32;
+        }
+    }
+    const thermos = new Thermostat(76);
+    let temp = thermos.temperature;
+    console.log(temp);
+    thermos.temperature = 26;
+    temp = thermos.temperature;
+    console.log(temp);
+
+    
+    
+</script>
+<script type="module" src="math.js">// Module-level scope</script>
+<script type="module">
+    // Module
+    console.log("From math.js:")
+    import {add, subtract, multiply, divide} from './math.js';
+
+    console.log(add(4,5));
+    console.log(multiply(4,5));
+
+    console.log("math.js // end")
 </script>
 
 <body>
