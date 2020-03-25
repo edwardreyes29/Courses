@@ -1,0 +1,29 @@
+I. Layout components overview
+
+
+
+II. Add a jumbotron 
+
+
+
+III. Table styles
+
+
+
+IV. Basic card layouts 
+
+
+
+V. Card content classes 
+
+
+
+VI. Card layouts 
+
+
+
+VII. Use media object 
+
+
+
+Quiz:
