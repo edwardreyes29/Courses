@@ -355,3 +355,98 @@ B. Reuse JavaScript code using import.
 
     Import more than one item:
         import { add, subtract } from './math_functions.js';
+
+C. Use * to Import Everything from a File.
+
+    Import all contents into the current file.
+
+    import *
+
+        import * as myMathModule from "./math_functions.js";
+
+    myMathModule object will contain all exports from math_functions.js
+
+        myMathModule.add(2,3);
+        myMathModule.subtract(5,3);
+
+D. Create an Export Fallback with export default
+
+    export default syntax:
+        - Use if only one value is being exported from a file.
+        - Also used to create a fallback value for a file or module.
+
+        export default:
+            // named function
+            export default function add(x,y) {
+                return x + y;
+            }
+
+            // anonymous function
+            export default function(x,y) {
+                return x + y;
+            }
+        
+    You can only have one value be default export in each module or file.
+    You cannot use export default with var, let, or const
+
+XVII. Create a JavaScript Promise 
+
+    promise - use it to make a promise to do something (asynchronously)
+              when task completes, you either fulfill your promise or 
+              fail to do so. 
+
+              Promise is a constructor function, you need to use 'new' 
+              keyword to create one.
+
+              It takes two parameters 'resolve' and 'reject' which are 
+              methods used to determine the outcome of the promise.
+
+    const myPromise = new Promise((resolve, reject) => {
+
+    });
+
+A. Complete a Promise with resolve and reject.
+
+    A promise has three states: pending, fulfilled, and rejected. The promise you 
+    created in the last challenge is forever stuck in the pending state because 
+    you did not add a way to complete the promise. The resolve and reject 
+    parameters given to the promise argument are used to do this. resolve is used 
+    when you want your promise to succeed, and reject is used when you want it to 
+    fail. These are methods that take an argument, as seen below.
+
+    const myPromise = new Promise((resolve, reject) => {
+        if(condition here) {
+            resolve("Promise was fulfilled");
+        }else {
+            reject("Promise was rejected");
+        }
+    });
+
+    The example above uses strings for the argument of these functions, but it can 
+    really be anything. Often, it might be an object, that you would use data from, 
+    to put on your website or elsewhere.
+
+B. Handle a Fulfilled Promise with then
+
+    Promises are most useful when you have a process that takes an unknown amount 
+    of time in your code (i.e. something asynchronous), often a server request. 
+    When you make a server request it takes some amount of time, and after it 
+    completes you usually want to do something with the response from the server. 
+    This can be achieved by using the then method. 
+    
+    The then method is executed 
+    immediately after your promise is fulfilled with resolve. Here’s an example:
+
+        myPromise.then(result => {
+            // do something with the result.
+        });
+
+C. Handle a Rejected Promise with catch 
+
+    catch is the method used when your promise has been rejected. It is executed 
+    immediately after a promise's reject method is called. Here’s the syntax:
+
+        myPromise.catch(error => {
+            // do something with the error.
+        });
+    

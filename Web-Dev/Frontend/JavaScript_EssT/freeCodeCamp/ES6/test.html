@@ -185,7 +185,7 @@
         }
         // getter
         get temperature() {
-            return 5/9 *  (this._temperature - 32); 
+            return 5 / 9 * (this._temperature - 32);
         }
         // setter
         set temperature(updatedTemp) {
@@ -199,17 +199,48 @@
     temp = thermos.temperature;
     console.log(temp);
 
-    
-    
+    // Promise -> then -> catch
+
+    const makeServerRequest = new Promise((resolve, reject) => {
+        // responseFromServer is set to true to represent a successful response from a server
+        let responseFromServer = true;
+
+        if (responseFromServer) {
+            resolve("We got the data");
+        } else {
+            reject("Data not received");
+        }
+    });
+
+    makeServerRequest.then(result => {
+        console.log(result);
+    })
+
+    makeServerRequest.catch(error => {
+        console.log(error);
+    })
+
+    // REVIEW: callback function example
+    function greeting(name) {
+        alert('Hello ' + name);
+    }
+
+    function processUserInput(callback) {
+        var name = prompt('Please enter your name.');
+        callback(name);
+    }
+
+    processUserInput(greeting);
+
 </script>
 <script type="module" src="math.js">// Module-level scope</script>
 <script type="module">
     // Module
     console.log("From math.js:")
-    import {add, subtract, multiply, divide} from './math.js';
+    import { add, subtract, multiply, divide } from './math.js';
 
-    console.log(add(4,5));
-    console.log(multiply(4,5));
+    console.log(add(4, 5));
+    console.log(multiply(4, 5));
 
     console.log("math.js // end")
 </script>
