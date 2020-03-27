@@ -4,26 +4,102 @@ I. Layout components overview
 
 II. Add a jumbotron 
 
+    Jumbotron Classes:
+        * jumbotron (container)
+        * jumbotron-fluid (items)
+        * Use styles as needed 
+
+    Goes on top of the screen traditionally
 
 
 III. Table styles
+    Table Classes: 
+        * table 
+        * table-dark (inverse table)
 
+    Style Classes:
+        * table-striped: creates slightly diff colors for each
+        * table-border 
+        * table-borderless
+        * table-hover
 
+    Head Colors:
+        * thead-light 
+        * thead-dark
+
+    Color Options:
+        * table-COLOR: TRs & TDs
+            active | primary | secondary | success | danger | warning | info | light | dark
+            - lighter than regular
+        * bg-COLOR: Trs & TDs
+            primary | success | danger | warning | info
+        * text-COLOR: for text
+            primary | secondary | success | danger | warning | info | light | dark
+
+    Size/Responsive:
+        * table-sm
+        * table-responsive(-BP)
+            BP: sm | md | lg | xl
 
 IV. Basic card layouts 
 
-
+    Basic Card Classes:
+        * card: container
+        * card-body
+    
+    Card Content:
+        * card-text 
+        * card-title
+        * card-subtitle
+        * card-link
+        * card-img
+    
+    Colors:
+        * bg-COLOR for backgrounds
+        * border-COLOR for outlines 
+        * text-COLOR for text
 
 V. Card content classes 
+    Basic Card Classes:
+        * card: container 
+        * card-body
+        * card-header
+        * card-footer
 
+    Card Images
+        * card-img
+        * card-img-top
+        * card-img-bottom
+        * card-img-overlay
+
+    List Groups:
+        * list-group: container
+        * list-group-item 
+        * list-group-flush
 
 
 VI. Card layouts 
 
+    Card Layout Containers:
+
+        * card-group
+        * card-deck 
+        * card-columns: pinterest style layouts
+    Using the Grid:
+        * row row(-cols(-BP) (-COL))
+            BP: sm | md | lg | xl
+            COL: 1-6
+    
+
+    Using the
 
 
 VII. Use media object 
 
-
+    Media Classes:
+        * media: containers 
+        * media-body
+        * Use flexbox classes 
+        
 
 Quiz:
