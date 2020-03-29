@@ -1,0 +1,48 @@
+I. The global object 
+    node firstFile.js // to run it
+    OR
+    node firstFile
+
+    global.console.log(""); // part of the global object
+
+    console is part of the global object, and everthing in the global object
+    is available to us in Node.js within our javascript files
+
+    reference: https://nodejs.org/api/globals.html
+    
+
+II. The require function 
+
+
+
+III. Argument variables with process.argv
+
+    * Get environment information
+    * Get environment variables
+    * Communicate with terminal and parent processes with standard input/output
+    * Exit current process
+
+    * collect information from terminal when loading application. -> process.argv
+
+    User process.argv to pass on arguments to a node module
+
+IV. Standard output
+
+    process.stdin
+    process.stdout
+        * Allows us to communicate with process.
+        * Use these to read and write data from and to the terminal
+
+        String templates honor white space.
+
+V. Create a delay with setTimeout
+
+    
+
+
+
+VI. Incorporate setInterval
+
+
+
+VII. Report progress with setInterval 

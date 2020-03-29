@@ -1,0 +1,17 @@
+Course for terminal: Unix for Mac OS X Users
+
+I. Node.js history 
+    https://foundation.nodejs.org
+    https://github.com/nodejs
+
+II. How it works
+    Blocking, thread waiting for file system to finish reading files before anything else.
+
+    Apache is multi-threaded.
+
+    Nodejs it single-threaded
+        - Works Asynchronously -> can do more than one thing at a time.
+        - No waiting
+        - No Blocking -> Non-blocking, event driven I/O
+
+    
