@@ -110,31 +110,31 @@ II. Accessing related tables
 
 III. Relating multiple tables
 
-The sales table is the junction table. It contains its own id and ids for both
-customers and items. When we create a JOIN, it will be based on the sales.
+    The sales table is the junction table. It contains its own id and ids for both
+    customers and items. When we create a JOIN, it will be based on the sales.
 
-SELECT c.name AS Cust, c.zip, i.name AS Item, i.description, s.quantity AS Quan, s.price AS Price
-    FROM sale As s
-    JOIN item AS i ON s.item_id = i.id
-    JOIN customer AS c ON s.customer_id = c.id
-    ORDER BY Cust, Item
-;
+    SELECT c.name AS Cust, c.zip, i.name AS Item, i.description, s.quantity AS Quan, s.price AS Price
+        FROM sale As s
+        JOIN item AS i ON s.item_id = i.id
+        JOIN customer AS c ON s.customer_id = c.id
+        ORDER BY Cust, Item
+    ;
 
-SELECT i.name AS Item, c.name AS Customer, s.quantity, s.price, c.state
-    FROM sale AS s
-    JOIN item AS i ON s.item_id = i.id
-    JOIN customer AS c ON s.customer_id = c.id
-;
+    SELECT i.name AS Item, c.name AS Customer, s.quantity, s.price, c.state
+        FROM sale AS s
+        JOIN item AS i ON s.item_id = i.id
+        JOIN customer AS c ON s.customer_id = c.id
+    ;
 
-// Create a left outer join to show customers without sales
-INSERT INTO customer (name) VALUES ('Jane Smith');
-SELECT * FROM customer;
+    // Create a left outer join to show customers without sales
+    INSERT INTO customer (name) VALUES ('Jane Smith');
+    SELECT * FROM customer;
 
-// This gets everything in the customer table since its a left join
-// and all rows from sale & items where there is a sale;
-SELECT c.name AS Cust, c.zip, i.name AS Item, i.description, s.quantity AS Quan, s.price AS Price
-    FROM customer AS c    
-    LEFT JOIN sale AS s ON s.customer_id = c.id
-    LEFT JOIN item AS i ON s.item_id = i.id
-    ORDER BY Cust, Item
-;
+    // This gets everything in the customer table since its a left join
+    // and all rows from sale & items where there is a sale;
+    SELECT c.name AS Cust, c.zip, i.name AS Item, i.description, s.quantity AS Quan, s.price AS Price
+        FROM customer AS c    
+        LEFT JOIN sale AS s ON s.customer_id = c.id
+        LEFT JOIN item AS i ON s.item_id = i.id
+        ORDER BY Cust, Item
+    ;

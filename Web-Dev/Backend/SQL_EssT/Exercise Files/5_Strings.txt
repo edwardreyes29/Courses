@@ -1,0 +1,63 @@
+I. About SQL strings
+
+    Standard SQL: 
+        SELECT 'a literal SQL string';
+
+    MySQL:
+        SELECT "a literal SQL string";
+        
+    Single quote in string:
+        SELECT 'Here''s a single quote mark.';
+
+    Concatenation in standard SQL:
+        SELECT 'This' || ' & ' || 'that';
+
+    Concatenation in MySQL: Uses a function
+        SELECT CONCAT('This', ' & ', 'that');
+
+    // SQLite supports these.
+    String functions: May be different on different systems
+    SUBSTR( string, start, length);
+    LENGTH( string );
+    TRIM( string );
+    UPPER( string );
+    LOWER( string );
+
+II. Finding the length of a string 
+    SELECT LENGTH('string'); // returns 6
+
+    SELECT Name, LENGTH(Name) AS Len FROM City ORDER BY Len DESC, Name;
+
+III. Selecting part of a string 
+
+     SUBSTR( string, start, length);
+
+     SELECT SUBSTR('this string', 6); // returns 'string'
+     SELECT SUBSTR('this string', 6, 3); // returns 'str'
+
+     released date in album example: 1959-08-17:
+        SELECT released,
+            SUBSTR(released, 1, 4) AS Year,     // 1959
+            SUBSTR(released, 6, 2) AS Month,    // 08
+            SUBSTR(released, 9, 2) AS Day,      // 17
+
+            FROM album ORDER BY released
+        ;
+
+        Useful for unpacking data. 
+
+IV. Removing spaces
+    SELECT TRIM('    string    ');
+    SELECT LTRIM('    string    '); // removes beginning of string
+    SELECT RTRIM('    string    '); // removes spaces from end of string
+    SELECT TRIM('....string....', '.'); // removes period characters
+
+
+V. Folding case
+
+    SELECT 'StRiNg' = 'string'; // Returns 0
+    SELECT LOWER('StRiNg') = LOWER('string');   // Returns 1
+    SELECT UPPER('StRiNg') = UPPER('string');   // Returns 1
+
+    SELECT UPPER(Name) FROM City ORDER BY Name; // Returns names in UPPER
+    SELECT LOWER(Name) FROM City ORDER BY Name; // Returns names in LOWER

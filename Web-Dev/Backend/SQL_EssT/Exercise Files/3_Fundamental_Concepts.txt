@@ -199,7 +199,7 @@ IX. Filtering data
         WHERE Name LIKE 'island%' ORDER BY Name;
 
       // Match any rows where the second character is an 'a'
-        WHERE Name LIE '_a%' ORDER BY Name;
+        WHERE Name LIKE '_a%' ORDER BY Name;
   // IN operator
     Used to select results that match values in a list.
 
@@ -248,7 +248,7 @@ XII. Conditional expressions
 
 // 1 or anything not zero = true, 0 = false.
   SELECT 
-      CASE WHEN a THEN 'true' ELSE 'false' END as boolA, // returns false
+      CASE WHEN a THEN 'true' ELSE 'false' END AS boolA, // returns false
       CASE WHEN b THEN 'true' ELSE 'false' END AS boolB  // returns false
       FROM booltest
   ;
