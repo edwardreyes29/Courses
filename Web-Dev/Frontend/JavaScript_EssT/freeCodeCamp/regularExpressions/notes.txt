@@ -1,0 +1,107 @@
+I. Regular Expressions: Using the Test Method
+
+
+    Used to match part of strings.
+    Create patterns to help you do that matching.
+
+    To find the word "the" in a string, use:
+        /the/
+
+    .test method to test a regexes:
+        let testStr = "freeCodeCamp";
+        let testRegex = /Code/;
+        testRegex.text(testStr);
+        // Returns true
+
+II. Match litral String with diff possibilities:
+    To match "yes" or "no", regex /yes|no/
+
+    /yes|no|maybe/
+
+
+III. Ignore Case While Matching:
+    i flag ignores case. Append it to regex 
+    
+    /ignorecase/i
+        - matches "ignorcase, "igNoreCase", "IgnoreCase" 
+
+IV. Extract Matches:
+
+    Extract actual matches with .match() method.
+
+    "Hello, World!".match(/Hello/);
+    // Returns ["Hello"]
+
+    let ourStr = "Regular expressions";
+    let ourRegex = /expressions/;
+    ourStr.match(ourRegex);
+    // Returns ['expressions"]
+
+V. Find more than the First Match:
+    let testStr = "Repeat, Repeat, Repeat";
+    let ourRegex = /Repeat/;
+    testStr.match(ourRegex); // Returns ["Repeat"]
+
+    'g' flag to search or extract a pattern more than once.
+
+    let repeatRegex = /Repeat/g;
+    testStr.match(repeatRegex); // Returns ["Repeat", "Repeat", "Repeat"]
+
+VI. Match Anything with Wildcard Period:
+
+    '.' wildcard character. (dot, period)
+    - will match anyone character.
+
+    e.g. To match "hug", "huh", "hut", and "hum"
+            use regex /hu./
+
+    let humStr = "I'll hum a song";
+    let hugStr = "Bear hug";
+    let huRegex = /hu./;
+    huRegex.test(humStr); // Returns true
+    huRegex.test(hugStr); // Returns true
+
+VII. Match Single Character with Multiple Possibilities:
+    
+    Search literal pattern with some flexibility with character classes
+    [ ]
+
+    e.g. "bag", "big", and "bug" but not "bog".
+        regex: /b[aiu]g/ 
+
+        [aiu] is the character class that will only mathc 
+        characters "a", "i", or "u".
+
+    let bigStr = "big";
+    let bagStr = "bag";
+    let bugStr = "bug";
+    let bogStr = "bog";
+    let bgRegex = /b[aiu]g/;
+    bigStr.match(bgRegex); // Returns ["big"]
+    bagStr.match(bgRegex); // Returns ["bag"]
+    bugStr.match(bgRegex); // Returns ["bug"]
+    bogStr.match(bgRegex); // Returns null
+
+A. Match letters of alphabet:
+    Define a range of chracters to match using hyphen (-)
+    e.g. to match letters a through e, [a-e]
+
+    let catStr = "cat";
+    let batStr = "bat";
+    let matStr = "mat";
+    let bgRegex = /[a-e]at/;
+    catStr.match(bgRegex); // Returns ["cat"]
+    batStr.match(bgRegex); // Returns ["bat"]
+    matStr.match(bgRegex); // Returns null
+
+    
+
+    
+
+
+
+
+
+
+
+
