@@ -1,0 +1,62 @@
+I. Form styles overview
+    Complex, learn classes and structure of markup.
+
+II. Create a basic form 
+
+    Form Classes:
+        * form-group 
+        * form-text 
+    
+    Form controls:
+        * form-control 
+        * form-control-label 
+        * form-control-file 
+
+    
+
+III. Checkboxes and radio classes 
+    * form-check 
+    * form-check-label 
+    * form-check-input 
+    * form-check-inline 
+
+
+IV. Size and validation styles
+
+    * form-control-sm
+    * form-control-lg
+    * form-inline
+
+    * has-COLOR (js):
+        success | warning | danger 
+    * form-control-COLOR:
+        success | warning | danger
+
+
+V. Multi-forms
+
+    Form Columns
+        * Use row | col 
+        * needs form-row | col-auto
+        * col-form-label
+
+VI. Create input groups 
+
+    * input-group 
+    * input-group-prepend | input-group-append 
+    * input-group-text
+    * aria-label | sr-only
+
+VII. Custom form components
+
+    Custom Controls:
+        * custom-TYP
+            TYP: select(-sm)(-lg) | radio | checkbox | switch | range | file-input
+        * custom-control-label 
+        * custom-control
+        * custom-control-input
+
+
+Quiz:
+1. Form control doesn't apply to buttons
+2. If you need to have radio buttons display side-by-side, you use form-check-inline . 
