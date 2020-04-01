@@ -1,38 +1,169 @@
 I. Interactive component overview
 
+    JS & jQuery
 
+    tooltips most basic of these components.
 
 II. Add tooltips
 
+    Using tooltips
+        * Links or Controls 
+        * data-toggle="tooltip" 
+        * title="text"
 
+    Configurations & Activation
+        * data: or JS  Configuration
+        * JavaScript Activation 
+
+
+    Ex. Using jQuery call to use tooltip method
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip({  OPTIONS })
+        })
+
+        Results:
+            <div class="tooltop bs-tooltip-top" role="tooltip">
+                <div class="arrow"></div>
+                <div class="tooltip-inner">
+                    Some tooltip text!
+                </div>
+            </div> 
+
+    Common Options:
+        * placement: top | right | bottom | left 
+        * trigger: click | hover | focus 
+        * html: true | false
 
 III. Display popovers 
 
+    Similar to tooltips.
 
+
+    Using PopOvers:
+        * data-toggle="popover"
+        * title="text"
+        * data-content="content"
+
+    Activating:
+        $(function () {
+            $('[data-toggle="popover"]').popover({ OPTIONS })
+        })
+
+    Common Options:
+        * placement: top | right | bottom | left
+        * trigger: click | hover | focus
+        * container
 
 
 IV. Create alerts 
 
+    Setting up Alerts:
+        * alert 
+        * aler-COLOR
+
+    Alert Content:
+        * alert-heading
+        * alert-link 
+
+        Meant for simple content 
+    
+    Dismissable Alerts:
+        * alert-dismissable fade show
+        * Add a close button 
 
 
 
 V. Use Dropdowns 
 
+    Dropdown Basics:
+        * Navs, Tabs, etc.
+        * Button/Nav Trigger 
+        * links or buttons
 
+    Dropdown Classes:
+        * dropdown 
+        * dropdown-toggle
+        * dropdown-menu
+        * dropdown-item 
+
+    Dropdown Elements:
+        * dropdown-header 
+        * dropdown-divider
+        * disabled 
+
+    Dropdown Options:
+        * btn-sm | btn-lg
+        * dropup 
+        * dropdown-menu-right 
+        * btn-group | dropdown-toggle-split
 
 
 VI. Add collapse accordions 
 
+    Collapse:
+        * Link or Button
+        * data-toggle="collapse"
+        * #id or data-target(if button)
+        * collapse: (class)
 
+    Accordians: Group of collapses put together
+        * Require container
+        * show class once 
+        * dropdown-menu
+        * Use card
 
 VII. Use modals 
 
+    * Button or Link
+    * #id or data-target 
+    * data-toggle="modal"
+    * modal
 
+    Structural Classes:
+        * modal-dialog 
+        * modal-content 
+        * modal-header 
+        * modal-body
+        * modal-footer
+
+    Modal Options:
+        * modal-title 
+        * modal-dialog-centered 
+        * modal-dialog-scrollable
+        * data-dismiss="modal"
+
+    Modal Sizes:
+        modal-sm:   300px 
+        Default:    500px 
+        modal-lg:   800px
+        modal-xl:   1140px
 
 
 VIII. Build carousels
 
+    Setup:
+        * carousel, slide, carousel-fade, (set a target)
+        * carousel-inner 
+            * carousel-item, active 
+                * img d-block & w-100
+                * carousel-caption
+        * Controls & Indicators
 
+    Data Attributes:    
+        * ride: carousel | false 
+        * interval: 5000 / item 
+        * pause: hover | false 
+        * touch (default), keyboard, wrap: true 
+
+    Controls:
+        * carousel-control-(prev)(next) 
+            * carousel-control-(prev)(next)-icon 
+            * href="target" 
+
+    Indicators:
+        * carousel-indicators 
+            * data-target="target"
+            * data-slide-to="#" // Zero index
 
 
 IX. Use scrollspy
