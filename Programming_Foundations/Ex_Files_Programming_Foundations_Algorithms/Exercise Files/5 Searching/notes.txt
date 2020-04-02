@@ -1,7 +1,0 @@
-Ch 3 Quiz:
-1. Why does a test for ordering require an algorithm that is linear time complextity
-    A: it must test every element
-2. Given that it is faster to search ordered list, what is the downside?
-    A: More time consuming to create and maintain than unordered lists
-    
-3. Searching unordered list requires computational time that is linear in the list size
