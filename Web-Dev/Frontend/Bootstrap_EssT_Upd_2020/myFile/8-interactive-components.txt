@@ -168,26 +168,75 @@ VIII. Build carousels
 
 IX. Use scrollspy
 
-
+    Using Scrollspy:
+        * data-spy="scroll"
+        * position: relative 
+        * data-target="ID" 
+        * fixed-top
+        * data-offset 
 
 X. Toasts
 
+    // Pops an extra window of text for more info (not really window)
+    * toast 
+    * toast-header 
+    * toast-body 
 
+    Data Attributes:
+        * animation: true 
+        * autohide: true 
+        * delay: 500
+
+    Setup:
+        * JS Activation
+        * Positioning (will take room in DOM)
+        * data-dismiss="toast"
 
 XI. Spinners
 
+    // Gives users feedback when you need them to wait.
+    * spinner-TYP(-SIZ)
+        TYP: border | grow
+        SIZ: sm
+    * text-COL: for color 
 
+
+    
 
 XII. Pagination
+    Pagination (nav type of element)
 
+        * pagination 
+            * page-item, disabled, active 
+                * page-link 
+
+
+    Use this to control with javaScript
 
 XIII. Stretched links
 
+    Stretched Links:
+        * stretched-link 
+        * Use for cards and columns 
+        * Position, transform
+            - position other than static, and transform, perspective other than none.
+        * Immediate parent
+        
 
+        So basically, instead of the button in a card being the only thing clickable,
+        it makes the entire card itself clickable.
 
 XIV. Embeds 
 
+    Pieces of code add from other websites.
+    
+    Formatting Embeds
+    * embed-responsive
+        * embed-responsive-SIZ
+            SIZ: 21by9 | 16by9 | 4by3 | 1by1
+        * embed-responsive-item
 
 
 
-Quiz:
+Next Steps:
+    
