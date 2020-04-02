@@ -5,3 +5,5 @@ console.log(`The file name is ${path.basename(__filename)}`); // The file name i
 
 console.log(__dirname); // returns full path to directory
 console.log(__filename);    // returns full path to file
+
+
