@@ -1,0 +1,83 @@
+A. Python as a Calculator
+
+    ###
+    >>> 17 // 3 # floor division discards fractional part
+    5
+    >>> 5 ** 2 # 5 squared
+    24
+    >>> width = 4 * 5
+    >>> width
+    20
+    ###
+
+    In interpreter, last printed expression is assign to _
+
+    ###
+    >>> tax = 12.5 / 100
+    >>> price = 100.50
+    >>> price * tax
+    12.5625
+    >>> price + _
+    113.0625
+    >>> round(_,2)
+    113.06
+    >>> 
+    ###
+
+    raw strings using 'r':
+        >>> print('C:\some\name) # \n means newline!
+
+        >>> print(r'C:\some\name') # r before quote 
+
+    Multi-line:
+        """...""" OR '''...'''
+        print("""\
+        Usage: thingy [OPTION]
+            -h
+            -H hostname
+        """)
+    
+    >>> 'Py' 'thon'
+    'Python'
+
+    >>> text = ('Put several strings within parentheses '
+    ...         'to have them joined together.')
+
+
+    Strings can be indexed:
+    word = 'Python'
+    word[0] == 'P'
+    word[-1] == 'n'
+    word[-2] == 'o' # second-last character
+
+    0 - 5 # positive indices
+    -1 to -6 # negative indices
+
+    >>> word[:2] # up to 2 (excluded)
+    'Py'
+    >>> word[2:] # from position 2
+    'thon'
+    
+    >>> word[:4] # get first 4 characters
+    'Pyth'
+    >>> word[4:] # exclude first 4 characters
+    'on'
+
+     +---+---+---+---+---+---+
+    | P | y | t | h | o | n |
+    +---+---+---+---+---+---+
+    0   1   2   3   4   5   6
+    -6  -5  -4  -3  -2  -1
+
+    Strings are immutable, create a new one if needed.
+    ###
+    >>> 'C' + word[1:]
+    'Cython'
+    >>> word[:1] + 'andas'
+    'Pandas'
+    >>> len(word)
+    6
+    ###
+
+B. Lists
+

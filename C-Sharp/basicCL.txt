@@ -1,0 +1,9 @@
+
+
+dotnet new sln -n "VSCodeIntroSln"
+
+dotnet new console "IntroUI"
+
+dotnet new classlib -n "IntroLibrary"
+
+

@@ -1,0 +1,267 @@
+string value1 = " a";
+string value2 = "A ";
+// Massage the data
+Console.WriteLine(value1.Trim().ToLower() == value2.Trim().ToLower());
+
+Methods that return Boolean value:
+    - Methods that return a Boolean value can be thought of as a query.
+
+    String data type:
+        Contains()
+        StartsWith()
+        EndsWith()
+
+    Ex. 
+        string pangram = "The quick brown fox jumps over the lazy dog.";
+        Console.WriteLine(pangram.Contains("fox")); // True
+        Console.WriteLine(pangram.Contains("cow")); // False
+
+        Console.WriteLine(pangram.Contains("fox") == false);    // False
+        Console.WriteLine(!pangram.Contains("cow"));    // True
+
+        Unlike java, you can use == to compare two strings!
+        string name1 = "Edward";
+        string name2 = "Edward";
+
+        Console.WriteLine(name1 == name2); // True
+
+A. Conditional Operator
+
+    <condition> ? <if true, return this value> : <if false, return this value>
+
+    Ex. 
+        int saleAmount = 1001;
+
+        Console.WriteLine($"Discount: {(saleAmount > 1000 ? 100 : 50)}" );
+        // necessary to wrap entire conditional operator statement in parenthesis so runtime doesn't mistake your intent.
+
+    
+    Use the conditional operator when you need to add branching logic inline.
+    Use the conditional operator when you need to return a value based on a 
+    binary condition ... return this when true, return that when false.
+
+
+    Coding Challenge: Heads or Tails
+        Random coin = new Random();
+
+        int flip = coin.Next(2);
+        Console.WriteLine($"{((flip == 0) ? "heads" : "tails")}");
+
+    Coding Challeng: Permissions
+
+    string permission = "Admin|Manager";
+    int level = 53;
+
+    if (permission.Contains("Admin"))
+    {
+        if (level > 55)
+        {
+            Console.WriteLine("Welcome, Super Admin user.");
+        }
+        else
+        {
+            Console.WriteLine("Welcome, Admin user.");
+        }
+    }
+    else if (permission.Contains("Manager"))
+    {
+        if (level >= 20)
+        {
+            Console.WriteLine("Contact an Admin for access.");
+        }
+        else
+        {
+            Console.WriteLine("You do not have sufficient privileges.");
+        }
+    }
+    else
+    {
+        Console.WriteLine("You do not have sufficient privileges.");
+    }
+
+III. Code blocks, methods, classes, namespace:
+
+    A namespace disambiguates class names. In the module "Call methods from the 
+    .NET Class Library using C#", you learned how there are so many classes in 
+    the .NET Class Library that it's possible to have two classes with the same 
+    name. The namespace ensures you can instruct the compiler which class and 
+    method you want to work with by also specifying a namespace.
+
+    using System;
+
+    namespace MyNewApp
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Console.WriteLine("Hello World!");
+            }
+        }
+    }
+    /* Can add as many namespaces as we want */
+    namespace MyNewApp.Business
+    {
+    // Classes here: Maybe implement business logic of our application
+    }
+
+    namespace MyNewApp.Data
+    {
+    // Classes here: Add classes that implement data access features of our application.   
+    }
+
+    (!) Code blocks define boundaries for each constructs. It also
+    suggest ownership or containment, or relationship.
+
+    Calling a method in the same class:
+        ###
+        using System;
+
+        namespace MyNewApp
+        {
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    string value = "Microsoft Learn";
+                    string reversedValue = Reverse(value); // calling method in the same class
+                    Console.WriteLine($"Secret message: {reversedValue}");
+                }
+
+                static string Reverse(string message)
+                {
+                    char[] letters = message.ToCharArray();
+                    Array.Reverse(letters);
+                    return new string(letters);
+                }
+            }
+        }
+        ###
+
+    Calling a method from a different class:
+        ###
+        using System;
+
+        namespace MyNewApp
+        {
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    string value = "Microsoft Learn";
+                    string reversedValue = Utility.Reverse(value); // calling method from a different class
+                    Console.WriteLine($"Secret message: {reversedValue}");
+                }
+            }
+            class Utility
+            {
+                public static string Reverse(string message) // add public, otherwise it won't be accessible to Program class.
+                {
+                    char[] letters = message.ToCharArray();
+                    Array.Reverse(letters);
+                    return new string(letters);
+                }
+            }
+        }
+        ###
+
+    Referencing a class in a different namespace
+
+        ###
+        using System;
+        namespace MyNewApp
+        {
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    string value = "Microsoft Learn";
+                    string reversedValue = MyNewApp.Utilities.Utility.Reverse(value); // (!) better to keep full name
+                    // string reversedValue = Utilities.Utility.Reverse(value); // since both classes are defined in MyNewApp
+                    Console.WriteLine($"Secret message: {reversedValue}");
+                }
+            }
+        }
+
+        namespace MyNewApp.Utilities
+        {
+            class Utility
+            {
+                public static string Reverse(string message)
+                {
+                    char[] letters = message.ToCharArray();
+                    Array.Reverse(letters);
+                    return new string(letters);
+                }
+            }
+        }
+        ###
+
+
+    using statement:
+        - using resolves class name used in the file.
+        - instructs compiler to look at the list of namespaces to fins all of the class names.
+
+        System.Console.WriteLine() --> using System; --> Console.WriteLine()
+
+        ### 
+        using System;
+        using MyNewApp.Utilities; 
+
+        namespace MyNewApp
+        {
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    string value = "Microsoft Learn";
+                    string reversedValue = Utility.Reverse(value);
+                    Console.WriteLine($"Secret message: {reversedValue}");
+                }
+            }
+        }
+
+        namespace MyNewApp.Utilities
+        {
+            class Utility
+            {
+                public static string Reverse(string message)
+                {
+                    char[] letters = message.ToCharArray();
+                    Array.Reverse(letters);
+                    return new string(letters);
+                }
+            }
+        }
+        ###
+
+Exercise - Remove code blocks in if statements
+    
+    ###
+    bool flag = true;
+    if (flag)
+    Console.WriteLine(flag);
+    ###
+    OR 
+    ###
+    // Hard to read
+    bool flag = true;
+    if (flag) Console.WriteLine(flag);
+    ###
+
+Challenge:
+    ###
+    int[] numbers = { 4, 8, 15, 16, 23, 42 };
+    int total = 0;
+    bool found = false;
+
+    foreach (int number in numbers)
+    {
+        total += number;
+        if (number == 42) found = true;
+    }
+
+    if (found)
+        Console.WriteLine("Set contains 42");
+    Console.WriteLine($"Total: {total}");
+    ###

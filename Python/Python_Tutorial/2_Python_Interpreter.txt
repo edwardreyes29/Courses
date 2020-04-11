@@ -1,0 +1,27 @@
+python3 // enter interactive mode
+OR
+python -c comman [arg] ... // analogous to shell;s -c option
+
+A. Arg passing:
+import sys // access argv which is a list of args passed
+sys.argv[0] // first arg
+
+B. Interactive mode
+    >>> the_world_is_flat = True
+    >>> if the_world_is_flat:
+    ...     print("Be careful not to fall off!")
+    ... 
+    Be careful not to fall off!
+    >>> 
+
+2.2 Interpreter and its Environment
+
+A. Source Code Encoding
+Must be first line except if start with "shebang" line
+    #!/usr/bin/env python3
+    
+Declare encoding:
+    # -*- coding: encoding -*-
+
+    e.g. Windows-1252 encoding
+        # -*- coding: cp1252 -*-

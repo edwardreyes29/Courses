@@ -1,0 +1,213 @@
+
+I. Calling different kinds of methods in the .NET Class Library
+
+    1. ClassName.MethodName() 
+    2. stateless methods don't require creating a new instance of its class first.
+    3. stateful methods require you to create an instance of the class and access 
+            the method on the object.
+    
+
+    // Simulate dice roll, numbers 1 to 6
+    Random dice = new Random(); // System.Random class in .NET Class Library
+    int roll = dice.next(1, 7); // (min, max)
+    Console.WriteLine(roll);
+
+    Calling Both Random and Console Class
+    - methods are stateful or stateless.
+
+    A. Stateful v. Stateless methods
+        state: describes condition of execution environment at specific moment in time.
+
+        e.g. State of application is collection of all values stored in memory.
+
+        Stateless methods (static methods): implemented so they can work without referencing or 
+                                            changing any values already stored in memory.
+        e.g. Console.WriteLine()
+                - doesn't rely on any values stored in memory.
+                - Performs its function and finishes without impacting stat os application.
+
+         stateful methods: are built in such a way that they rely on values stored in memory by 
+                            previous lines of code that have already executed. Or they modify 
+                            the state of the application by updating values or storing new values 
+                            in memory. They're also known as (instance methods).
+
+II. Working with Return Values and Input Parameters
+
+method signature: number of input params defined for method and data type for each input params
+void methods return no value.
+
+Console.WriteLIne has 19 different overloaded versions.
+
+Random.Next has 3 overloaded versions:
+
+    Random dice = new Random();
+    int roll1 = dice.Next();        // 0 to 2,147,483,647
+    int roll2 = dice.Next(101);     // 0 to 100, 101 is exclusive upper bound, means no number larger than 100
+    int roll3 = dice.Next(50, 101); // 50 to 100
+
+    Console.WriteLine($"First roll: {roll1}");
+    Console.WriteLine($"First roll: {roll2}");
+    Console.WriteLine($"First roll: {roll3}");
+
+
+Intellisense: provides hints and brief reference information in popup window 
+
+II. Decision Logic:
+
+    // Dice Game
+    Random dice = new Random();
+
+    int roll1 = dice.Next(1, 7);
+    int roll2 = dice.Next(1, 7);
+    int roll3 = dice.Next(1, 7);
+
+    int total = roll1 + roll2 + roll3;
+
+    Console.WriteLine($"Dice roll: {roll1} + {roll2} + {roll3} = {total}");
+
+    if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3))
+    {
+        if ((roll1 == roll2) && (roll2 == roll3))
+        {
+            Console.WriteLIne("You rolled triples! +6 bonus to total!");
+            total += 6;
+        }
+        else 
+        {
+            Console.WriteLine("You rolled doubles! +2 bonus to total!");
+            total += 2;
+        }
+    }
+    
+    if (total >= 16)
+    {
+        Console.WriteLine("You win a new car!");
+    }
+    else if (total >= 10) 
+    {
+        Console.WriteLine("You win a new laptop!");
+    }
+    else if (total == 7)
+    {
+        Console.WriteLine("You win a trip for two!");
+    }
+    else 
+    {
+        Console.WriteLine("You lose");
+    }
+
+III. Arrays
+
+    string[] letters = {"a","b","c"};
+    foreach (string letter in letters) 
+    {
+        Console.WriteLine(letter);
+    }
+
+
+    int[] inventory = {200,450,700,175,250};
+
+    int sum = 0;
+    foreach (int items in inventory)
+    {
+        sum += items;
+    }
+
+    Console.WriteLine($"The total number of items: {sum}");
+
+
+    int[] inventory = {200,450,700,175,250};
+
+    // Create a variable to hold the current bin number and display the running tally
+    int sum = 0;
+    int bin = 0;
+    foreach (int items in inventory)
+    {
+        sum += items;
+        bin++;
+        Console.WriteLine($"Bin {bin} = {items} items (Running tally: {sum})");
+    }
+
+    Console.WriteLine($"We have {sum} items in inventory.");
+
+    // Challenge:
+    string[] fakeOrderIDs = {"B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179"};
+    foreach (string id in fakeOrderIDs)
+    {
+        if (id.Contains("B")) { // id.StartsWith("B")
+            Console.WriteLine(id);
+        }
+    }
+
+    Variable names shouldn't include the data type of the variable. You might see some advice 
+    to use a style like string strValue;. It was a popular style years ago. However, most 
+    developers don't follow this advice any more.
+
+    Variable names examples:
+        char userOption;
+        int gameScore;
+        float particlesPerMillion;
+        bool processedCustomer;
+
+    // TODO
+        - VS IDE provides window called Task List to help you identify TODO messages in your code.
+    
+
+    // code comments cannot be trusted. Best use comments for higher-level ideas and not how a line code works.
+
+
+    Random random = new Random();
+    string[] orderIDs = new string[5];
+    // Loop through each blank orderID
+    for (int i = 0; i < orderIDs.Length; i++)
+    {
+        // Get a random value that equates to ASCII letters A through E
+        int prefixValue = random.Next(65, 70);
+        // Convert the random value into a char, then a string
+        string prefix = Convert.ToChar(prefixValue).ToString();
+        // Create a random number, padd with zeroes
+        string suffix = random.Next(1, 1000).ToString("000");
+        // Combine the prefix and suffix together, then assign to current OrderID
+        orderIDs[i] = prefix + suffix;
+    }
+    // Print out each orderID
+    foreach (var orderID in orderIDs)
+    {
+        Console.WriteLine(orderID);
+    }
+
+    There are two problems with this code:
+
+    The code comments unnecessarily explain the obvious functionality of individual lines of code. 
+    These are considered low-quality comments because they merely explain how C# or methods of the 
+    .NET Class Library work. If the reader is unfamiliar with these ideas, they can look them up 
+    using docs.microsoft.com or Intellisense.
+
+    The code comments don't provide any context to the problem being solved by the code. These are 
+    considered low-quality comments because the reader doesn't gain any insight into the purpose of 
+    this code, especially as it relates to the larger system.
+
+
+    Higher-level purpose of code in comments:
+    /*
+        The following code creates five random OrderIDs
+        to test the fraud detection process.  OrderIDs 
+        consist of a letter from A to E, and a three
+        digit number. Ex. A123.
+    */
+    Random random = new Random();
+    string[] orderIDs = new string[5];
+
+    for (int i = 0; i < orderIDs.Length; i++)
+    {
+        int prefixValue = random.Next(65, 70);
+        string prefix = Convert.ToChar(prefixValue).ToString();
+        string suffix = random.Next(1, 1000).ToString("000");
+
+        orderIDs[i] = prefix + suffix;
+    }
+
+    foreach (var orderID in orderIDs)
+    {
+        Console.WriteLine(orderID);
+    }

@@ -16,7 +16,7 @@ const ask = (i=0) => {
 ask();
 
 const answers = [];
-process.stdin.on('data', data => {
+process.stdin.on('data', data => { // When data is typed on keyboard
     answers.push(data.toString().trim());
 
     if (answers.length < questions.length) {
