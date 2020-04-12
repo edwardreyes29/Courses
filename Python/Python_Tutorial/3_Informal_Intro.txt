@@ -1,27 +1,27 @@
 A. Python as a Calculator
 
     ###
-    >>> 17 // 3 # floor division discards fractional part
-    5
-    >>> 5 ** 2 # 5 squared
-    24
-    >>> width = 4 * 5
-    >>> width
-    20
+        >>> 17 // 3 # floor division discards fractional part
+        5
+        >>> 5 ** 2 # 5 squared
+        24
+        >>> width = 4 * 5
+        >>> width
+        20
     ###
 
     In interpreter, last printed expression is assign to _
 
     ###
-    >>> tax = 12.5 / 100
-    >>> price = 100.50
-    >>> price * tax
-    12.5625
-    >>> price + _
-    113.0625
-    >>> round(_,2)
-    113.06
-    >>> 
+        >>> tax = 12.5 / 100
+        >>> price = 100.50
+        >>> price * tax
+        12.5625
+        >>> price + _
+        113.0625
+        >>> round(_,2)
+        113.06
+        >>> 
     ###
 
     raw strings using 'r':
@@ -71,13 +71,71 @@ A. Python as a Calculator
 
     Strings are immutable, create a new one if needed.
     ###
-    >>> 'C' + word[1:]
-    'Cython'
-    >>> word[:1] + 'andas'
-    'Pandas'
-    >>> len(word)
-    6
+        >>> 'C' + word[1:]
+        'Cython'
+        >>> word[:1] + 'andas'
+        'Pandas'
+        >>> len(word)
+        6
     ###
 
 B. Lists
+    Arrays = {1,2,3}
+    Lists = [1,2,4]
+
+    square = [1,2,3];
+    square[0] == 1
+    square[-1] == 3
+    square[:2] = [1,2] # slicing can be applied
+    #concatenation
+    squares + [4,5,6] == [1,2,3,4,5,6]
+
+    #list are mutable!
+    squares[0] = 10 == [10,2,3,4,5,6]
+
+    #add new items at end of list append()
+    squares.append(7) == [10,2,3,4,5,6,7]
+
+    ###
+        >>> letter = ['a','b','c','d']
+        >>> letter[1:3] = ['B','C']
+        >>> letter
+        ['a', 'B', 'C', 'd']
+        >>> # remove 'B','C'
+        >>> letter[1:3] = []
+        >>> letter
+        ['a', 'd']
+        >>> # clear list
+        >>> letter[:] = []
+        >>> letter
+        []
+    ###
+C: Programming
+    ###
+        # Fibonacci series
+        >>> a,b = 0, 1 # multi assignment
+        >>> while a < 10:
+        ...     print(a)
+        ...     a,b = b, a + b
+        ... 
+        0
+        1
+        1
+        2
+        3
+        5
+        8
+    ###
+
+    Like in C, any non-zero integer value is true; zero is false.
+
+    print() inserts space between items:
+        i = 45
+        print('Value is', i)
+
+    end keyword to avoid newline after output:
+        a, b = 0, 1
+        while a < 1000:
+            print(a, end=',')
+            a, b = b, a+b
 
