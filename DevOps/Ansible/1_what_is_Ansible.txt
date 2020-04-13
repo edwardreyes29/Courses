@@ -3,9 +3,113 @@ What you should know:
 
 
 I. Intro
+	A Task execution engine.
+	Target local computer.
+	Targer remote computers.
 
+	Manages fleet of infastructure.
+
+	Ansible at Scale:
+		- Execute tasks on multiple machines at the same time
+		
+	Modes of Operation: Linear
+
+	1. Rolling Deployments
+		- Smaller batches in specific order
+		- Ease a change into production
+		- Minimize impact of a specific service
+	2. Run as fast as you can.
+	
+
+	References:
+	https://goo.gl/XMVwOM
+	
+	Written in Python.
+
+	http://www.yaml.io
+	- The way humans direct Ansible to accomplish tasks.
+	- blends human readibility with machine parsing.
 
 II. Low-cost fleet management
 
+	Lightweight: Ansible control -------> Fleet
+	Minimal requirments: Python with few library.
+	Agents	
+		- Installed on remote hosts
+		- Perform automated functions
+		- Communication
+		- Required preconfiguration
+	Agents are not required
+	
+
+	1. Communication with target host defaults to SSH:
+		- Widely avaiable and trusted communication protocol.
+	2. Transports
+		- Task instruction and Task code
+		- Return Data
+
+	No persistent state engine.
+	state discoverd at runtime.
+
+	Ansible only needs:
+	1. Inventory: potential targets
+	2. State Directives: Sinlge or multiple
+	3. Credentials: communications
+	
 
 III. Get started with Ansible
+	Ansible needs to be explicitly installed on the control machine.
+	- The machine that will processing all the task execution directions.
+	Requires Python 2.6 or later.
+
+	Windows cannot run as a control machine
+
+	sudo dnf install ansible
+
+	type: which ansible
+		available at /usr/bin/ansible
+
+	install python pip, usefule to use multiple version of ansible
+
+	(!) remove: sudo dnf remove ansible
+
+	Make sure you have python-virtualenv installed:
+	sudo dnf install python-virtualenv
+
+	GCC compiler:
+	sudo dnf install gcc openssl-devel
+
+	create new python virtualenv:
+	virtualenv ~/ansible
+
+	Acitvate this env:
+	source ~/ansible/bin/activate
+
+	type which pip to verfify:
+	which pip
+	returns: ~/ansible/bin/pip
+	(ansible)
+
+	Search for anisble using pip
+	pip search ansible
+		- shows many results
+	
+	pip search ansible |less
+		- anything that stars with ansible
+
+	Alternatively< pypi.org, search ansible, and first
+	result is package looking for.
+
+	Finally install:
+	pip install ansible
+		this time no config file set.
+
+
+
+
+
+
+
+
+
+

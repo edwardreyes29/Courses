@@ -1,0 +1,16 @@
+I. Work with hosts and variables
+
+
+II. Provide code to accomplish work
+
+
+III. Playbooks: Collections of tasks
+
+
+
+
+VI.. Control task and play behavior
+
+
+
+VII. Challenge: Write a playbook
