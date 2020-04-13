@@ -1,10 +1,111 @@
 I. Work with hosts and variables
+    Inventory provide:
+        * set of potential targets
+        * Targets required for any Ansible action
+        * Choice of inventory at execution time
 
+    Inventories are collection of hosts potentially with variable data.
+
+        Simple inventory: Uncategorized list of host names or ip addresses.
+            server1.domain
+            server2.domain
+            server3.domain
+
+        Groups:
+            [web]
+            server1.domain
+            server2.domain
+
+            [db]
+            server3.domain
+
+        Subgroups:
+            [east:children]
+            web
+
+            [west:children]
+            db
+
+    Patterns:
+        - support wild card and regex.
+        - Can select just east group, west and web exclusivle, or union of east adn web Groups.
+
+        Multiple Inventories:
+            - can create automation using same group names but different values within each inventory.
+            - switch in dev to deploying by switching inventory option.
+
+        Inventory variables: (key & value pairs)
+            foo: a_value
+            db: sql.myhost.io 
+            ansible_user: fred
+
+
+            Task arguments:
+            - can be used in task arguments or in conditional statements.
+            - instructs Ansible whether or not it should perform a certain task.
+                pip:
+                    name: {{ foo }}
+
+            Template Configuration:
+                [database]
+                conn = {{ db }}
+
+            Ansible Behavior:
+                ansible_user=fred
+
+
+    1. Inventory File:
+        inventory/hosts:
+        [web]
+        myhost foo=a_value
+
+    2. Group Files:
+        inventory/group_vars/web.yaml:
+        foo: different_value
+
+        inventory/group_vars/all.yaml:
+        foo: default_value
+
+    Most specific variable wins.
+
+        Static
+            * Simple to start with
+        Dynamic:
+            * Cloud
+            * Containers/VMs
+            * ssh_config 
 
 II. Provide code to accomplish work
+    - Tasks 
+    - Task Data 
+        - Task Return Data:
+            skipped - false
+            changed - true
+            path - /derp
+            mode - 755
+    - Task Controls
+
+    Code tasks use to perform works are called modules.
 
 
 III. Playbooks: Collections of tasks
+1. YAML Files
+    * collection of one or more plays.
+2. Plays 
+    * Link task with target hosts.
+
+(!) To demonstrate playbooks, first create an inventory
+
+    1. Create file called 'hosts'   
+    [groupA]
+    host1
+    host2
+    host3
+
+    [groupB]
+    host4
+    host5
+    host6
 
 
 

@@ -1,0 +1,87 @@
+I. What is ansible?
+
+    Simple automation language that can perfectly describe IT applications infrastructure 
+    in Ansible Playbooks.
+
+    Its an automation engine that runs Ansible Playbooks
+    
+    Ansible Tower by Red Hat is an enterprise framework for controlling,
+    securing, and managing your Ansible automation with UI and restful API.
+
+    Simple:
+        - No coding skills required
+        - productive quickly
+
+    Poweful:
+        - App deployment
+        - Configuration management
+        - Workflow orchestration
+        - Orchestrate app lifescycle
+
+    Agentless:
+
+II. What can I use Ansible to do?
+    - Config management
+    - App deployment
+    - Provisioning
+    - Continuous Delivery
+    - Security & Compliance
+    - Orchestration
+
+III. Playbooks
+    - Plain-text YAML describe desired state of something
+    - Human and machine readable
+    - Can be used to build entire application environments
+
+Playbook example:
+    name: install and start apache
+    hosts: web
+    remote_user: edward
+    become_method: sudo
+    become_user: root
+    vars:
+        http_port: 80
+        max_clients: 200
+    
+    tasks:
+    - name: install httpd
+      yum: name=httpd state=latest  (module)
+    - name: write apache config file
+      template: src=srv/httpd.j2 dest=/etc/httpd.conf 
+      notify:
+      -restart apache
+    - name: start httpd
+      service: name=httpd state=running
+
+    handlers:
+    - name: restart apache
+      service: name=httpd state=restarted
+
+Modules:
+    Standard structure:
+        module: directive1=value directive2=value
+
+IV. How to run:
+    Ad-Hoc: ansible <inventory> -m 
+    Playooks: ansible-playbook 
+    Automation Framework: Ansible Tower
+
+    AD-HOC Commands:
+        Runs command or calls module from command line (no playbook required):
+            ansible <inventory> <options>
+            ansible web -a /bin/date
+            ansible web -m ping 
+            ansible web -m yum -a "name=openssl state=latest"
+
+    Running Playbooks:
+        Runs a playbook on selected inventories from the command line.
+
+        ansible-playbook <options>
+        ansible-playbook my-playbook.yml
+
+    Check Mode:
+        Dry-run for ad-hoc commands and Playbooks.
+        Validate Playbook runs before making state changes on target systems
+
+            ansible web -C -m yum -a "name=httpd state=latest"
+            ansible-playbook -C my-playbook.yml 
