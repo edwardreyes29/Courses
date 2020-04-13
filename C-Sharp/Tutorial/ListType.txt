@@ -1,0 +1,41 @@
+I. Create lists
+
+    var names = new List<string> {"Edward", "Ana", "Felipe"};
+    foreach (var name in names)
+    {
+        Console.WriteLine($"Hello {name.ToUpper()}!");
+    }
+
+    List<T> Class
+        - stores sequences of elements, specify type within angle brackets.
+        - strongly typed list of objects accessed by index.
+        - methods for search, sort, manipulate lists.
+
+    Methods:
+        names.Add("Maria"); // Adds elements to end of list
+        names.Add("Bill");
+        names.Remove("Ana"); // removes instance of element
+
+        names[0] == "Edward"
+        names[1] == "Felipe"
+
+        names.Count() // returns the length of list
+
+        var index = names.IndexOf("Felipe"); // returns index of this element if found, -1 if not
+
+        names.Sort(); // sorts list in alphabetical order for strings
+
+II. List of other types
+    var fibonacciNumbers = new List<int> {1, 1};
+
+    int previous = 0;
+    int previous2 = 0;
+
+    for(int i = 0; i < 20; i++) {
+        previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+        previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+
+        fibonacciNumbers.Add(previous + previous2);
+    }
+    foreach (var item in fibonacciNumbers)
+        Console.WriteLine(item);

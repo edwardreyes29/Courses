@@ -1,0 +1,11 @@
+What you should know:
+- Linux CL
+
+
+I. Intro
+
+
+II. Low-cost fleet management
+
+
+III. Get started with Ansible

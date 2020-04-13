@@ -1,0 +1,12 @@
+String methods:
+    Trim()
+    TrimStart()
+    TrimEnd()
+    Replace(string1, string2)
+    ToUpper()
+    ToLower()
+
+Search strings:
+    string.Contains(string); // returns True or False if string is found.
+    string.StartsWith(string);
+    string.EndsWith(string);

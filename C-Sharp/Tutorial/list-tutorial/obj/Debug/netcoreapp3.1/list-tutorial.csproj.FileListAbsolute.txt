@@ -1,0 +1,12 @@
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/bin/Debug/netcoreapp3.1/list-tutorial.deps.json
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/bin/Debug/netcoreapp3.1/list-tutorial.runtimeconfig.json
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/bin/Debug/netcoreapp3.1/list-tutorial.runtimeconfig.dev.json
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/bin/Debug/netcoreapp3.1/list-tutorial.dll
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/bin/Debug/netcoreapp3.1/list-tutorial.pdb
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/obj/Debug/netcoreapp3.1/list-tutorial.csprojAssemblyReference.cache
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/obj/Debug/netcoreapp3.1/list-tutorial.csproj.CoreCompileInputs.cache
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/obj/Debug/netcoreapp3.1/list-tutorial.AssemblyInfoInputs.cache
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/obj/Debug/netcoreapp3.1/list-tutorial.AssemblyInfo.cs
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/obj/Debug/netcoreapp3.1/list-tutorial.dll
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/obj/Debug/netcoreapp3.1/list-tutorial.pdb
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/list-tutorial/obj/Debug/netcoreapp3.1/list-tutorial.genruntimeconfig.cache

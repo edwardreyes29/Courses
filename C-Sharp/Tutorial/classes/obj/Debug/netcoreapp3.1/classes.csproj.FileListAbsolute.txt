@@ -1,0 +1,12 @@
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/obj/Debug/netcoreapp3.1/classes.csprojAssemblyReference.cache
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/obj/Debug/netcoreapp3.1/classes.csproj.CoreCompileInputs.cache
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/obj/Debug/netcoreapp3.1/classes.AssemblyInfoInputs.cache
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/obj/Debug/netcoreapp3.1/classes.AssemblyInfo.cs
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/bin/Debug/netcoreapp3.1/classes.deps.json
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/bin/Debug/netcoreapp3.1/classes.runtimeconfig.json
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/bin/Debug/netcoreapp3.1/classes.runtimeconfig.dev.json
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/bin/Debug/netcoreapp3.1/classes.dll
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/bin/Debug/netcoreapp3.1/classes.pdb
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/obj/Debug/netcoreapp3.1/classes.dll
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/obj/Debug/netcoreapp3.1/classes.pdb
+/Users/edwardreyes/Coding/Courses/C-Sharp/Tutorial/classes/obj/Debug/netcoreapp3.1/classes.genruntimeconfig.cache

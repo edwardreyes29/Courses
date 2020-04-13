@@ -1,0 +1,4 @@
+dotnet new console -o myApp
+cd myApp
+
+dotnet run // to run app

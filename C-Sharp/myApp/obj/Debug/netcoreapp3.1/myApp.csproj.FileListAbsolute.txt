@@ -1,0 +1,12 @@
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/bin/Debug/netcoreapp3.1/myApp.deps.json
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/bin/Debug/netcoreapp3.1/myApp.runtimeconfig.json
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/bin/Debug/netcoreapp3.1/myApp.runtimeconfig.dev.json
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/bin/Debug/netcoreapp3.1/myApp.dll
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/bin/Debug/netcoreapp3.1/myApp.pdb
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/obj/Debug/netcoreapp3.1/myApp.csprojAssemblyReference.cache
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/obj/Debug/netcoreapp3.1/myApp.csproj.CoreCompileInputs.cache
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/obj/Debug/netcoreapp3.1/myApp.AssemblyInfoInputs.cache
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/obj/Debug/netcoreapp3.1/myApp.AssemblyInfo.cs
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/obj/Debug/netcoreapp3.1/myApp.dll
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/obj/Debug/netcoreapp3.1/myApp.pdb
+/Users/edwardreyes/Coding/Courses/C-Sharp/myApp/obj/Debug/netcoreapp3.1/myApp.genruntimeconfig.cache
