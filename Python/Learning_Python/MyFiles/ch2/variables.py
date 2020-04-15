@@ -14,4 +14,13 @@ someFunction()
 print(f)
 
 del f # deletes definition of a variable that was previously declared
-print(f) # global name 'f' not defined
+# print(f) # global name 'f' not defined
+
+a=1
+b=2
+def func():
+    global b
+    b = a+b
+    return b
+
+print(func())
