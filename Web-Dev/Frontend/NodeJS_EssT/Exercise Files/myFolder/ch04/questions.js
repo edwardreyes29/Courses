@@ -1,9 +1,4 @@
-const readline = require("readline");
-
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const collectAnswers = require("./lib/collectAnswers");
 
 const questions = [
     "What is your name? ",
@@ -11,30 +6,16 @@ const questions = [
     "What are you going to do with node js? "
 ];
 
-/* Collect  to ask every questions in array and present it to user.
-    The callback should list the answers back.
-*/
+// collectAnswers(questions);
+const answerEvents = collectAnswers(questions);
 
-const collectAnswers = (questions, done) => {
-    const answers = [];
-    const [firstQuestion] = questions; // destructure array
-    
-    const questionAnswered = answer => {
-        answers.push(answer);
-        // ask another question if answer length is less than questions length
-        if (answers.length < questions.length) {
-            rl.question(questions[answers.length],questionAnswered); // 1 -> second question, 2 -> third
-        } else {
-            done(answers); // callback
-        }
-    };
+answerEvents.on("answer", answer => 
+    console.log(`question answered: ${answer}`)
+);
 
-    rl.question(firstQuestion, questionAnswered);
-};
-
-collectAnswers(questions, answers => {
+answerEvents.on("complete", answers => {
     console.log("Thank you for your answers. ");
     console.log(answers);
-    process.exit();
 });
 
+answerEvents.on("complete", answers => process.exit());
