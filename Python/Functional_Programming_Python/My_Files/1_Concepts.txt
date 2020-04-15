@@ -1,0 +1,23 @@
+O-O to functional programming. Reduces bugs and increases readability & reusability. Lisp, Haskell
+
+What you should know:
+    - Basic Python syntax
+    - Command-Line Operations
+
+    Object-Oriented Basics:
+
+I. Goal of functional programming
+
+
+II. Declarative versus imperative programming
+
+
+III. Immutability
+
+
+IV. Separation of data and functions
+
+
+V. First-class functions
+
+

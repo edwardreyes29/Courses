@@ -1,0 +1,17 @@
+I. Functions as data part 1 & 2
+
+
+
+
+III. Passing functions as arguments
+
+
+IV. Returning Functions
+
+
+
+V. Closure
+
+
+
+VI. Higer-order Functions
