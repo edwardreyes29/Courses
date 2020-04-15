@@ -1,4 +1,4 @@
-# f = 0
+f = 0
 # print(f)
 # f = "abc"
 # print("this is a string " + f) # causes error
@@ -6,5 +6,12 @@
 
 # Global vs. local variables in functions
 def someFunction():
-    f = "def"
+    global f # target global variable
+    f = "def" # local variable
     print(f)
+
+someFunction()
+print(f)
+
+del f # deletes definition of a variable that was previously declared
+print(f) # global name 'f' not defined
