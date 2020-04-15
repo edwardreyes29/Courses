@@ -1,0 +1,22 @@
+Check version: $ python --version
+I. Hello World
+
+
+II. Variables and Expressions
+
+
+III. Python Functions
+
+
+
+IV. Conditional Structures
+
+
+V. Loops
+
+
+
+VI. Classes
+
+
+Quiz:
