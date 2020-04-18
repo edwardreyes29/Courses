@@ -1,0 +1,77 @@
+I. Request/Response pair
+    client sends Request.
+    server response to request.
+
+II. Anatomy of a url
+    Universal Resource Locator: Human-readable address describing where on teh web a particular resource is located.
+
+    Two parts:
+        1. Protocol declaration: https://
+        2. URN: Uniform Resource Name: edwardtreyes.com/
+            - host/connection-port/resource-path/URL-query
+
+        connection port: usually hidden | https default :443 | http default :80
+        resource-path:
+            - index.html
+            - default.htm
+
+            If anything else, needs to list file path specifically
+            - mysite.com/folder/about.html
+            - mysite.com/folder/contact.html
+
+        URL-query:
+            - ?u=1234567
+            - optional
+                - can perform further actions, like tracking user id or filter contents.
+
+III. HTTPs methods
+    Typical methods:
+        GET, PUT, DELETE
+
+    Other methods:
+        PUT, PATCH, HEAD, OPTIONS, TRACE
+
+
+    GET: Gets the specified resource, if available
+        // http status
+        - 200 0K (success) 
+        - 404 Not Found or 405 Not Allowed or 403 Forbidden (Failure)
+
+    Methods to send data from client to server: POST, PUT, and PATCH
+
+    POST: Create a new resource and add it to a collection
+        // http status
+        - 201 created (success)
+        - 409 Conflict - already created
+        - 401 Unauthorized or 409 Conflict or 404 Not Found (failure)
+
+    PUT: Update an existing singleton resource based on ID.
+        // http status
+        - 200 OK (success)
+        - 204 No Content or 404 Not Found or 405 Method Not Allowed (failure)
+
+    PATCH: Modify an existing singleton resource based on ID.
+        // http status
+        - 200 OK (success)
+        - 204 No Content or 404 Not Found or 405 Method Not Allowed
+
+    DELETE: Delete a resource based on ID.
+        // http status
+        - 200 OK
+        - 401 Unauthorized or 404 Not Found or 405 Method Not Allowed
+
+    
+    HEAD, OPTIONS, TRACE
+
+    
+IV. HTTP Status message
+    1xx     Information
+    2xx     success
+        200 OK | 201 Created | 204 No content
+    3xx     Redirection
+        301 Moved permanently | 302/303 Found at other URI | 307 Temporary redirect | 308 Permanent redirect
+    4xx     Client error 
+        400 Bad request | 401 Unauthorized | 403 Forbidden | 404 Not Found | 405 Method not allowed
+    5xx     Server error
+        500 Internal server error | 502 Bad gateway | 503 Service unavailable
+

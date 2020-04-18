@@ -1,0 +1,158 @@
+I. What is HTTP?
+    HTTP: Hypertext Transfer Protocol
+
+    Protocol: System of rules of communication of entities between separate entities
+
+    HTTP Protocol: The set of rules servers and browsers use to transfer web documents back and forth.
+    
+    Which is why every url starts with http
+
+    HTTP is plain language and human readable:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - CONNECT
+        - HEAD
+
+    Stateless Protocol:
+        - Each individual request sent over to the protocol is unique, and no request is connect to another request.
+        - Has no memory of previous request.
+
+    Sessions: -> Solves stateless issue
+        - Stored states shared between browser and server.
+        - browser and server can exchange information about where the visitor is in the sequence by
+            passing information back and forth in the form of cookies.
+
+    HTTP Headers:
+        * What type of client sent to the request
+        * Server Configuration
+        * Time and date of the response
+        * Duration of data storage
+        * Data format
+        * Cookies used to track sessions
+
+    HTTP works based on request/response pairs:
+
+II. HTTP, HTTP/2, and HTTPS
+    HTTP/2 - Version 2
+        - 70% - 80% of all transaction online
+
+    Differences:
+        Courses: HTTP/2: Developing for performance Courses
+
+        HTTP/2
+        - Faster and more secure
+        - Uses compression algorithms to speed up requests
+        - allows multiplexing -> multiple files sent over connection at the same time.
+        - requires encrypted connections between client and server through HTTPS
+
+        HTTP/1.1
+        - Uncompressed Headers
+        - Transfers one file at a time
+        - No default encryption
+
+        most HTTP > HTTPS over HTTP/2 > Unencrypted HTTP/1.1
+
+
+III. HTTP Terminology
+
+    Browser: Applications used to access and navigate between HTML documents 
+    
+    Visual browsers:
+        - smartphone, tablet, computer
+    Text-to-speech audio browsers
+    Text-only browsers
+    VR,AR,MR,XR browsers, etc.
+
+    User Agent: Application acting on behalf of the user - literally an agent of the user - typically a browser.
+    (Client Application)
+        - A user agent is whatever application is transporting information from the user to a server and back.
+        - Job typically falls to the browser, but it can also be middleware or a service like Google or even a server.
+
+    TCP: Transmission Control Protocol, one of the main internet protocols used by the World Wide Web, email, FTP
+        and remote administration.
+
+        - When connecting to a service, most likely using a TCP protocol
+
+    IP: Internet protocol, IP is used to transfer data between computers over a network.
+        - Every device connected to the internet has an IP address.
+
+    URL: Uniform Resource Locator, an address pointing at a resource on the web.
+
+    DNS: Short for Domain Name Server, DNS catalogs all domain name URLs and points them to the IP addresses of servers
+
+    Resource: The fil or files available on a sever when following a URL.
+
+    Server: Computer on the internet running some form of data storage and sharing application.
+            - Most commonly a web server application.
+
+    Proxy: Software or hardware service acting as a middle person between clients and servers.
+
+    Request-Response Pairs:
+        Clients and servers communicate over HTTP using request-response pairs.
+        A request is sent, a response is returned.
+
+    Header: 
+        Request and responses use HTTP headers to pass information back and forth.
+    
+    HTTP Request Method/Verb:
+        Every HTTP request contains a method - a.k.a a verb - explaining what action the sender wants to perform on the resource.
+
+    Status Response Code:
+        Numerical code in the 100 to 500 range describing what type of response the server sent back to the client.
+
+    Cache:
+        Method for storing data on the client or server to speed up performance.
+
+    Stateless: ^^
+
+    Cookie: String of data passed back and fourth between the client and server to create a stateful session.
+
+    Session: 
+        Clients and servers can share information about states by passing information back and fourth, creating a session.
+
+IV. HTTP Flow
+
+    Website -> Library
+    Libriarian handles requests
+    Librarian goes to releveant peices and returns to you.
+
+
+    1. Browser opens a TCP connections to server.
+        - Ensures data can be sent back and forth over the network and that the data
+            sent from one end is put together the same way at the other end.
+        - TLS certificates are exchanged to ensure only computer and server can encrypt and decrypt the transmitted data.
+            - prevents eavesdropping on data.
+
+    2. Browser sends an HTTP message
+        - This message always contains an HTTP method: GET, PUT, DELETE, or something similar, 
+            and the URL pointing at the requested resource.
+
+            e.g. GET /about.html
+
+        - Can also contain headers like cookies or authentication data.
+        - browser submits data using POST, PUT, or PATH methods.
+
+    3. Server performs the requested actions and sends a response back to the browser.
+        - This response will contain HTTP status message, indicating what happened,
+            headers with info about the response, and whatever data was requested.
+                - HTML document, stylesheet, JavaScript file or image, etc.
+
+    4. TCP Connections is closed
+        - Back to a clean slate
+
+    Request examples:
+        - 200 OK /about.html
+        - 200 OK /style.css 
+        - 200 OK /nav.js
+
+V. Tools to see HTTP in action
+
+    - use developer tools -> in this example firefox.
+
+        1. Open developer tools -> Inspect Element
+        2. Go to Networks tab
+
+            304 -> cahced data
+            200 -> successful get

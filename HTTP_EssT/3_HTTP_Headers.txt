@@ -1,0 +1,134 @@
+I. What are HTTP Headers?
+    Human readable name value pair separated by a colon which are added to the HTTP request/response used to pass
+    a standard or custom information back and forth between the client and the server.
+
+    Ex. Say you want to send a POST request to a content management system to create a new resource.
+        To make this work, you first have to authenticate yourself to prove to the server you have the
+        correct authorization to create new resources. Send an Authentication header with basic 
+        authentication information: a user name and a password
+
+        Base64 encoded
+
+        Authorization: Basic bWydGV....
+
+        If a server wants, or needs, the client to remember where it has been or what state it is in, like what movie the 
+        client is currently watching in this course, it can use a set cookie header, to give the client a cookie, a small 
+        piece of data. The next time the client visits the server, it sends the cookie back, and the server brings the 
+        client to the right state. Cookies like this are used everywhere on the web. They are the reason why news and 
+        social media sites seem to remember where you have been and why you stayed logged into sites even after you have 
+        closed the tab or the browser.
+        Cookies can also be used to track you.
+
+        When Caches are stored, it won't receive any new versions of a website until they are cleared or expired.
+
+II. How to see HTTP Headers
+
+    If you need to send a custom request headers to a server to rest the response, you can do so using a REST client.
+    -> Course: Learning REST APIS
+
+    How data is transferred between clients and servers.
+
+
+    Two tools: Postman & VS Code Rest Client
+
+III. Anatomy of request Headers
+
+    GET https://mor10.com/
+
+    Accept	
+    text/html,application/xhtml+xm…ml;q=0.9,image/webp,*/*;q=0.8
+    Accept-Encoding	
+    gzip, deflate, br
+    Accept-Language	
+    en-US,en;q=0.5
+    Cache-Control	
+    max-age=0
+    Connection	
+    keep-alive
+    Host	
+    mor10.com
+    Referer	
+    https://www.google.com/
+    TE	
+    Trailers
+    Upgrade-Insecure-Requests	
+    1
+    User-Agent	
+    Mozilla/5.0 (Macintosh; Intel …) Gecko/20100101 Firefox/75.0
+
+
+IV. Anatomy of response Headers
+
+    Server: nginx
+    Date: Sat, 18 Apr 2020 02:27:09 GMT
+    Content-Type: text/html; charset=UTF-8
+    Content-Length: 8248
+    Connection: close
+    X-Cache-Enabled: True
+    Link: <https://mor10.com/wp-json/>; rel="https://api.w.org/", <https://mor10.com/>; rel=shortlink
+    Set-Cookie: wpSGCacheBypass=0; expires=Sat, 18-Apr-2020 01:27:09 GMT; Max-Age=0; path=/
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Cache-Control: max-age=15552000
+    Expires: Thu, 15 Oct 2020 02:27:09 GMT
+    alt-svc: quic=":443"; ma=86400; v="43,39"
+    Host-Header: 624d5be7be38418a3e2a818cc8b7029b
+    X-Proxy-Cache: MISS
+
+V. Cookies
+    Cookies used to pass states between server and clients
+    Login panel: want broswer to remember and authenticate itself. Can use a cookie for this.
+
+    Cookies can be used to to keep people logged in or keep track of where they left off. B/c they can be used by advertisers,
+    the European Union made it mandatory for websites to warn the use of cookies.
+
+
+VI. Caching
+
+    Both servers and clients can tell the other party to cache files to be used for later.
+    Once cached, they will be used over fresh files, which dramatically speeds up site and performance.
+
+    Caveat: Cached files can't be overwritten from the server.
+
+    Cache Request Directives:
+        - Cache-Control:
+            max-age=<seconds>
+            max-stale[=<seconds>]
+            min-fresh=<seconds>
+            no-cache
+            no-store 
+            no-transform 
+            only-if-cached 
+
+    Cache-Control:
+        must-revalidate 
+        no-cache
+        no-store 
+        no-transform
+        public
+        private
+        proxy-revalidate 
+        max-age=<seconds>
+        s-maxage=<seconds>
+
+        Cache-Control: max-age: 31536000 (one year)
+            Store this file for one year and use it instead of requesting to download a fresh copy during that time.
+
+        User needs to actively clear cache. So some browsers won't update.
+
+        Solutions:
+        Cache-Control: no-cache, max-age: 31536000
+            store this file for one year, but before you use it, check to see if a new version is available.
+
+        Cache-Control: no-store 
+            Do not cache this file
+
+        // Reduce max-age
+        Cache-Control: max-age: 86400
+            Store this fiel for one day and use it instead of requesting to download a fresh copy during that time.
+
+        Cache-control: max-age: 2592000
+            Store this file for one month and use it instead of requesting to download a fresh copy during that time.
+
+
+Course: HTTP/2 Developing for performance
