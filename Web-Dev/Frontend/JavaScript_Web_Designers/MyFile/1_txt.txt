@@ -1,0 +1,25 @@
+III. When you don't use JS
+    If CSS can handle it, use CSS.
+    Animation only for Advanced animations
+
+IV. JS can be dangerous
+    - Can load data via AJAX 
+        - Security risks (XSS)
+
+    Course: Programming Foundations: Web Security
+
+    Performance Problems:
+        - Pull and display ads
+        - Tracking scripts
+        - Large file sizes
+        - Page load times
+    
+    Improve Performance
+        - Keep JS lean
+        - Avoid using lots of scripts
+
+    course: Vanilla JavaScript: Web performance Optimizaiton APIs
+    course: Learning Enterprise Web Application Performance
+
+    JavaScript can be blocked
+    - some users may opt out of JS

@@ -1,0 +1,36 @@
+III. Tools in action
+
+var myFriend = {};
+myFriend.name = "Edward";
+myFriend.age = 29;
+
+{name: "Edward", age: 29}
+
+function talkingDog() {
+    window.alert("Woof Woof");
+}
+
+VI. DOM
+    Document Object model (DOM)
+    CSS -> works with DOM
+    - JS
+    - jQuery
+
+    Methods:
+        - document.getElementByIDS
+            - get page element by using its getElementByIDS
+        - document:QuerySelector
+        - document.QuerySelectorAll
+    Properties:
+        - value: get value of text fields other form elements 
+        - checked: form checks
+        - className
+        - id 
+
+VII. Vanilla JS or Framework:
+    Frameworks are good for task are already solved.
+    Bad: bloat, security risk, vulnerability.
+
+    Vanilla JS: Only need to write code that you need.
+        - Solid graps is good for frameworks.
+        
