@@ -1,5 +1,7 @@
+// Immediateley invoked functions
 (function() {
-"use strict";
+"use strict"; // Turns on JS strict mode: accidental global variables
+
 	
 	
 	

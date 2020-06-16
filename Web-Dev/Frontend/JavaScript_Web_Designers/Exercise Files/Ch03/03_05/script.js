@@ -1,3 +1,4 @@
+// Validate input
 (function() {
   "use strict";
 
@@ -6,8 +7,17 @@
     .addEventListener("submit", estimateTotal);
 
   function estimateTotal(event) {
-    event.preventDefault;
+    event.preventDefault();
 
-    console.log("You submitted the form");
+    var state = document.getElementById('s-state');
+
+    // Check its value if its empty
+    if (state.value === "") {
+      alert("Please choose your shipping state");
+
+      state.focus();
+
+      return;
+    } 
   }
 })();

@@ -1,0 +1,35 @@
+III. Radio Submissions with events
+
+    document.getElementByID("id").value; // returns id
+    document.forms; // returns all form elements in an array
+    documents.forms[i].element["id"]; // select a form at index i and see element with 'id'
+
+    document.getElementById('s-state').options // returns all option elements within the parent element
+    <select id="s-state">
+        <option>
+        <option>
+    </select>
+
+    // Dealing with checkboxes <input type="checkbox">
+    document.getElementById("c-special-gift").checked
+    false
+
+    // QuerySelectors use CSS syntax
+        // Get all checkbox that are checked
+        document.querySelectorAll('.special input[type=checkbox]:checked');
+            0: <input id="c-special-gift" type="checkbox" value="YES" name="c-special-gift">​
+            1: <input id="c-special-email" type="checkbox" value="YES" name="c-special-email">
+    ​
+            length: 2
+
+
+    // radio types
+    <input type="radio" value="pickup" name="r_method" id="r-method-pickup" checked="">
+
+    document.querySelector('input[name=r_method]:checked')
+
+    // Set a radio to true so it gets checked.
+    <label for="r-method-ups">UPS ($3/item)</label>
+    document.getElementById('r-method-ups').checked = true;
+
+IV. Changing submissions with events
