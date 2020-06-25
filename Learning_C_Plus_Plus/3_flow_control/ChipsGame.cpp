@@ -28,13 +28,17 @@ int main() {
 
     // start game with random number of chiprs in the pile.
     chipsInPile = (rand() % MAX_CHIPS ) + 1; // pile of chips between 1 and 100
-
     cout << "This round will start with " << chipsInPile << " chips in the pile\n";
-
+    if (player1Turn) {
+        cout << playerName[0] << " How many chips would you like?\n";
+    }
+    else {
+        cout << playerName[1] << " How many chips would you like?\n";
+    }
     maxPerTurn = static_cast<int>(chipsInPile * MAX_TURN);
-
     cout << "You can only take " << maxPerTurn << endl;
-    chipsTaken = (rand() % maxPerTurn) + 2;
+    // chipsTaken = (rand() % maxPerTurn) + 2;
+    cin >> chipsTaken;
 
     cout << "Number taken: " << chipsTaken << endl;    
 
