@@ -1,0 +1,54 @@
+S.2.1 Declaring simple data types
+    <datatype> <variable name>;
+
+    int myVar;
+    float mySalary;
+    double mySalary;
+    char middleInitial = "A"; // ASCII Table values
+    string firstName = "Tom";
+    bool isValid = TRUE;
+
+    int y = x * 5;
+
+S.2.2 Declaring of Variables
+
+    * Cannot start with special characters or numbers
+    * (_) is the only special character that can be used, usually to separate characters if camel casing not used
+        e.g. emp_first_name or empFirstName 
+    
+    int age     -> hold 4 bytes of memory allocated (4039)
+    double salaryPerMonth   -> holds 8 bytes of memory allocated
+
+    always initialize to numbers and strings, if memory is old, it may contain old data. Compiler doesn't clear out data, just renames it.
+
+S.2.3 Storage of data in memory
+
+    int numEggs = 3;
+    numEggs = numEggs * 1.5; // decimal will be truncated
+
+    cout << (numEggs * 1.5); // converts result into double.
+
+    // Casting to integer
+    cout << static_cast<int>(numEggs * 1.5);
+
+    int taxRate = ceil (4.9999); // rounds up
+    int taxRate = floor (4.999); // rounds down
+
+    int remainder = 6 % 2;
+    6/4 = 1 R2
+
+    r^2 in code = pow (r, 2)
+    sqrt (4.0)
+    abs = int absolute values
+    fabs = floating abs
+
+    rand() // random number generattor, in C standard library
+    r = rand() % 6 // generate number between 0 and 5
+    add 1 to r to get a number between 1 and 6
+
+    * Number generation start at the same point
+        Seed generator to startat different point each time.
+        srand() 
+        srand(time(0)) // each second generates a brand new number (jan 1st, 1970)
+
+        
