@@ -24,8 +24,8 @@ int main()
 	cin >> qty; 
 	
 	//format output
-	cout.setf(ios::fixed);
-	cout.setf(ios::showpoint);
+	cout.setf(ios::fixed); // allows data not to be shown in e notation
+	cout.setf(ios::showpoint); // make decimal point be shown
 	
 	//calculations
 	charge = price * qty;
