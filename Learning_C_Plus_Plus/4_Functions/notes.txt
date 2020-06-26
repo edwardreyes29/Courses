@@ -1,0 +1,13 @@
+S.4.1 What is a function?
+
+    string:
+        Int string.length()
+    iomanip:
+        Setw()
+        Setfill()
+        SetPrecision() 
+    cctype:
+        Bool isdigit(char)
+        Bool isalpha(char)
+        Bool isupper(char)
+        Bool islower(char)
