@@ -1,0 +1,29 @@
+S.4.1 What is a function?
+
+    string:
+        Int string.length()
+    iomanip:
+        Setw()
+        Setfill()
+        SetPrecision() 
+    cctype:
+        Bool isdigit(char)
+        Bool isalpha(char)
+        Bool isupper(char)
+        Bool islower(char)
+
+    cstdlib:
+        rand()
+        srand(int)
+
+S.4.2 Creating a function
+
+    Syntax:
+        <Return data type> FunctionName(parameter list) {
+            function body code
+        }
+
+        // A function that doesn't return anything
+        void printReceipt(string compnayName, float total) {
+            function body code
+        }

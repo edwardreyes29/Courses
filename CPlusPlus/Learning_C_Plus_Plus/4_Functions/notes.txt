@@ -11,3 +11,55 @@ S.4.1 What is a function?
         Bool isalpha(char)
         Bool isupper(char)
         Bool islower(char)
+
+    cstdlib:
+        rand()
+        srand(int)
+
+S.4.2 Creating a function
+
+    Syntax:
+        <Return data type> FunctionName(parameter list) {
+            function body code
+        }
+
+        // A function that doesn't return anything
+        void printReceipt(string compnayName, float total) {
+            function body code
+        }
+
+    HappyBirthday() {
+        Happy Birthday to you
+    }
+
+S.4.3 Function parameters
+
+    Match by type, order, and number
+
+    e.g.    
+        void printRecept(string , float&);
+        
+        int main() {
+            float grandTotal = 0;
+            string companyName = "123 CO";
+            printReceipt(companyName, grandTotal); // grandtotal passes the address to the memory location
+            cout << grandTotal << endl;
+        }
+
+        void printReceipt(string companyName, float& total) { // & indicates passing by reference
+            cout << "Thank you for using " << companyName;
+            cout << fixed;
+            cout << "\nYout total is ";
+            total = total + 1; // changes the grandTotal in main() too
+            cout << setrecision(2) << total << endl;
+        }
+
+    2 types of paramters:
+        1. Passed by reference (an array)
+        2. Passed by value (a regular data type) (copies data to temporary variable, after use, temporary memory is deleted)
+
+    3. Scope "how long a variable will live"
+        * Local
+        * Global 
+    
+    4. Calling, prototypes, and defining functions
