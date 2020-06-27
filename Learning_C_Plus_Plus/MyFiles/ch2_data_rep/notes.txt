@@ -1,0 +1,22 @@
+C++ compiler doesn't remove old data once it's created.
+Initialize data
+Data is override when assigning new data.
+
+III. Storage of data in memory
+
+   int numEggs = 3;
+   numEggs = numEggs * 1.5; // results it 4 not 4.5
+   cout << (numEggs * 1.5); // outputs 4.5, does not truncate the decimal since it's not storing it in an int var.
+
+    int taxRate = ceil (4.9999); // 5 rounds up
+    int taxRate = floor (4.9999); // 4 rounds down
+    int remainder = 6 % 2; // mod operator
+    6/2 = 3 R0
+    
+    r^2 in code = pow (r,2)
+    sqrt (4.0)
+    abs = int absolute value
+
+    rand() // C standard library, generates random num between 0 and 1 
+    r = rand() % 6 //  multiply mod 6 generate number between 0 and 5
+    adding 1 to get a random number between 1 and 6
