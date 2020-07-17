@@ -1,0 +1,302 @@
+Installed lodash:
+    npm install lodash --save
+I. Intro
+    1. Keeps functions and data separate
+    2. Avoids state change and mutable data
+    3. Treats functions as first-class citizens
+
+    1. Keep Function and Data Separate
+    
+    Object-Oriented Programming:
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+
+            getOlder() {
+                this.age += 1
+            }
+        }
+
+    Functional Programming: Stores construct in arrays or hashes
+        const joe = {
+            name: "Joe",
+            age: 30,
+        }
+
+        function increaseAge(obj) {
+            const objCopy = _.cloneDeep(obj)
+            objCopy.age += 1
+            return objCopy
+        }
+
+    Pros: gives immediate polymorphism in regards to our data
+
+    e.g. Function works with any data that has an age field
+
+        const wine = { age: 5, type: "Pinot Noir" }
+        const house = { age: 10, sqFt: 2400 }
+        const me { name: "Shaun", age: 23, profession: "programmer" }
+
+        const betterWine = increaseAge(wine)
+        const worseHouse = increaseAge(house)
+        const olderMe = increaseAge(me)
+
+    2. Avoids state change and mutable data
+    
+    e.g. Keeping track of state changes of a variable
+
+        var greeting = "Hello"
+        ...
+        greeting = greeting + ", it's nice to meet you"
+        ...
+        greeting = greeting.toUppercase()
+
+        console.log(greeting)
+
+    Solution: Make all data immutable. Makes debugging easier
+        const greeting = "Hello"
+        ...
+        const longGreeting = greeting + ", it's nice to meet you"
+        ...
+        const longShoutedGreeting = longGreeting.toUppercase()
+
+        console.log(longShoutedGreeting)
+
+    3. Treats functions as first-class citizens
+        const x = 5
+        const y = "Hello"
+        const z = function() {...}
+
+        Important implications;
+            - first class functions gives ability to pass functions
+              as arguments to other functions and to return functions
+            - increase reusability.
+
+        const doSomething = function() {...}
+        doSomething (function() {...} )
+        function doSomethingElse() {
+            ...
+            return function() {...}
+        }
+
+    1.4 Functional vs Object-Oriented Programming
+
+    O:
+        class ShoppingList {
+            constructor(items) {
+                this.items = items
+            }
+            addItem(item) {
+                this.items.push(item)
+            }
+        }
+
+        class ShoppingItem {
+            constructor(name, price) {
+                this.name = name
+                this.price = price
+            }
+        }
+
+    F: Can assume a shopping list will be defines as an array
+        function addItem(list, item) {
+            return list.concat(item)
+        }
+
+
+    Creating object using O:
+        var myShoppingList = new ShoppingList([
+            new ShoppingItem("milk", 4.99),
+            new ShoppingItem("eggs", 3.99),
+            new ShoppingItem("beer", 6.99)
+        ])
+
+        // Mutates the original data, changes state of myShopping list
+        // Give us no hint of why we are adding an item
+        myShoppingList.addItem(
+            New ShoppingItem("bananas", 1.99)
+        )
+
+    Creating object using F: A simple has with value keys.
+        - more concern with the raw data itself
+        const myShoppingList = [
+            { name: "milk", price: 4.99 },
+            { name: "eggs", price: 3.99 },
+            { name: "beer", price: 6.99 }
+        ]
+
+        // Tells us why we are adding the new item from it's name
+        const nextWeekShoppingList = addItem(myShoppingList,
+            { name: "bananas", price: 1.99 })
+
+    Con: have to come up with a new name for each transformation performed.
+
+    Forces us to think carefully of why we are performing a transformation and
+    what it will be used for.
+
+    O:
+        if (havePetMonkey) {
+            myShoppingList.addItem(
+                new ShoppingItem("bananas", 1.99)
+            )
+            myShoppingList.sendToPerson()
+        } else if (guestAreVegans) {
+            myShoppingList.remove("milk", "eggs")
+            myShoppingList.sendToPerson()
+        } else {
+            myShoppingList.sendToPerson()
+        }
+
+    F:
+        const monkeyList = addItem(myShoppingList,
+            { name: "bananas", price: 1.99 })
+        const veganList = removeItems(myShoppingList, "milk", "eggs")
+
+        if (buyPetMonkey) {
+            sentToPerson(monkeyList)
+        } else if (guestsAreVegans) {
+            sendToPerson(veganList)
+        } else {
+            sendToPerson(myShoppingList)
+        }
+
+II. First-Class functions
+
+    2.1 Assigning functions to variables
+        Basic Syntax: 
+            const greet = function() {
+                console.log("Hello")
+            }
+
+            const square = function(x) {
+                return x * x
+            }
+
+            greet()     // "Hello"
+
+            square(5)   // 25
+            square(10)  // 100
+            square(42)  // 1764
+
+        Parentheses:
+            var threeSquared = square(3)    // With Parentheses -> transforms to whatever returning value is
+            threeSquared // 9
+
+            var anotherSquare = square
+            anotherSquare(3) // 9 -> represents the function itself
+
+        What is the difference?
+            // Doesn't matter when we use the functions before or after
+            // their declaration -> Hoisted: compiler moves them up on the file
+            function doSomething() {    // Normal Way
+                ...                 
+            }
+            doSomething()
+
+            // Can only be used when they have been declared
+            var doSomething = function() {  // Function-variable way
+                ...
+            }
+            doSomething()
+
+            
+    2.2. Passing functions as arguments 
+        Passing Values:
+
+            functions add(x, y) {
+                return x + y
+            }
+
+            function subtract(x, y) {
+                return x - y
+            }
+
+        Passing Functions: Pass arguments to specify what is done to data
+
+            function combine4and7(someFunction) {
+                return someFunction(4,7)
+            }
+
+            e.g. 
+                function combine4and7(add) {
+                    return add(4,7)
+                }
+
+
+    2.3 Closure and returning functions 
+
+        Basic Syntax:
+            function giveMeAFunction() {
+                return function() { // common practice to return anonymous functions
+                    console.log("I'm a function")
+                }
+            }
+
+            const aFunction = giveMeAFunction() // transform aFunction to giveMeAFunction() return value
+            aFunction() // prints "I'm a function"
+
+            giveMeAFunction()() // prints "I'm a function"
+            // Think of each pair of parentheses as moving inward each code block
+
+            Returning Named functions:
+                function giveMeAFunction() {
+                    function printSomething() {
+                        console.log("I'm a function")
+                    }
+                    return printSomething
+                }
+
+                const aFunction = giveMeAFunction()
+                aFunction() // prints "I'm a function"
+
+            Returning multiple objects in a JS object
+
+                function return2Functions() {
+                    return {
+                        function1: function() {
+                            console.lg("I'm the first function!")
+                        },
+                        function2: function() {
+                            console.log("I'm the second function!")
+                        }
+                    }
+                }
+
+                var twoFunctions = return2Functions()
+
+                twoFunctions.function1()    // prints "I'm the first function!"
+                twoFunctions.function2()    // prints "I'm the second function!"
+
+            // Variable Scope
+            function someFunction() {
+                var x = 5
+                console.log(x) // prints "5"
+            }
+
+            console.log(x) // undefined -> declared but no value assigned
+
+
+            // Closure and Capturing
+            // even if printValueOfX is outside the scope where x is defined, the
+            // printValueOfX function still has access to x, this is called 'Closure'
+            function someFunction() {
+                var x = 5
+                return function() {
+                    console.log("x is " + x)
+                }
+            }
+
+            var printValueOfX = someFunction() // "captures" the value of x
+            printValueOfX() // prints "x is 5"
+
+
+
+    2.4 Higher-order functions
+
+    A function that takes a function as an argument, returns a function, or both
+    
+
+
+
