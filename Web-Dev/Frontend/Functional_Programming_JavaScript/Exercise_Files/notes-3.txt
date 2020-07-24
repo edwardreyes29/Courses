@@ -1,0 +1,50 @@
+3. Array Functions
+
+S.3.1 Mapping
+
+map -> used when you want to take all the element in an array and convert
+       them into a some other value.
+
+_.map(numbers, f) -> lodash https://lodash.com/docs/#map
+
+const numbers = [1, 2, 3, 4, 5]
+                 |  |  |  |  |
+               [f(1), f(2), f(3), f(4), f(5)]
+
+_.map(numbers, square)
+const numbers = [1, 2, 3, 4, 5]
+                 |  |  |  |  |
+               [1, 4, 9, 16, 25]
+
+// Pass in an anonymous Functions
+_.map(array, function(element) {
+    ...
+    return ...
+})
+
+(!) Important
+1. _.map does not change the original array. The only return
+a copy. You have to assign the result to something.
+
+e.g. const numberSquared = _.map(numbers, square)
+
+S.3.2 Filtering
+https://lodash.com/docs/#filter
+
+used when you want some elements in an array that meet some criteria.
+
+_.filter(numbers, f)
+
+_.filter(numbers, isEven)
+
+    -.filter(array, function(element){
+        ...
+        return true // (or false)
+    })
+    
+
+S.3.3 Every/some
+
+S.3.4 Reducing
+
+S.3.5 Combining Functions
