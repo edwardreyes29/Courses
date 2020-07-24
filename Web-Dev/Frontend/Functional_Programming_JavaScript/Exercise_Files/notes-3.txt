@@ -41,9 +41,21 @@ _.filter(numbers, isEven)
         ...
         return true // (or false)
     })
-    
+
 
 S.3.3 Every/some
+    _.some AND _.every
+    Returns true or false as output
+
+    _.some returns true if function given returns true for some elements 
+    in array
+    _.every returns true if function given returns true for all elements 
+    in array.
+
+    e.g.
+        _.every(numbers, isEven) 
+            - If one number is not even, will return false.
+
 
 S.3.4 Reducing
 
