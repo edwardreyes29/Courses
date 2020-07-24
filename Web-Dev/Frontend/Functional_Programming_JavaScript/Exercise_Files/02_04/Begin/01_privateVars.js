@@ -17,6 +17,7 @@
 //   }
 // }
 
+// make count private
 function createCounter() {
   var count = 0
   return { // This is what myCounter really is, and it does not have property count

@@ -100,7 +100,8 @@ I. Intro
             }
         }
 
-    F: Can assume a shopping list will be defines as an array
+    F: Can assume a shopping list will be defined as an array
+
         function addItem(list, item) {
             return list.concat(item)
         }
@@ -119,7 +120,7 @@ I. Intro
             New ShoppingItem("bananas", 1.99)
         )
 
-    Creating object using F: A simple has with value keys.
+    Creating object using F: A simple hash with value keys.
         - more concern with the raw data itself
         const myShoppingList = [
             { name: "milk", price: 4.99 },
@@ -128,6 +129,7 @@ I. Intro
         ]
 
         // Tells us why we are adding the new item from it's name
+
         const nextWeekShoppingList = addItem(myShoppingList,
             { name: "bananas", price: 1.99 })
 
@@ -190,6 +192,7 @@ II. First-Class functions
         What is the difference?
             // Doesn't matter when we use the functions before or after
             // their declaration -> Hoisted: compiler moves them up on the file
+            
             function doSomething() {    // Normal Way
                 ...                 
             }

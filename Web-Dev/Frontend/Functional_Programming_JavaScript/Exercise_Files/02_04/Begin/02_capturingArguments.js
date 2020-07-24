@@ -21,5 +21,8 @@ function createCounter(count) {
 */
 
 var counterStartingAt5 = createCounter(5)
+console.log(counterStartingAt5.currentValue())
+counterStartingAt5.increment()
+console.log(counterStartingAt5.currentValue())
 
 var counterStartingAtMinus2 = createCounter(-2)
