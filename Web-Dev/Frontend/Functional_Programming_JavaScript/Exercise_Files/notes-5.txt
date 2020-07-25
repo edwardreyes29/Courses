@@ -1,0 +1,32 @@
+5. Advanced Function Concepts
+
+S.5.1 Introduction
+- Partial applicaiton
+- recursion
+
+S.5.2 Partial Application
+    -> taking one of the arguments and fixing the value.
+    
+    function add(x, y) {
+        return x + y
+    }
+
+    function partiallyApply(func, x) {
+        return function(y) {
+            return func(x, y)
+        }
+    }
+
+    e.g.
+        var add5 = partiallyApply(add, 5)
+        add5(2) // => 7
+
+
+
+S.5.3 Recursion -> a function that calls itself
+
+function recursiveFunction() {
+    ...
+    recursiveFunction()
+    ...
+}

@@ -58,5 +58,23 @@ S.3.3 Every/some
 
 
 S.3.4 Reducing
+_.reduce -> takes an array, reduces array to a single value.
+some, average, etc...
+
+e.g.    
+    _.reduce(numbers, sum) 
+
+_.reduce(array, function(acc, element) {
+    ...
+    return ...
+})
+    function needs two arguments, 1st represents value accumulated so far,
+    the second represents the current element.
+
+// To find sum in array
+const sum = _.reduce(array, function(acc, element) {
+    return acc + element
+}, 0) // A third arg can be passed (0), becomes the starting value.
+      // By default, the starting value is the element of the array passed in.
 
 S.3.5 Combining Functions

@@ -10,3 +10,51 @@ var employees = [
   { name: "Jerry",  salary: 90000,  age: 39, gender: 'M' },
   { name: "Barb",   salary: 95000,  age: 36, gender: 'F' }
 ]
+
+// filter array for male employees
+var males = _.filter(employees, function(employee) {
+  return employee.gender === 'M'
+}) // returns array of males
+
+// Convert male array to ages of all male employees
+var maleAges = _.map(males, function(male) {
+  return male.age
+})
+
+// Find total age
+var maleAgeTotal = _.reduce(maleAges, function(acc, age) {
+  return acc + age
+})
+
+// Get average age for males
+var maleAgeAverage = maleAgeTotal / males.length
+
+console.log(maleAgeAverage)
+
+// Filter array for female employees
+var females = _.filter(employees, function(employee) {
+  return employee.gender === 'F'
+})
+
+// Convert female array to ages of all male employees
+var femaleAges = _.map(females, function(female) {
+  return female.age
+})
+
+// find total age for females
+var femaleAgeTotal = _.reduce(femaleAges, function(acc, age) {
+  return acc + age
+})
+
+// get average age for females
+var femaleAgeAverage = femaleAgeTotal / females.length
+
+console.log(femaleAgeAverage)
+
+/*
+
+  Notes:
+  - many transformations, common practice for functional programming.
+  - Original data has not been mutated, maintained integrity of original data
+
+*/

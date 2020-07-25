@@ -1,0 +1,30 @@
+4. Callbacks
+
+
+S.4.1 Chapter Introductions
+// Synchronous Operations -> requires file operation must be fully completed before any other code is executed.
+    var file = fs.readFileSync('someHugeFile.txt', 'utf8')
+    console.log("That took a long time!")
+
+// Callbacks
+    someAsyncTask( function(result) {
+        console.log("The result was: " + result)
+    })
+
+    console.log("I was called right away!")
+
+    A callback is a function that you pass as an arg to an asynchronous function.
+
+
+S.4.2 Simple Callbacks
+
+// setTimeout -> delays execution of another function
+    setTimeout( function() {
+        ...
+    }, 3000)
+
+
+S.4.3 Callback with arguments
+    someAsyncFunction( function(err, result) {
+        ...
+    })
