@@ -1,0 +1,80 @@
+What you should know
+- HTML and CSS
+- JavaScript
+- JavaScript libraries and frameworks
+    - node, react, jQuery
+
+I. Understand the need for a debugger
+
+    S.1.1 Intro the debugger
+
+    S.1.2 Important concepts
+        - breakpoint:
+            place where you tell debugger to stop
+        - Step Over:
+            - execute current line to the next one
+        - Step Into:
+            - Takes you into next function call
+        - Step Out:
+            - Takes you out of function you are executing.
+        - Watch:
+            - watch a particular variable
+        - Call Stack:
+            - Series of function calls, made up of frames (an entry)
+        - IDE
+            - Integrated development environment
+        
+    S.1.3 Debuggers in Web Browsers
+        - Chrome (or Canary)    
+            - Debugger: developer tools
+        - FireFox
+            - Debuggers: Developer tools
+        - Safari:
+            - Debugger: Web Inspector
+        - Edge & Internet Explorer:
+            - F12 developer tools
+
+    S.1.4 The importance of a good editor and IDE
+
+    S.1.5 Why debugging AJAX can be tricky
+        Problems:
+            - Same-origin policy
+            - CORS(cross-origin resource sharing)
+            - files://URLs
+        Solution:
+            - use a local web server
+            - Chrome: disable-web-security
+            - Firefox: security.fileuri.string_origin_policy
+            - Safari: disable local file restrictions
+
+II. Debugger Basics
+
+    S.2.1 Debugging without a debugger
+
+    S.2.2 Leverage more of the Console API
+        Using console.error allows you to look up the call stack to see what actions were taken
+        before console.error() was invoked.
+
+        console.count('message') // presents how many times something happens
+
+        // formatted message using tokens (%s -> string %O -> object)
+        console.error('swipe %s using %O event', direction, event);
+
+
+
+    S.2.3 Simple breakpoints
+
+    in VSCode or any editor, can add debugger keyword
+
+    S.2.4 Explore other breakpoint options
+        Can set conditional breakpoints
+        - right click, conditional breakpoint in developer tools
+    S.2.5 Step into, over, and out of funcitons
+
+    S.2.6 Find out where you are using call Stack
+
+    S.2.7 Monitor variables with watches
+        Use Watch to look at a particular varialbe instead of looking at the local variables in the debugger, can be quite long and tedious to sift through.
+
+    S.2.8 Source maps to debug minified files
+        Can't use watch expression with source maps, only is able to detect variables from currently executing file.
