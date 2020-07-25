@@ -30,3 +30,8 @@ function recursiveFunction() {
     recursiveFunction()
     ...
 }
+
+Next steps:
+- Node.js essential training
+"Structure and interpration of computer programs"
+- Gerald Jay Sussman and hal Abelson
