@@ -1,0 +1,46 @@
+Weather map API key
+de36e36780976652d3e84a5502633fce
+
+
+I. Building Blocks of Closures
+
+    S.1.1 Local and global scope
+        Global, accessible anywhere in the code
+        Local, inside block of code like a function
+
+        e.g.
+            let forecast = "Sunny"; // global variable
+            function advise() {
+                let tempF = 1.8; // local variable
+                console.log("The weather will be " + forecast);
+            }
+
+    S.1.2 Nesting functions
+
+    function updateClicks() { // Outer function
+        const button = this.id;
+        clicks[button] = clicks[button] + 1 || 1;
+
+        function reportClicks() { // inner function -> has local scope
+            const report = [button, clicks];
+            console.log(...report);
+        }
+        reportClicks
+    }
+
+    S.1.3 Return a value from an inner function 
+        Function:
+            function calcTotal(base, tax) {
+                let total = base + (base * tax);
+                return total;
+            }
+
+        Closure Benefits:
+            - supports practice of keeping variables out of global scope as much as possible.
+            - Variables like the clicks variable, are only available through our closure,
+              making the variable somewhat protected.
+
+    S.1.4 Create parallel closures
+
+        (!) Closure can create references to multiple closed over variables
+        that are independent to each other.

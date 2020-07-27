@@ -1,0 +1,68 @@
+I. Defining Classes
+
+    S.1.1 Intro to Classes
+        * Syntactic sugar over prototypes
+        * Class changes get passed down
+        * Aren't hoisted to the top, unlike functions. Define before use
+        * Two ways to define classes: 
+            1. class declarations
+                class Car {
+                    constructor(doors, engine, color) {
+                        this.doors = doors;
+                        this.engine = engine;
+                        this.color = color;
+                    }
+                }
+
+                const cx5 = new Car(4, 'V6', 'grey');
+
+            2. expressions
+                var Car = class {
+                    constructor(doors, engine, color) {
+                        this.doors = doors;
+                        this.engine = engine;
+                        this.color = color;
+                    }
+                };
+
+        * Properties and methods
+            class Car {
+                constructor(doors, engine, color) {
+                    this.doors = doors; 
+                    this.engine = engine;
+                    this.color = color;
+                }
+                carStats() {
+                    return `This car has ${this.doors} doors, a 
+                    ${this.engine} engine and a beautiful ${this.color}`;
+                }
+            }   
+
+    S.1.2 Defining a Class 
+
+    S.1.3 Differences between functions and Classes
+        Differences:
+            Functions are hoisted and classes are not
+            Functions can be overwritten, but classes cannot.
+
+            Use Case: React Class component (stateful)
+            - If you want to create a blueprint to be reused and still need functions, create a class.
+
+            Method if you only need to create a function with no properties. (stateless)
+
+
+    S.1.4 Hoisting explained with Classes
+
+
+    S.1.5 Strict mode with classes 
+
+    S.1.6 Static methods and usage
+
+    S.1.7 Prototype methods explained
+
+III. Extends and Mixins
+
+    S.3.2 Mixins and usage
+        Classes can only extend one class at a time.
+
+        Mixins are frowned upon for React Developers.
