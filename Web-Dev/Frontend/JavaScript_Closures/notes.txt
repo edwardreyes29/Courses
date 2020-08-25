@@ -44,3 +44,28 @@ I. Building Blocks of Closures
 
         (!) Closure can create references to multiple closed over variables
         that are independent to each other.
+
+II.
+
+    II.I Modules
+
+    - Encapsulate code
+    - Expose subset of properties and methods
+    - Protect values
+    - Provide only specific access
+    - Avoid polluting global namespace
+
+    Code that create a modules returns an object
+
+    e.g.    
+        const updateClicks = function() { // returns object
+            const choices = [];
+            return { // returned methods contain closures
+                addChoice: function(newChoice) {
+                    choices.push(newChoice);
+                },
+                getChoices: function() {
+                    return choices;
+                }
+            };
+        }(); // Uses an IIFE
